@@ -6,840 +6,678 @@
 <title>VibeCoffee — Project Dashboard</title>
 <style>
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=DM+Sans:wght@300;400;500;600&family=DM+Mono:wght@400;500&display=swap');
-
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-
 :root{
-  --cream:#FAF6EF;
-  --cream2:#F3EDE0;
-  --cream3:#E8DEC8;
-  --brown:#3B2A1A;
-  --brown2:#5C3D20;
-  --brown3:#7A5230;
-  --espresso:#1A0F06;
-  --gold:#C8963A;
-  --gold2:#E8B054;
-  --sage:#5A7A5C;
-  --sage2:#7A9E7C;
-  --rust:#C04A2A;
-  --rust2:#E06040;
-  --sky:#4A7A9E;
-  --text:#2A1A0E;
-  --muted:#8A7060;
-  --border:rgba(58,42,26,0.12);
-  --border2:rgba(58,42,26,0.22);
+  --cream:#FAF6EF;--cream2:#F3EDE0;--cream3:#E8DEC8;
+  --brown:#3B2A1A;--brown2:#5C3D20;
+  --espresso:#1A0F06;--gold:#C8963A;--gold2:#E8B054;
+  --sage:#5A7A5C;--rust:#C04A2A;--sky:#4A7A9E;
+  --text:#2A1A0E;--muted:#8A7060;
+  --border:rgba(58,42,26,0.12);--border2:rgba(58,42,26,0.22);
   --shadow:rgba(58,42,26,0.08);
 }
-
-body{
-  font-family:'DM Sans',sans-serif;
-  background:var(--cream);
-  color:var(--text);
-  min-height:100vh;
-}
+body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);min-height:100vh;}
 
 /* HEADER */
-.header{
-  background:var(--espresso);
-  padding:0 32px;
-  display:flex;
-  align-items:center;
-  height:64px;
-  gap:20px;
-  position:sticky;top:0;z-index:50;
-}
-.brand{
-  font-family:'Playfair Display',serif;
-  font-size:22px;
-  font-weight:900;
-  color:var(--gold2);
-  letter-spacing:0.02em;
-}
-.brand span{color:rgba(255,255,255,0.4);font-weight:300;font-size:13px;margin-left:8px;font-family:'DM Sans',sans-serif;letter-spacing:0;}
-.header-tag{
-  font-size:10px;
-  background:rgba(200,150,58,0.2);
-  color:var(--gold2);
-  border:1px solid rgba(200,150,58,0.35);
-  padding:3px 10px;
-  border-radius:20px;
-  letter-spacing:0.08em;
-  text-transform:uppercase;
-}
-.header-right{margin-left:auto;display:flex;align-items:center;gap:24px;}
+.header{background:var(--espresso);padding:0 28px;display:flex;align-items:center;height:58px;gap:16px;position:sticky;top:0;z-index:50;}
+.brand{font-family:'Playfair Display',serif;font-size:21px;font-weight:900;color:var(--gold2);letter-spacing:.02em;}
+.brand span{color:rgba(255,255,255,.35);font-weight:300;font-size:12px;margin-left:8px;font-family:'DM Sans',sans-serif;}
+.header-right{margin-left:auto;display:flex;align-items:center;gap:20px;}
 .hstat{text-align:right;}
-.hstat-val{font-family:'DM Mono',monospace;font-size:16px;font-weight:500;}
-.hstat-lbl{font-size:10px;color:rgba(255,255,255,0.35);text-transform:uppercase;letter-spacing:0.07em;}
-.c-gold{color:var(--gold2);}
-.c-sage{color:#86c88a;}
-.c-rust{color:#f08060;}
-.date-badge{
-  font-family:'DM Mono',monospace;
-  font-size:11px;
-  color:rgba(255,255,255,0.4);
-  border-left:1px solid rgba(255,255,255,0.1);
-  padding-left:20px;
-}
+.hstat-val{font-family:'DM Mono',monospace;font-size:15px;font-weight:500;}
+.hstat-lbl{font-size:10px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.07em;}
+.c-gold{color:var(--gold2);}.c-sage{color:#86c88a;}.c-rust{color:#f08060;}
+.date-badge{font-family:'DM Mono',monospace;font-size:11px;color:rgba(255,255,255,.4);border-left:1px solid rgba(255,255,255,.1);padding-left:18px;}
+
+/* TAB NAV */
+.tab-nav{background:var(--espresso);border-top:1px solid rgba(255,255,255,.07);display:flex;padding:0 28px;gap:2px;}
+.tab-btn{padding:9px 20px;font-size:12px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:rgba(255,255,255,.38);background:transparent;border:none;cursor:pointer;border-bottom:2px solid transparent;transition:all .2s;display:flex;align-items:center;gap:8px;}
+.tab-btn:hover{color:rgba(255,255,255,.65);}
+.tab-btn.active{color:var(--gold2);border-bottom-color:var(--gold2);}
+.t-badge{font-family:'DM Mono',monospace;font-size:10px;padding:1px 6px;border-radius:8px;background:rgba(200,150,58,.2);color:var(--gold2);}
+.tab-btn.active .t-badge{background:rgba(200,150,58,.3);}
+.t-badge-g{background:rgba(86,200,120,.15);color:#86c88a;}
+.tab-btn.active .t-badge-g{background:rgba(86,200,120,.25);}
 
 /* LAYOUT */
-.page{display:grid;grid-template-columns:260px 1fr;min-height:calc(100vh - 64px);}
+.page{display:grid;grid-template-columns:252px 1fr;min-height:calc(100vh - 98px);}
 
 /* SIDEBAR */
-.sidebar{
-  background:var(--cream2);
-  border-right:1px solid var(--border);
-  padding:24px 0;
-  display:flex;flex-direction:column;gap:0;
-}
-.sidebar-section{padding:0 20px 16px;margin-bottom:8px;border-bottom:1px solid var(--border);}
-.sidebar-title{font-size:10px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:var(--muted);margin-bottom:12px;}
+.sidebar{background:var(--cream2);border-right:1px solid var(--border);overflow-y:auto;scrollbar-width:thin;scrollbar-color:var(--border2) transparent;}
+.sb{padding:18px 0;}
+.sb-sec{padding:0 17px 14px;margin-bottom:6px;border-bottom:1px solid var(--border);}
+.sb-sec:last-child{border-bottom:none;}
+.sb-ttl{font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px;}
 
-.product-item{
-  display:flex;align-items:center;gap:10px;
-  padding:10px 12px;border-radius:10px;
-  cursor:pointer;transition:background 0.15s;
-  margin-bottom:4px;
-}
-.product-item:hover,.product-item.active{background:rgba(58,42,26,0.07);}
-.prod-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
-.prod-name{font-size:13px;font-weight:500;line-height:1.3;}
-.prod-status{margin-left:auto;font-size:10px;padding:2px 8px;border-radius:10px;font-weight:500;}
+.prod-item{display:flex;align-items:center;gap:9px;padding:8px 10px;border-radius:9px;cursor:pointer;transition:background .15s;margin-bottom:3px;}
+.prod-item:hover,.prod-item.active{background:rgba(58,42,26,.07);}
+.pd{width:8px;height:8px;border-radius:50%;flex-shrink:0;}
+.pn{font-size:12px;font-weight:500;line-height:1.3;flex:1;}
+.ps{font-size:9px;padding:2px 7px;border-radius:9px;font-weight:500;flex-shrink:0;}
 
-.info-card{
-  margin:16px 20px 0;
-  background:var(--brown);
-  border-radius:12px;
-  padding:14px 16px;
-  color:white;
-}
-.info-card-title{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;color:var(--gold2);margin-bottom:10px;}
-.info-row{display:flex;justify-content:space-between;font-size:12px;margin-bottom:6px;align-items:flex-start;gap:8px;}
-.info-label{color:rgba(255,255,255,0.5);flex-shrink:0;}
-.info-val{color:white;font-weight:500;text-align:right;font-size:11px;line-height:1.4;}
-.info-highlight{color:var(--gold2);font-family:'DM Mono',monospace;font-weight:500;}
+.icard{background:var(--brown);border-radius:11px;padding:12px 14px;color:white;margin-bottom:8px;}
+.icard-ttl{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--gold2);margin-bottom:9px;}
+.ir{display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;align-items:flex-start;gap:8px;}
+.il{color:rgba(255,255,255,.45);flex-shrink:0;}
+.iv{color:white;font-weight:500;text-align:right;font-size:11px;line-height:1.4;}
+.ih{color:var(--gold2);font-family:'DM Mono',monospace;font-weight:500;}
 
-.condition-box{
-  margin:12px 20px 0;
-  background:rgba(200,150,58,0.08);
-  border:1px solid rgba(200,150,58,0.2);
-  border-radius:10px;
-  padding:12px 14px;
-}
-.cond-title{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--gold);margin-bottom:8px;}
-.cond-item{font-size:11px;color:var(--brown2);margin-bottom:5px;line-height:1.5;display:flex;gap:6px;}
-.cond-item::before{content:"•";color:var(--gold);flex-shrink:0;}
+.cbox{background:rgba(200,150,58,.08);border:1px solid rgba(200,150,58,.2);border-radius:9px;padding:10px 12px;margin-bottom:8px;}
+.cb-ttl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--gold);margin-bottom:7px;}
+.ci{font-size:11px;color:var(--brown2);margin-bottom:4px;line-height:1.5;display:flex;gap:5px;}
+.ci::before{content:"•";color:var(--gold);flex-shrink:0;}
+
+.tl{background:rgba(90,122,92,.07);border:1px solid rgba(90,122,92,.18);border-radius:9px;padding:10px 12px;}
+.tl-ttl{font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:.07em;color:var(--sage);margin-bottom:7px;}
+.tl-r{display:flex;gap:6px;margin-bottom:4px;font-size:11px;color:var(--brown2);}
+.tl-d{color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;}
 
 /* MAIN */
-.main{padding:28px 32px;overflow-y:auto;}
-
-.section-header{
-  display:flex;align-items:center;justify-content:space-between;
-  margin-bottom:20px;
-}
-.section-title{
-  font-family:'Playfair Display',serif;
-  font-size:20px;
-  font-weight:700;
-  color:var(--brown);
-}
-.section-sub{font-size:12px;color:var(--muted);margin-top:2px;}
+.main{padding:22px 26px;overflow-y:auto;}
+.tab-panel{display:none;}.tab-panel.active{display:block;}
+.sec-hd{display:flex;align-items:center;justify-content:space-between;margin-bottom:17px;}
+.sec-ttl{font-family:'Playfair Display',serif;font-size:19px;font-weight:700;color:var(--brown);}
+.sec-sub{font-size:12px;color:var(--muted);margin-top:2px;}
 
 /* KANBAN */
-.kanban{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-bottom:32px;}
-.col-wrap{}
-.col-head{
-  display:flex;align-items:center;gap:8px;
-  padding:10px 14px;
-  border-radius:10px 10px 0 0;
-  border:1px solid var(--border);
-  border-bottom:none;
-}
-.col-dot{width:8px;height:8px;border-radius:50%;}
-.col-name{font-size:11px;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;}
-.col-cnt{margin-left:auto;font-family:'DM Mono',monospace;font-size:11px;background:rgba(58,42,26,0.08);padding:1px 7px;border-radius:8px;color:var(--muted);}
-.col-body{
-  border:1px solid var(--border);
-  border-radius:0 0 10px 10px;
-  padding:10px;
-  min-height:80px;
-  background:white;
-  display:flex;flex-direction:column;gap:8px;
-}
+.kb{display:grid;grid-template-columns:repeat(4,1fr);gap:11px;margin-bottom:26px;}
+.ch{display:flex;align-items:center;gap:7px;padding:8px 12px;border-radius:8px 8px 0 0;border:1px solid var(--border);border-bottom:none;}
+.cd{width:7px;height:7px;border-radius:50%;}
+.cn{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;}
+.cc{margin-left:auto;font-family:'DM Mono',monospace;font-size:10px;background:rgba(58,42,26,.07);padding:1px 6px;border-radius:7px;color:var(--muted);}
+.cb{border:1px solid var(--border);border-radius:0 0 8px 8px;padding:8px;min-height:60px;background:white;display:flex;flex-direction:column;gap:7px;}
 
-.task-card{
-  border-radius:10px;
-  padding:12px 13px;
-  border:1px solid var(--border);
-  background:var(--cream);
-  cursor:pointer;
-  transition:transform 0.15s,box-shadow 0.15s,border-color 0.15s;
-  position:relative;
-  overflow:hidden;
-}
-.task-card::before{
-  content:'';position:absolute;left:0;top:0;bottom:0;width:3px;
-  border-radius:3px 0 0 3px;
-}
-.task-card.pri-high::before{background:var(--rust);}
-.task-card.pri-medium::before{background:var(--gold);}
-.task-card.pri-low::before{background:var(--sage);}
-.task-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--shadow);border-color:var(--border2);}
+.tc{border-radius:8px;padding:10px 11px;border:1px solid var(--border);background:var(--cream);cursor:pointer;transition:transform .15s,box-shadow .15s,border-color .15s;position:relative;overflow:hidden;}
+.tc::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;border-radius:3px 0 0 3px;}
+.tc.ph::before{background:var(--rust);}.tc.pm::before{background:var(--gold);}.tc.pl::before{background:var(--sage);}
+.tc:hover{transform:translateY(-1px);box-shadow:0 4px 14px var(--shadow);border-color:var(--border2);}
+.tt{display:flex;align-items:flex-start;gap:7px;margin-bottom:6px;}
+.ti{font-size:15px;flex-shrink:0;margin-top:1px;}
+.tn{font-size:12px;font-weight:600;line-height:1.4;color:var(--brown);flex:1;}
+.tp{font-size:9px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:2px 6px;border-radius:4px;flex-shrink:0;}
+.ph .tp{background:rgba(192,74,42,.12);color:var(--rust);border:1px solid rgba(192,74,42,.2);}
+.pm .tp{background:rgba(200,150,58,.12);color:var(--brown2);border:1px solid rgba(200,150,58,.25);}
+.pl .tp{background:rgba(90,122,92,.12);color:var(--sage);border:1px solid rgba(90,122,92,.2);}
+.td{font-size:11px;color:var(--muted);line-height:1.5;margin-bottom:7px;}
+.tpg{height:3px;background:var(--cream3);border-radius:2px;overflow:hidden;margin-bottom:7px;}
+.tb{height:100%;border-radius:2px;transition:width .4s ease;}
+.tm{display:flex;align-items:center;gap:5px;flex-wrap:wrap;}
+.tg{font-size:10px;padding:2px 7px;border-radius:4px;background:var(--cream2);color:var(--muted);border:1px solid var(--border);}
+.tdt{margin-left:auto;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);}
+.ta{font-size:10px;color:var(--sky);font-weight:500;}
 
-.tc-top{display:flex;align-items:flex-start;gap:8px;margin-bottom:7px;}
-.tc-icon{font-size:18px;flex-shrink:0;margin-top:1px;}
-.tc-title{font-size:13px;font-weight:600;line-height:1.4;color:var(--brown);flex:1;}
-.tc-pri{
-  font-size:9px;font-weight:600;letter-spacing:0.07em;text-transform:uppercase;
-  padding:2px 7px;border-radius:5px;flex-shrink:0;
-}
-.pri-high .tc-pri{background:rgba(192,74,42,0.12);color:var(--rust);border:1px solid rgba(192,74,42,0.2);}
-.pri-medium .tc-pri{background:rgba(200,150,58,0.12);color:var(--brown2);border:1px solid rgba(200,150,58,0.25);}
-.pri-low .tc-pri{background:rgba(90,122,92,0.12);color:var(--sage);border:1px solid rgba(90,122,92,0.2);}
+/* PRICE */
+.ps2{margin-top:4px;}
+.pt{font-family:'Playfair Display',serif;font-size:17px;font-weight:700;color:var(--brown);margin-bottom:3px;}
+.ps3{font-size:11px;color:var(--muted);margin-bottom:13px;}
+.pn2{background:rgba(192,74,42,.06);border:1px solid rgba(192,74,42,.15);border-radius:9px;padding:10px 14px;font-size:12px;color:var(--rust);margin-bottom:13px;display:flex;gap:8px;}
+.ptb{width:100%;border-collapse:collapse;font-size:12px;}
+.ptb th{background:var(--brown);color:white;padding:9px 11px;text-align:left;font-weight:500;font-size:11px;}
+.ptb th:first-child{border-radius:7px 0 0 0;}.ptb th:last-child{border-radius:0 7px 0 0;}
+.ptb td{padding:8px 11px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle;}
+.ptb tr:last-child td{border-bottom:none;}
+.ptb tr:nth-child(even) td{background:rgba(58,42,26,.025);}
+.ptb tr:hover td{background:rgba(200,150,58,.05);}
+.pv{font-family:'DM Mono',monospace;font-weight:500;color:var(--brown2);}
+.hr2 td{background:rgba(200,150,58,.08)!important;}.hr2 .pv{color:var(--gold);font-weight:600;}
+.bvn{background:rgba(90,122,92,.12);color:var(--sage);border:1px solid rgba(90,122,92,.2);font-size:10px;padding:2px 7px;border-radius:5px;}
+.bsg{background:rgba(74,122,158,.12);color:var(--sky);border:1px solid rgba(74,122,158,.2);font-size:10px;padding:2px 7px;border-radius:5px;}
+.bi{background:rgba(192,74,42,.08);color:var(--rust);border:1px solid rgba(192,74,42,.15);font-size:10px;padding:2px 7px;border-radius:5px;}
+.bcn{background:rgba(90,90,90,.1);color:#606060;border:1px solid rgba(0,0,0,.1);font-size:10px;padding:2px 7px;border-radius:5px;}
+.bn{background:rgba(200,150,58,.15);color:var(--gold);border:1px solid rgba(200,150,58,.3);font-size:10px;padding:2px 7px;border-radius:5px;font-weight:600;}
 
-.tc-desc{font-size:11px;color:var(--muted);line-height:1.55;margin-bottom:9px;}
-.tc-progress{height:3px;background:var(--cream3);border-radius:2px;overflow:hidden;margin-bottom:8px;}
-.tc-bar{height:100%;border-radius:2px;transition:width 0.4s ease;}
-.tc-meta{display:flex;align-items:center;gap:6px;flex-wrap:wrap;}
-.tc-tag{font-size:10px;padding:2px 8px;border-radius:5px;background:var(--cream2);color:var(--muted);border:1px solid var(--border);}
-.tc-date{margin-left:auto;font-family:'DM Mono',monospace;font-size:10px;color:var(--muted);}
-.tc-assignee{font-size:10px;color:var(--sky);font-weight:500;}
-
-/* PRICE TABLE SECTION */
-.price-section{margin-top:8px;}
-.price-title{
-  font-family:'Playfair Display',serif;
-  font-size:18px;font-weight:700;color:var(--brown);
-  margin-bottom:4px;
-}
-.price-sub{font-size:12px;color:var(--muted);margin-bottom:16px;}
-.price-note{
-  background:rgba(192,74,42,0.06);
-  border:1px solid rgba(192,74,42,0.15);
-  border-radius:10px;
-  padding:12px 16px;
-  font-size:12px;
-  color:var(--rust);
-  margin-bottom:16px;
-  display:flex;gap:8px;align-items:flex-start;
-}
-.price-note strong{font-weight:600;}
-
-.price-table{width:100%;border-collapse:collapse;font-size:12px;}
-.price-table th{
-  background:var(--brown);color:white;
-  padding:10px 12px;text-align:left;
-  font-weight:500;font-size:11px;letter-spacing:0.04em;
-}
-.price-table th:first-child{border-radius:8px 0 0 0;}
-.price-table th:last-child{border-radius:0 8px 0 0;}
-.price-table td{padding:9px 12px;border-bottom:1px solid var(--border);color:var(--text);vertical-align:middle;}
-.price-table tr:last-child td{border-bottom:none;}
-.price-table tr:nth-child(even) td{background:rgba(58,42,26,0.025);}
-.price-table tr:hover td{background:rgba(200,150,58,0.05);}
-.price-table .price-val{
-  font-family:'DM Mono',monospace;font-weight:500;color:var(--brown2);
-}
-.price-table .highlight-row td{background:rgba(200,150,58,0.08)!important;}
-.price-table .highlight-row .price-val{color:var(--gold);font-weight:600;}
-.badge-vn{background:rgba(90,122,92,0.12);color:var(--sage);border:1px solid rgba(90,122,92,0.2);font-size:10px;padding:2px 7px;border-radius:5px;}
-.badge-sg{background:rgba(74,122,158,0.12);color:var(--sky);border:1px solid rgba(74,122,158,0.2);font-size:10px;padding:2px 7px;border-radius:5px;}
-.badge-indo{background:rgba(192,74,42,0.08);color:var(--rust);border:1px solid rgba(192,74,42,0.15);font-size:10px;padding:2px 7px;border-radius:5px;}
-.badge-cn{background:rgba(90,90,90,0.1);color:#606060;border:1px solid rgba(0,0,0,0.1);font-size:10px;padding:2px 7px;border-radius:5px;}
-.my-ndc{background:rgba(200,150,58,0.15);color:var(--gold);border:1px solid rgba(200,150,58,0.3);font-size:10px;padding:2px 7px;border-radius:5px;font-weight:600;}
-
-.compare-box{
-  margin-top:12px;
-  background:var(--brown);
-  border-radius:12px;
-  padding:16px 20px;
-  display:grid;grid-template-columns:1fr 1fr 1fr;gap:16px;
-}
-.cmp-item{text-align:center;}
-.cmp-label{font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:4px;}
-.cmp-val{font-family:'DM Mono',monospace;font-size:18px;font-weight:500;color:var(--gold2);}
-.cmp-sub{font-size:10px;color:rgba(255,255,255,0.35);margin-top:2px;}
-.cmp-divider{width:1px;background:rgba(255,255,255,0.1);align-self:stretch;}
+.cmp{margin-top:11px;background:var(--brown);border-radius:11px;padding:14px 18px;display:grid;gap:12px;}
+.ci2{text-align:center;}
+.cl{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;margin-bottom:3px;}
+.cv{font-family:'DM Mono',monospace;font-size:16px;font-weight:500;color:var(--gold2);}
+.cs{font-size:10px;color:rgba(255,255,255,.3);margin-top:2px;}
+.cdv{width:1px;background:rgba(255,255,255,.1);align-self:stretch;}
 
 /* NOTES */
-.notes-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px;}
-.note-card{
-  background:white;
-  border:1px solid var(--border);
-  border-radius:12px;
-  padding:16px;
-}
-.note-card-title{font-size:12px;font-weight:600;color:var(--brown);margin-bottom:8px;display:flex;align-items:center;gap:6px;}
-.note-list{list-style:none;}
-.note-list li{font-size:12px;color:var(--muted);padding:5px 0;border-bottom:1px solid var(--border);line-height:1.5;display:flex;gap:6px;}
-.note-list li:last-child{border-bottom:none;}
-.note-list li::before{content:"→";color:var(--gold);font-weight:600;flex-shrink:0;}
+.ng{display:grid;grid-template-columns:1fr 1fr;gap:11px;margin-top:20px;}
+.nc{background:white;border:1px solid var(--border);border-radius:11px;padding:14px;}
+.nc-t{font-size:12px;font-weight:600;color:var(--brown);margin-bottom:7px;}
+.nl{list-style:none;}
+.nl li{font-size:12px;color:var(--muted);padding:4px 0;border-bottom:1px solid var(--border);line-height:1.5;display:flex;gap:5px;}
+.nl li:last-child{border-bottom:none;}
+.nl li::before{content:"→";color:var(--gold);font-weight:600;flex-shrink:0;}
 
-/* responsive-ish */
-@media(max-width:1100px){.kanban{grid-template-columns:1fr 1fr;}.compare-box{grid-template-columns:1fr 1fr;}}
+/* ===== MARKETING TAB ===== */
+.mhero{background:var(--espresso);border-radius:13px;padding:20px 22px;margin-bottom:20px;display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:0;}
+.ms{text-align:center;padding:0 14px;position:relative;}
+.ms+.ms::before{content:'';position:absolute;left:0;top:15%;bottom:15%;width:1px;background:rgba(255,255,255,.1);}
+.ms-ico{font-size:20px;margin-bottom:5px;}
+.ms-val{font-family:'DM Mono',monospace;font-size:17px;font-weight:500;color:var(--gold2);margin-bottom:2px;}
+.ms-lbl{font-size:10px;color:rgba(255,255,255,.4);text-transform:uppercase;letter-spacing:.07em;}
+.ms-b{display:inline-block;font-size:9px;padding:2px 8px;border-radius:10px;margin-top:4px;font-weight:600;letter-spacing:.05em;}
+.lb{background:rgba(86,200,120,.15);color:#86c88a;border:1px solid rgba(86,200,120,.25);}
+.sb2{background:rgba(245,200,66,.15);color:#d4a800;border:1px solid rgba(245,200,66,.25);}
+.pb{background:rgba(200,150,58,.15);color:var(--gold2);border:1px solid rgba(200,150,58,.25);}
+
+.cg{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:20px;}
+.ccard{background:white;border:1px solid var(--border);border-radius:12px;padding:15px;transition:border-color .15s,transform .15s;}
+.ccard:hover{border-color:var(--border2);transform:translateY(-1px);}
+.cch{display:flex;align-items:center;gap:10px;margin-bottom:11px;}
+.cci{width:38px;height:38px;border-radius:10px;display:flex;align-items:center;justify-content:center;font-size:19px;flex-shrink:0;}
+.ccn{font-size:13px;font-weight:600;color:var(--brown);}
+.ccs{font-size:11px;color:var(--muted);margin-top:1px;}
+.cst{margin-left:auto;font-size:10px;padding:3px 9px;border-radius:10px;font-weight:600;}
+.ccb{display:flex;flex-direction:column;gap:5px;}
+.ccr{display:flex;align-items:center;justify-content:space-between;font-size:12px;}
+.ccrl{color:var(--muted);}
+.ccrv{font-weight:500;color:var(--brown2);}
+.cclink{display:flex;align-items:center;gap:6px;margin-top:9px;padding:7px 11px;background:var(--cream2);border-radius:7px;border:1px solid var(--border);font-size:11px;color:var(--sky);text-decoration:none;font-weight:500;transition:background .15s;}
+.cclink:hover{background:var(--cream3);}
+.ccact{margin-top:9px;padding:7px 11px;background:rgba(200,150,58,.08);border-radius:7px;border:1px solid rgba(200,150,58,.18);font-size:11px;color:var(--brown2);display:flex;gap:6px;}
+.ccact::before{content:"→";color:var(--gold);font-weight:600;flex-shrink:0;}
+
+.wsec{background:white;border:1px solid var(--border);border-radius:12px;padding:18px;margin-bottom:20px;}
+.ws-t{font-size:14px;font-weight:600;color:var(--brown);margin-bottom:12px;}
+.wsg{display:grid;grid-template-columns:1fr 1fr 1fr;gap:11px;}
+.wsc{background:var(--cream2);border-radius:9px;padding:12px;border:1px solid var(--border);}
+.wsc-t{font-size:11px;font-weight:600;color:var(--brown);margin-bottom:5px;display:flex;align-items:center;gap:6px;}
+.wsc-s{font-size:11px;color:var(--muted);line-height:1.6;}
+.wtag{display:inline-block;font-size:9px;padding:2px 7px;border-radius:5px;font-weight:600;letter-spacing:.05em;}
+
+@media(max-width:1100px){.kb,.mkt-kb{grid-template-columns:1fr 1fr;}.mhero{grid-template-columns:1fr 1fr;}.cg{grid-template-columns:1fr;}.wsg{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
 
 <header class="header">
   <div class="brand">VibeCoffee <span>by Hoàng Kim Phát</span></div>
-  <div class="header-tag">Project Dashboard</div>
   <div class="header-right">
     <div class="hstat"><div class="hstat-val c-gold">3</div><div class="hstat-lbl">Sản phẩm</div></div>
     <div class="hstat"><div class="hstat-val c-rust">3</div><div class="hstat-lbl">Nhà cung cấp</div></div>
-    <div class="hstat"><div class="hstat-val c-sage">100tr</div><div class="hstat-lbl">MOQ đơn đầu</div></div>
+    <div class="hstat"><div class="hstat-val c-sage">4</div><div class="hstat-lbl">Kênh MKT</div></div>
     <div class="date-badge">30/03/2026</div>
   </div>
 </header>
+
+<nav class="tab-nav">
+  <button class="tab-btn active" onclick="switchTab('sx',this)">
+    ⚙️ Sản xuất &amp; R&amp;D <span class="t-badge">11 tasks</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab('mkt',this)">
+    📣 Marketing <span class="t-badge t-badge-g">7 tasks</span>
+  </button>
+</nav>
 
 <div class="page">
 
   <!-- SIDEBAR -->
   <aside class="sidebar">
-    <div class="sidebar-section">
-      <div class="sidebar-title">Lộ trình sản phẩm</div>
+    <div class="sb">
 
-      <div class="product-item active">
-        <div class="prod-dot" style="background:var(--rust)"></div>
-        <div>
-          <div class="prod-name">Cà phê muối phô mai</div>
-          <div style="font-size:10px;color:var(--muted);">Sản phẩm 1 — Ưu tiên cao</div>
+      <div class="sb-sec">
+        <div class="sb-ttl">Lộ trình sản phẩm</div>
+        <div class="prod-item active">
+          <div class="pd" style="background:var(--rust)"></div>
+          <div style="flex:1"><div class="pn">Cà phê muối phô mai</div><div style="font-size:10px;color:var(--muted)">SP1 — Ưu tiên cao</div></div>
+          <span class="ps" style="background:rgba(192,74,42,.1);color:var(--rust);border:1px solid rgba(192,74,42,.2)">R&D</span>
         </div>
-        <span class="prod-status" style="background:rgba(192,74,42,0.1);color:var(--rust);border:1px solid rgba(192,74,42,0.2);">R&D</span>
-      </div>
-
-      <div class="product-item">
-        <div class="prod-dot" style="background:var(--gold)"></div>
-        <div>
-          <div class="prod-name">Cà phê muối truyền thống</div>
-          <div style="font-size:10px;color:var(--muted);">Sản phẩm 2</div>
+        <div class="prod-item">
+          <div class="pd" style="background:var(--gold)"></div>
+          <div style="flex:1"><div class="pn">Cà phê muối truyền thống</div><div style="font-size:10px;color:var(--muted)">SP2</div></div>
+          <span class="ps" style="background:rgba(200,150,58,.1);color:var(--brown2);border:1px solid rgba(200,150,58,.2)">Chờ</span>
         </div>
-        <span class="prod-status" style="background:rgba(200,150,58,0.1);color:var(--brown2);border:1px solid rgba(200,150,58,0.2);">Chờ</span>
-      </div>
-
-      <div class="product-item">
-        <div class="prod-dot" style="background:var(--sage)"></div>
-        <div>
-          <div class="prod-name">Muối capuchino dừa</div>
-          <div style="font-size:10px;color:var(--muted);">Sản phẩm 3</div>
+        <div class="prod-item">
+          <div class="pd" style="background:var(--sage)"></div>
+          <div style="flex:1"><div class="pn">Muối capuchino dừa</div><div style="font-size:10px;color:var(--muted)">SP3</div></div>
+          <span class="ps" style="background:rgba(90,122,92,.1);color:var(--sage);border:1px solid rgba(90,122,92,.2)">Chờ</span>
         </div>
-        <span class="prod-status" style="background:rgba(90,122,92,0.1);color:var(--sage);border:1px solid rgba(90,122,92,0.2);">Chờ</span>
-      </div>
-    </div>
-
-    <div class="sidebar-section" style="border-bottom:none;flex:1;">
-      <div class="sidebar-title">Nhà cung cấp MQ</div>
-      <div class="info-card">
-        <div class="info-card-title">Công ty CP Nguyên Liệu MQ</div>
-        <div class="info-row"><span class="info-label">Liên hệ</span><span class="info-val">Ms Thủy<br>0908 859 846</span></div>
-        <div class="info-row"><span class="info-label">R&D</span><span class="info-val">Mr Đăng</span></div>
-        <div class="info-row"><span class="info-label">Ngày gửi mẫu</span><span class="info-val info-highlight">30/03/2026</span></div>
-        <div class="info-row"><span class="info-label">Hotline</span><span class="info-val">+84 909 086 896</span></div>
-        <div class="info-row"><span class="info-label">Website</span><span class="info-val" style="color:var(--gold2);">mqflavor.com</span></div>
-        <div class="info-row"><span class="info-label">Báo giá HHL</span><span class="info-val" style="color:rgba(255,255,255,0.45);font-size:10px;">Hiệu lực 30 ngày<br>Chưa bao gồm VAT 8%</span></div>
       </div>
 
-      <div class="condition-box">
-        <div class="cond-title">Điều kiện R&D miễn phí</div>
-        <div class="cond-item">Lấy hầu hết nguyên liệu từ MQ</div>
-        <div class="cond-item">Đơn hàng đầu tiên tối thiểu <strong style="color:var(--gold);">100 triệu đồng</strong></div>
-        <div class="cond-item">3 mẫu: 2 NDC của MQ + 1 NDC của Hoàng Kim Phát</div>
-        <div class="cond-item">NDC tự cung cấp: <strong style="color:var(--gold);">37,000đ/kg</strong> (đã VAT)</div>
+      <div class="sb-sec">
+        <div class="sb-ttl">NCC Nguyên Liệu — MQ</div>
+        <div class="icard">
+          <div class="icard-ttl">Công ty CP Nguyên Liệu MQ</div>
+          <div class="ir"><span class="il">Liên hệ</span><span class="iv">Ms Thủy · 0908 859 846</span></div>
+          <div class="ir"><span class="il">R&D</span><span class="iv">Mr Đăng</span></div>
+          <div class="ir"><span class="il">Gửi mẫu</span><span class="iv ih">30/03/2026</span></div>
+          <div class="ir"><span class="il">Website</span><span class="iv" style="color:var(--gold2)">mqflavor.com</span></div>
+          <div class="ir"><span class="il">Báo giá</span><span class="iv" style="color:rgba(255,255,255,.4);font-size:10px">HHL 30 ngày · Chưa VAT 8%</span></div>
+        </div>
+        <div class="cbox">
+          <div class="cb-ttl">Điều kiện R&D miễn phí</div>
+          <div class="ci">Lấy hầu hết nguyên liệu từ MQ</div>
+          <div class="ci">Đơn đầu tối thiểu <strong style="color:var(--gold)">100 triệu đồng</strong></div>
+          <div class="ci">3 mẫu: 2 NDC MQ + 1 NDC Hoàng Kim Phát</div>
+          <div class="ci">NDC tự cung cấp: <strong style="color:var(--gold)">37,000đ/kg</strong> (đã VAT)</div>
+        </div>
       </div>
-    </div>
 
-    <div class="sidebar-section" style="padding-top:16px;">
-      <div class="sidebar-title">Đơn vị in bao bì — Sài Gòn In KD</div>
-      <div class="info-card" style="background:linear-gradient(135deg,#2a3d5e,#1a2a4a);">
-        <div class="info-card-title" style="color:#90b8f0;">Sài Gòn In KD</div>
-        <div class="info-row"><span class="info-label">Sản phẩm</span><span class="info-val">Hộp cà phê hòa tan</span></div>
-        <div class="info-row"><span class="info-label">Kích thước</span><span class="info-val info-highlight" style="color:#90b8f0;font-size:12px;">16.5 × 12 × 8 cm</span></div>
-        <div class="info-row"><span class="info-label">Chất liệu</span><span class="info-val">Ivory 350 gsm</span></div>
-        <div class="info-row"><span class="info-label">SL 3,000c</span><span class="info-val info-highlight" style="color:#90b8f0;">2,900đ/c</span></div>
-        <div class="info-row"><span class="info-label">SL 5,000c</span><span class="info-val info-highlight" style="color:#a8e6ab;">2,500đ/c ✓</span></div>
-        <div class="info-row"><span class="info-label">Thiết kế</span><span class="info-val" style="color:rgba(255,255,255,0.5);">Đơn giản (miễn phí)</span></div>
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.12);">
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:8px;height:8px;border-radius:50%;background:#f5c842;flex-shrink:0;"></div>
-            <span style="font-size:12px;color:white;font-weight:500;">Chờ file thiết kế</span>
+      <div class="sb-sec">
+        <div class="sb-ttl">In bao bì — Sài Gòn In KD</div>
+        <div class="icard" style="background:linear-gradient(135deg,#2a3d5e,#1a2a4a)">
+          <div class="icard-ttl" style="color:#90b8f0">Sài Gòn In KD</div>
+          <div class="ir"><span class="il">Kích thước</span><span class="iv ih" style="color:#90b8f0">16.5 × 12 × 8 cm</span></div>
+          <div class="ir"><span class="il">Chất liệu</span><span class="iv">Ivory 350 gsm</span></div>
+          <div class="ir"><span class="il">5,000c</span><span class="iv" style="color:#a8e6ab">2,500đ/c ✓ Đã chốt</span></div>
+          <div class="ir"><span class="il">Tổng</span><span class="iv ih" style="color:#90b8f0">12,500,000đ</span></div>
+          <div style="margin-top:9px;padding-top:9px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:7px;">
+            <div style="width:7px;height:7px;border-radius:50%;background:#f5c842"></div>
+            <span style="font-size:11px;color:white">Chờ file thiết kế ~tuần 31/03</span>
           </div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;padding-left:16px;">Anh gửi file ~tuần sau 28/03</div>
+        </div>
+        <div class="tl">
+          <div class="tl-ttl">Lịch sử 28/03</div>
+          <div class="tl-r"><span class="tl-d">28/03</span><span>Báo giá hộp 16.5×12×8</span></div>
+          <div class="tl-r"><span class="tl-d">28/03</span><span>Chốt 5,000 hộp × 2,500đ</span></div>
+          <div class="tl-r"><span style="color:#f5c842;font-family:'DM Mono',monospace;font-size:10px">⏳</span><span style="color:var(--sky)">Gửi file TK tuần 31/03</span></div>
         </div>
       </div>
-      <div style="margin:10px 0 0;background:rgba(74,122,158,0.08);border:1px solid rgba(74,122,158,0.2);border-radius:10px;padding:11px 13px;">
-        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--sky);margin-bottom:7px;">Lịch sử liên lạc</div>
-        <div style="font-size:11px;color:var(--brown2);line-height:1.6;">
-          <div style="display:flex;gap:6px;margin-bottom:4px;"><span style="color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;">28/03</span><span>Yêu cầu báo giá hộp 16.5×12×8</span></div>
-          <div style="display:flex;gap:6px;margin-bottom:4px;"><span style="color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;">28/03</span><span>Nhận báo giá: 3k=2,900đ / 5k=2,500đ</span></div>
-          <div style="display:flex;gap:6px;margin-bottom:4px;"><span style="color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;">28/03</span><span>Chốt chạy 5,000 hộp trước</span></div>
-          <div style="display:flex;gap:6px;"><span style="color:#f5c842;font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;">⏳ Chờ</span><span style="color:var(--sky);font-weight:500;">Gửi file thiết kế tuần 31/03</span></div>
-        </div>
-      </div>
-    </div>
 
-    <div class="sidebar-section" style="border-bottom:none;padding-top:16px;">
-      <div class="sidebar-title">NCC NDC — Gia Vũ</div>
-      <div class="info-card" style="background:var(--sage);background:linear-gradient(135deg,#3d5e3f,#2a4a2c);">
-        <div class="info-card-title" style="color:#a8e6ab;">Công ty Gia Vũ</div>
-        <div class="info-row"><span class="info-label">Đại diện</span><span class="info-val">Trương Thanh Trang</span></div>
-        <div class="info-row"><span class="info-label">Sản phẩm</span><span class="info-val">NDC (nguyên liệu)</span></div>
-        <div class="info-row"><span class="info-label">Đơn giá</span><span class="info-val info-highlight" style="color:#a8e6ab;">37,000đ/kg <span style="font-size:10px;font-weight:400;color:rgba(255,255,255,0.5)">(có VAT)</span></span></div>
-        <div class="info-row"><span class="info-label">Giao mẫu</span><span class="info-val">16/03/2026 ~15:00</span></div>
-        <div style="margin-top:10px;padding-top:10px;border-top:1px solid rgba(255,255,255,0.12);">
-          <div style="font-size:10px;color:rgba(255,255,255,0.45);text-transform:uppercase;letter-spacing:0.07em;margin-bottom:6px;">Trạng thái mẫu</div>
-          <div style="display:flex;align-items:center;gap:8px;">
-            <div style="width:8px;height:8px;border-radius:50%;background:#a8e6ab;flex-shrink:0;"></div>
-            <span style="font-size:12px;color:white;font-weight:500;">Đã nhận 2 mẫu NDC ✓</span>
+      <div class="sb-sec">
+        <div class="sb-ttl">NCC NDC — Gia Vũ</div>
+        <div class="icard" style="background:linear-gradient(135deg,#3d5e3f,#2a4a2c)">
+          <div class="icard-ttl" style="color:#a8e6ab">Công ty Gia Vũ</div>
+          <div class="ir"><span class="il">Đại diện</span><span class="iv">Trương Thanh Trang</span></div>
+          <div class="ir"><span class="il">Đơn giá</span><span class="iv ih" style="color:#a8e6ab">37,000đ/kg (có VAT)</span></div>
+          <div class="ir"><span class="il">Giao mẫu</span><span class="iv">16/03/2026 ~15:00</span></div>
+          <div style="margin-top:9px;padding-top:9px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:7px;">
+            <div style="width:7px;height:7px;border-radius:50%;background:#a8e6ab"></div>
+            <span style="font-size:11px;color:white;font-weight:500">Đã nhận 2 mẫu NDC ✓</span>
           </div>
-          <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;padding-left:16px;">Mẫu 3 (tự cung cấp) → gửi MQ R&D</div>
+        </div>
+        <div class="tl">
+          <div class="tl-ttl">Lịch sử 16/03</div>
+          <div class="tl-r"><span class="tl-d">16/03</span><span>Yêu cầu gửi 2 mẫu NDC</span></div>
+          <div class="tl-r"><span class="tl-d">16/03</span><span>Trang xác nhận giao ~15:00</span></div>
+          <div class="tl-r"><span style="color:var(--sage);font-family:'DM Mono',monospace;font-size:10px">✓</span><span style="color:var(--sage);font-weight:500">Đã nhận đủ 2 mẫu</span></div>
         </div>
       </div>
 
-      <div style="margin:10px 0 0;background:rgba(90,122,92,0.08);border:1px solid rgba(90,122,92,0.2);border-radius:10px;padding:11px 13px;">
-        <div style="font-size:10px;font-weight:600;text-transform:uppercase;letter-spacing:0.07em;color:var(--sage);margin-bottom:7px;">Lịch sử liên lạc</div>
-        <div style="font-size:11px;color:var(--brown2);line-height:1.6;">
-          <div style="display:flex;gap:6px;margin-bottom:4px;"><span style="color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;">16/03</span><span>Anh Vương yêu cầu gửi 2 mẫu NDC</span></div>
-          <div style="display:flex;gap:6px;margin-bottom:4px;"><span style="color:var(--muted);font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;">16/03</span><span>Trang xác nhận giao chiều ~15:00</span></div>
-          <div style="display:flex;gap:6px;"><span style="color:var(--sage);font-family:'DM Mono',monospace;font-size:10px;flex-shrink:0;">✓ Done</span><span style="color:var(--sage);font-weight:500;">Đã nhận 2 mẫu thành công</span></div>
-        </div>
-      </div>
     </div>
   </aside>
 
-  <!-- MAIN CONTENT -->
+  <!-- MAIN -->
   <main class="main">
 
-    <!-- KANBAN BOARD -->
-    <div class="section-header">
-      <div>
-        <div class="section-title">Bảng theo dõi tiến độ</div>
-        <div class="section-sub">VibeCoffee — Cà phê muối phô mai (Sản phẩm đầu tiên)</div>
-      </div>
-    </div>
+    <!-- ====== TAB 1: SẢN XUẤT & R&D ====== -->
+    <div id="tab-sx" class="tab-panel active">
 
-    <div class="kanban">
-
-      <!-- COL: DONE -->
-      <div class="col-wrap">
-        <div class="col-head" style="background:rgba(90,122,92,0.08);border-color:rgba(90,122,92,0.2);">
-          <div class="col-dot" style="background:var(--sage)"></div>
-          <div class="col-name" style="color:var(--sage)">Đã hoàn thành</div>
-          <div class="col-cnt">3</div>
-        </div>
-        <div class="col-body">
-
-          <div class="task-card pri-medium">
-            <div class="tc-top">
-              <div class="tc-icon">📋</div>
-              <div class="tc-title">Lập kế hoạch sản phẩm VibeCoffee</div>
-              <span class="tc-pri">TB</span>
-            </div>
-            <div class="tc-desc">Xác định lộ trình 3 sản phẩm: phô mai → truyền thống → capuchino dừa</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:100%;background:var(--sage)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">Strategy</span>
-              <span class="tc-date">Mar 2026</span>
-            </div>
-          </div>
-
-          <div class="task-card pri-high">
-            <div class="tc-top">
-              <div class="tc-icon">📨</div>
-              <div class="tc-title">Liên hệ & gửi mẫu cho MQ Ingredients</div>
-              <span class="tc-pri">Cao</span>
-            </div>
-            <div class="tc-desc">Đã gửi mẫu cho Ms Thủy. Mr Đăng tiếp nhận R&D. Đã xác nhận điều kiện hợp tác.</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:100%;background:var(--sage)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">NCC · MQ</span>
-              <span class="tc-assignee">Ms Thủy</span>
-              <span class="tc-date">30/03</span>
-            </div>
-          </div>
-
-          <div class="task-card pri-high">
-            <div class="tc-top">
-              <div class="tc-icon">🧂</div>
-              <div class="tc-title">Nhận 2 mẫu NDC từ Công ty Gia Vũ</div>
-              <span class="tc-pri">Cao</span>
-            </div>
-            <div class="tc-desc">Trương Thanh Trang (Gia Vũ) giao trực tiếp ~15:00. Đã nhận đủ 2 mẫu NDC để chuyển cho MQ R&D — dùng làm mẫu thứ 3 (NDC tự cung cấp 37,000đ/kg đã VAT).</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:100%;background:var(--sage)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">NDC · Gia Vũ</span>
-              <span class="tc-assignee">Thanh Trang</span>
-              <span class="tc-date">16/03</span>
-            </div>
-          </div>
-
-        </div>
+      <div class="sec-hd">
+        <div><div class="sec-ttl">Tiến độ Sản xuất & R&D</div><div class="sec-sub">VibeCoffee — Cà phê muối phô mai (SP đầu tiên)</div></div>
       </div>
 
-      <!-- COL: IN PROGRESS -->
-      <div class="col-wrap">
-        <div class="col-head" style="background:rgba(74,122,158,0.08);border-color:rgba(74,122,158,0.2);">
-          <div class="col-dot" style="background:var(--sky)"></div>
-          <div class="col-name" style="color:var(--sky)">Đang thực hiện</div>
-          <div class="col-cnt">3</div>
+      <div class="kb">
+
+        <div>
+          <div class="ch" style="background:rgba(90,122,92,.08);border-color:rgba(90,122,92,.2)">
+            <div class="cd" style="background:var(--sage)"></div><div class="cn" style="color:var(--sage)">Đã hoàn thành</div><div class="cc">3</div>
+          </div>
+          <div class="cb">
+            <div class="tc pm">
+              <div class="tt"><div class="ti">📋</div><div class="tn">Lập kế hoạch sản phẩm VibeCoffee</div><span class="tp">TB</span></div>
+              <div class="td">Xác định lộ trình 3 sản phẩm: phô mai → truyền thống → capuchino dừa</div>
+              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
+              <div class="tm"><span class="tg">Strategy</span><span class="tdt">Mar 2026</span></div>
+            </div>
+            <div class="tc ph">
+              <div class="tt"><div class="ti">📨</div><div class="tn">Liên hệ & gửi mẫu cho MQ Ingredients</div><span class="tp">Cao</span></div>
+              <div class="td">Đã gửi mẫu cho Ms Thủy. Mr Đăng tiếp nhận R&D. Xác nhận điều kiện hợp tác.</div>
+              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
+              <div class="tm"><span class="tg">NCC · MQ</span><span class="ta">Ms Thủy</span><span class="tdt">30/03</span></div>
+            </div>
+            <div class="tc ph">
+              <div class="tt"><div class="ti">🧂</div><div class="tn">Nhận 2 mẫu NDC từ Công ty Gia Vũ</div><span class="tp">Cao</span></div>
+              <div class="td">Thanh Trang (Gia Vũ) giao ~15:00. Đã nhận đủ 2 mẫu NDC — mẫu thứ 3 (37,000đ/kg đã VAT).</div>
+              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
+              <div class="tm"><span class="tg">NDC · Gia Vũ</span><span class="ta">Thanh Trang</span><span class="tdt">16/03</span></div>
+            </div>
+          </div>
         </div>
-        <div class="col-body">
 
-          <div class="task-card pri-high">
-            <div class="tc-top">
-              <div class="tc-icon">🧪</div>
-              <div class="tc-title">R&D 3 mẫu cà phê muối phô mai</div>
-              <span class="tc-pri">Cao</span>
+        <div>
+          <div class="ch" style="background:rgba(74,122,158,.08);border-color:rgba(74,122,158,.2)">
+            <div class="cd" style="background:var(--sky)"></div><div class="cn" style="color:var(--sky)">Đang thực hiện</div><div class="cc">3</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph">
+              <div class="tt"><div class="ti">🧪</div><div class="tn">R&D 3 mẫu cà phê muối phô mai</div><span class="tp">Cao</span></div>
+              <div class="td">MQ R&D: Mẫu 1+2 (NDC MQ) · Mẫu 3 (NDC Gia Vũ). Cả 3 mẫu đã sẵn sàng.</div>
+              <div class="tpg"><div class="tb" style="width:40%;background:var(--sky)"></div></div>
+              <div class="tm"><span class="tg">R&D · MQ</span><span class="ta">Mr Đăng</span><span class="tdt">30/03 →</span></div>
             </div>
-            <div class="tc-desc">MQ tiến hành R&D: Mẫu 1 (NDC MQ #1) · Mẫu 2 (NDC MQ #2) · Mẫu 3 (NDC Gia Vũ — đã nhận 2 mẫu ngày 16/03, 37k/kg có VAT) → <strong style="color:var(--sky)">Cả 3 mẫu đã sẵn sàng</strong></div>
-            <div class="tc-progress"><div class="tc-bar" style="width:40%;background:var(--sky)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">R&D · MQ</span>
-              <span class="tc-assignee">Mr Đăng</span>
-              <span class="tc-date">30/03 →</span>
+            <div class="tc ph">
+              <div class="tt"><div class="ti">💰</div><div class="tn">Lên kế hoạch tài chính đơn đầu</div><span class="tp">Cao</span></div>
+              <div class="td">Chuẩn bị ngân sách tối thiểu 100tr cho đơn đầu tiên (điều kiện R&D free MQ).</div>
+              <div class="tpg"><div class="tb" style="width:30%;background:var(--sky)"></div></div>
+              <div class="tm"><span class="tg">Finance</span><span class="tdt">Tháng 4</span></div>
+            </div>
+            <div class="tc pm">
+              <div class="tt"><div class="ti">📦</div><div class="tn">Thiết kế file bao bì hộp VibeCoffee</div><span class="tp">TB</span></div>
+              <div class="td">Hộp 16.5×12×8 cm gửi Sài Gòn In KD. 5,000 hộp × 2,500đ. Dự kiến ~tuần 31/03.</div>
+              <div class="tpg"><div class="tb" style="width:25%;background:var(--sky)"></div></div>
+              <div class="tm"><span class="tg">Branding · Bao bì</span><span class="tdt">~tuần 31/03</span></div>
             </div>
           </div>
-
-          <div class="task-card pri-high">
-            <div class="tc-top">
-              <div class="tc-icon">💰</div>
-              <div class="tc-title">Lên kế hoạch tài chính đơn hàng đầu</div>
-              <span class="tc-pri">Cao</span>
-            </div>
-            <div class="tc-desc">Cần chuẩn bị ngân sách tối thiểu 100tr cho đơn đầu tiên theo điều kiện R&D miễn phí của MQ</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:30%;background:var(--sky)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">Finance</span>
-              <span class="tc-date">Trong tháng 4</span>
-            </div>
-          </div>
-
-          <div class="task-card pri-medium">
-            <div class="tc-top">
-              <div class="tc-icon">📦</div>
-              <div class="tc-title">Thiết kế file bao bì hộp VibeCoffee</div>
-              <span class="tc-pri">TB</span>
-            </div>
-            <div class="tc-desc">Tạo file thiết kế hộp 16.5×12×8 cm để gửi Sài Gòn In KD in 5,000 hộp. Chất liệu Ivory 350gsm — giá 2,500đ/hộp. Dự kiến gửi file ~tuần 31/03.</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:25%;background:var(--sky)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">Branding · Bao bì</span>
-              <span class="tc-date">~tuần 31/03</span>
-            </div>
-          </div>
-
         </div>
+
+        <div>
+          <div class="ch" style="background:rgba(200,150,58,.08);border-color:rgba(200,150,58,.2)">
+            <div class="cd" style="background:var(--gold)"></div><div class="cn" style="color:var(--brown2)">Chờ review</div><div class="cc">3</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph">
+              <div class="tt"><div class="ti">🖨️</div><div class="tn">Gửi file & đặt in 5,000 hộp</div><span class="tp">Cao</span></div>
+              <div class="td">Sau khi có file TK: Sài Gòn In KD in 5,000 hộp × 2,500đ = 12,500,000đ.</div>
+              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
+              <div class="tm"><span class="tg">Bao bì · In ấn</span><span class="tdt">Sau file TK</span></div>
+            </div>
+            <div class="tc ph">
+              <div class="tt"><div class="ti">⚖️</div><div class="tn">Chọn NDC tối ưu cho phô mai</div><span class="tp">Cao</span></div>
+              <div class="td">Sau R&D: đánh giá vị & chi phí 3 mẫu. NDC Gia Vũ 37k/kg (VAT) vs NDC MQ.</div>
+              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
+              <div class="tm"><span class="tg">R&D · Decision</span><span class="tdt">Sau R&D</span></div>
+            </div>
+            <div class="tc pm">
+              <div class="tt"><div class="ti">📄</div><div class="tn">Review hợp đồng với MQ</div><span class="tp">TB</span></div>
+              <div class="td">Review trước khi đặt đơn đầu. Báo giá HHL đến ~18/04/2026.</div>
+              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
+              <div class="tm"><span class="tg">Legal</span><span class="tdt">Trước 18/04</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <div class="ch" style="background:rgba(58,42,26,.04);border-color:var(--border)">
+            <div class="cd" style="background:var(--muted)"></div><div class="cn" style="color:var(--muted)">Chưa bắt đầu</div><div class="cc">2</div>
+          </div>
+          <div class="cb">
+            <div class="tc pm">
+              <div class="tt"><div class="ti">🧂</div><div class="tn">R&D cà phê muối truyền thống</div><span class="tp">TB</span></div>
+              <div class="td">SP2 trong lộ trình. Khởi động sau khi hoàn thiện SP1.</div>
+              <div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div>
+              <div class="tm"><span class="tg">R&D · SP2</span></div>
+            </div>
+            <div class="tc pl">
+              <div class="tt"><div class="ti">🥥</div><div class="tn">R&D capuchino dừa</div><span class="tp">Thấp</span></div>
+              <div class="td">SP3. Sau khi SP1 và SP2 hoàn thiện.</div>
+              <div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div>
+              <div class="tm"><span class="tg">R&D · SP3</span></div>
+            </div>
+          </div>
+        </div>
+
       </div>
 
-      <!-- COL: REVIEW -->
-      <div class="col-wrap">
-        <div class="col-head" style="background:rgba(200,150,58,0.08);border-color:rgba(200,150,58,0.2);">
-          <div class="col-dot" style="background:var(--gold)"></div>
-          <div class="col-name" style="color:var(--brown2)">Chờ review / quyết định</div>
-          <div class="col-cnt">3</div>
-        </div>
-        <div class="col-body">
-
-          <div class="task-card pri-high">
-            <div class="tc-top">
-              <div class="tc-icon">🖨️</div>
-              <div class="tc-title">Gửi file thiết kế & đặt in 5,000 hộp</div>
-              <span class="tc-pri">Cao</span>
-            </div>
-            <div class="tc-desc">Sau khi có file thiết kế: gửi Sài Gòn In KD in 5,000 hộp × 2,500đ = <strong style="color:var(--brown2)">12,500,000đ</strong>. Hộp Ivory 350gsm, kích thước 16.5×12×8 cm.</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:0%;background:var(--gold)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">Bao bì · In ấn</span>
-              <span class="tc-assignee">Sài Gòn In KD</span>
-              <span class="tc-date">Sau file TK</span>
-            </div>
-          </div>
-
-          <div class="task-card pri-high">
-            <div class="tc-top">
-              <div class="tc-icon">⚖️</div>
-              <div class="tc-title">So sánh & chọn NDC tối ưu cho phô mai</div>
-              <span class="tc-pri">Cao</span>
-            </div>
-            <div class="tc-desc">Sau khi nhận 3 mẫu: đánh giá vị, chi phí và quyết định dùng NDC nào. NDC tự cung cấp: 37k/kg (VAT), NDC MQ: xem bảng giá</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:0%;background:var(--gold)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">R&D · Decision</span>
-              <span class="tc-date">Sau R&D</span>
-            </div>
-          </div>
-
-          <div class="task-card pri-medium">
-            <div class="tc-top">
-              <div class="tc-icon">📄</div>
-              <div class="tc-title">Xem xét điều khoản hợp đồng với MQ</div>
-              <span class="tc-pri">TB</span>
-            </div>
-            <div class="tc-desc">Review hợp đồng nguyên liệu trước khi đặt đơn đầu tiên. Lưu ý: báo giá hiệu lực 30 ngày kể từ 19/03</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:0%;background:var(--gold)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">Legal · NCC</span>
-              <span class="tc-date">Trước 18/04</span>
-            </div>
-          </div>
-
+      <!-- Price tables -->
+      <div class="ps2">
+        <div class="pt">Bảng giá nguyên liệu — MQ Ingredients</div>
+        <div class="ps3">Báo giá 19/03/2026 · Hiệu lực 30 ngày · Chưa bao gồm VAT 8%</div>
+        <div class="pn2"><span>⚠</span><div><strong>Lưu ý:</strong> Báo giá hiệu lực đến <strong>~18/04/2026</strong>. Cần xác nhận trước hạn. Không áp dụng hàng vận chuyển air.</div></div>
+        <table class="ptb">
+          <thead><tr><th>#</th><th>Tên sản phẩm</th><th>Mã Code</th><th>MOQ (kg)</th><th>Đơn giá (VNĐ/kg)</th><th>Nguồn gốc</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td>1</td><td><strong>Bột kem béo thực vật</strong></td><td style="font-family:'DM Mono',monospace;font-size:11px">MQ-KF48</td><td>1,000</td><td class="pv">58,800</td><td><span class="bi">Indo</span></td><td style="font-size:11px;color:var(--muted)">Tất cả SP</td></tr>
+            <tr><td>2</td><td><strong>Bột kem béo thực vật</strong></td><td style="font-family:'DM Mono',monospace;font-size:11px">MQ-KF48</td><td>1,000</td><td class="pv">40,950</td><td><span class="bcn">China</span></td><td style="font-size:11px;color:var(--muted)">Tất cả SP</td></tr>
+            <tr class="hr2"><td rowspan="2">3</td><td rowspan="2"><strong>Bột cà phê hòa tan ⭐</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">MQ-RA06</td><td>1,000</td><td class="pv">278,600</td><td rowspan="2"><span class="bvn">Việt Nam</span></td><td rowspan="2" style="font-size:11px;color:var(--rust);font-weight:600">Nguyên liệu chính!</td></tr>
+            <tr class="hr2"><td>500</td><td class="pv">289,800</td></tr>
+            <tr><td rowspan="2">4</td><td rowspan="2"><strong>Bột hương cà phê</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">99057</td><td>100</td><td class="pv">1,065,000</td><td rowspan="2"><span class="bsg">Singapore</span></td><td rowspan="2" style="font-size:11px;color:var(--muted)">Hương liệu</td></tr>
+            <tr><td>50</td><td class="pv">1,130,000</td></tr>
+            <tr><td rowspan="2">5</td><td rowspan="2"><strong>Bột hương vanilla</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">99027</td><td>100</td><td class="pv">480,000</td><td rowspan="2"><span class="bsg">Singapore</span></td><td rowspan="2" style="font-size:11px;color:var(--muted)">Muối capuchino</td></tr>
+            <tr><td>50</td><td class="pv">510,000</td></tr>
+            <tr style="background:rgba(200,150,58,.05)"><td>—</td><td><strong>NDC (Gia Vũ — tự cung cấp)</strong></td><td style="font-family:'DM Mono',monospace;font-size:11px">—</td><td>—</td><td class="pv" style="color:var(--gold);font-weight:600">37,000 <span style="font-size:10px;font-weight:400">(có VAT)</span></td><td><span class="bn">Tự cung cấp</span></td><td style="font-size:11px;color:var(--brown2);font-weight:600">Mẫu thứ 3</td></tr>
+          </tbody>
+        </table>
+        <div class="cmp" style="grid-template-columns:1fr 1fr 1fr">
+          <div class="ci2"><div class="cl">NDC tự cung cấp</div><div class="cv">37,000đ</div><div class="cs">Đã bao gồm VAT 8%</div></div>
+          <div class="cdv"></div>
+          <div class="ci2"><div class="cl">Báo giá hiệu lực đến</div><div class="cv">18/04</div><div class="cs">Cần xác nhận sớm</div></div>
+          <div class="cdv"></div>
+          <div class="ci2"><div class="cl">Đơn hàng đầu tối thiểu</div><div class="cv">100tr</div><div class="cs">Điều kiện R&D free</div></div>
         </div>
       </div>
 
-      <!-- COL: TODO -->
-      <div class="col-wrap">
-        <div class="col-head" style="background:rgba(58,42,26,0.04);border-color:var(--border);">
-          <div class="col-dot" style="background:var(--muted)"></div>
-          <div class="col-name" style="color:var(--muted)">Chưa bắt đầu</div>
-          <div class="col-cnt">3</div>
+      <div class="ps2" style="margin-top:24px">
+        <div class="pt">Báo giá bao bì hộp — Sài Gòn In KD</div>
+        <div class="ps3">28/03/2026 · Hộp Ivory 350gsm · 16.5 × 12 × 8 cm</div>
+        <table class="ptb">
+          <thead><tr><th>Số lượng</th><th>Đơn giá</th><th>Thành tiền</th><th>Chất liệu</th><th>Ghi chú</th></tr></thead>
+          <tbody>
+            <tr><td>3,000 hộp</td><td class="pv">2,900đ/c</td><td class="pv">8,700,000</td><td>Ivory 350 gsm</td><td style="font-size:11px;color:var(--muted)">Phương án dự phòng</td></tr>
+            <tr class="hr2"><td><strong>5,000 hộp ✓</strong></td><td class="pv">2,500đ/c</td><td class="pv">12,500,000</td><td>Ivory 350 gsm</td><td style="font-size:11px;color:var(--rust);font-weight:600">Đã chốt</td></tr>
+          </tbody>
+        </table>
+        <div class="cmp" style="grid-template-columns:1fr 1fr 1fr 1fr">
+          <div class="ci2"><div class="cl">Số lượng</div><div class="cv">5,000</div><div class="cs">hộp</div></div>
+          <div class="cdv"></div>
+          <div class="ci2"><div class="cl">Đơn giá</div><div class="cv">2,500đ</div><div class="cs">/ hộp</div></div>
+          <div class="cdv"></div>
+          <div class="ci2"><div class="cl">Tổng chi phí</div><div class="cv">12.5tr</div><div class="cs">chưa VAT</div></div>
+          <div class="cdv"></div>
+          <div class="ci2"><div class="cl">Trạng thái</div><div class="cv" style="font-size:13px;color:#f5c842">⏳ Chờ TK</div><div class="cs">Gửi ~tuần 31/03</div></div>
         </div>
-        <div class="col-body">
+      </div>
 
-          <div class="task-card pri-medium">
-            <div class="tc-top">
-              <div class="tc-icon">🧂</div>
-              <div class="tc-title">Bắt đầu R&D cà phê muối truyền thống</div>
-              <span class="tc-pri">TB</span>
+      <div class="ng">
+        <div class="nc">
+          <div class="nc-t">📌 Việc cần làm ngay (Tháng 4)</div>
+          <ul class="nl">
+            <li>Chờ kết quả 3 mẫu R&D từ Mr Đăng — NDC Gia Vũ đã giao đủ</li>
+            <li>Confirm báo giá MQ trước 18/04 (hết hiệu lực)</li>
+            <li>So sánh vị & chi phí 3 mẫu NDC để chọn công thức</li>
+            <li>Chuẩn bị ngân sách 100 triệu cho đơn đầu tiên</li>
+            <li><strong style="color:var(--rust)">Tuần 31/03:</strong> Hoàn thiện file TK bao bì → gửi Sài Gòn In KD</li>
+          </ul>
+        </div>
+        <div class="nc">
+          <div class="nc-t">⚠️ Rủi ro & lưu ý</div>
+          <ul class="nl">
+            <li>Báo giá MQ chưa gồm VAT 8% — cộng thêm khi tính giá thành</li>
+            <li>Thời gian giao hàng 3–7 ngày sau PO và thanh toán</li>
+            <li>MOQ bột cà phê hòa tan: 500–1,000kg — cần tính lượng tồn kho</li>
+            <li>NDC Gia Vũ 37k/kg đã VAT — cần so sánh với giá NDC MQ</li>
+            <li>Điều kiện R&D free: phải lấy hầu hết nguyên liệu từ MQ</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /tab-sx -->
+
+
+    <!-- ====== TAB 2: MARKETING ====== -->
+    <div id="tab-mkt" class="tab-panel">
+
+      <div class="mhero">
+        <div class="ms"><div class="ms-ico">🌐</div><div class="ms-val">1</div><div class="ms-lbl">Website</div><div><span class="ms-b lb">LIVE</span></div></div>
+        <div class="ms"><div class="ms-ico">▶</div><div class="ms-val">1</div><div class="ms-lbl">Video branding</div><div><span class="ms-b lb">YOUTUBE</span></div></div>
+        <div class="ms"><div class="ms-ico">📱</div><div class="ms-val">3</div><div class="ms-lbl">Mạng xã hội</div><div><span class="ms-b sb2">SETUP</span></div></div>
+        <div class="ms"><div class="ms-ico">🌍</div><div class="ms-val">—</div><div class="ms-lbl">Domain riêng</div><div><span class="ms-b pb">PENDING</span></div></div>
+      </div>
+
+      <div class="sec-hd">
+        <div><div class="sec-ttl">Kênh truyền thông</div><div class="sec-sub">Trạng thái các kênh marketing VibeCoffee</div></div>
+      </div>
+
+      <div class="cg">
+        <div class="ccard">
+          <div class="cch">
+            <div class="cci" style="background:rgba(200,150,58,.1)">🌐</div>
+            <div><div class="ccn">Website chính thức</div><div class="ccs">coffee-box-site · GitHub Pages</div></div>
+            <span class="cst" style="background:rgba(86,200,120,.1);color:#5ac87a;border:1px solid rgba(86,200,120,.2)">Live ✓</span>
+          </div>
+          <div class="ccb">
+            <div class="ccr"><span class="ccrl">5 trang</span><span class="ccrv">Trang chủ · Giới thiệu · SP · Tin tức · Liên hệ</span></div>
+            <div class="ccr"><span class="ccrl">Tagline</span><span class="ccrv" style="font-style:italic">"Trọn vị cà phê - Trọn từng khoảnh khắc"</span></div>
+            <div class="ccr"><span class="ccrl">Domain</span><span class="ccrv" style="color:var(--rust)">Cần mua domain riêng</span></div>
+          </div>
+          <a href="https://vuongtran189.github.io/coffee-box-site/" target="_blank" class="cclink">🔗 Xem website →</a>
+        </div>
+
+        <div class="ccard">
+          <div class="cch">
+            <div class="cci" style="background:rgba(255,60,60,.08)">▶</div>
+            <div><div class="ccn">YouTube</div><div class="ccs">Video branding đã publish</div></div>
+            <span class="cst" style="background:rgba(86,200,120,.1);color:#5ac87a;border:1px solid rgba(86,200,120,.2)">Live ✓</span>
+          </div>
+          <div class="ccb">
+            <div class="ccr"><span class="ccrl">Loại nội dung</span><span class="ccrv">Video branding thương hiệu</span></div>
+            <div class="ccr"><span class="ccrl">Trạng thái</span><span class="ccrv" style="color:var(--sage)">Đã đăng tải ✓</span></div>
+          </div>
+          <a href="https://www.youtube.com/watch?v=84jYbXm0oyE" target="_blank" class="cclink">▶ Xem video branding →</a>
+        </div>
+
+        <div class="ccard">
+          <div class="cch">
+            <div class="cci" style="background:rgba(74,122,158,.1)">📘</div>
+            <div><div class="ccn">Facebook</div><div class="ccs">Fanpage VibeCoffee</div></div>
+            <span class="cst" style="background:rgba(245,200,66,.1);color:#d4a800;border:1px solid rgba(245,200,66,.2)">Setup</span>
+          </div>
+          <div class="ccb">
+            <div class="ccr"><span class="ccrl">Trạng thái</span><span class="ccrv">Đã tạo tài khoản</span></div>
+            <div class="ccr"><span class="ccrl">Nội dung</span><span class="ccrv" style="color:var(--rust)">Chưa có content</span></div>
+          </div>
+          <div class="ccact">Cần lên kế hoạch content & lịch đăng bài trước launch</div>
+        </div>
+
+        <div class="ccard">
+          <div class="cch">
+            <div class="cci" style="background:rgba(58,42,26,.06)">🎵</div>
+            <div><div class="ccn">TikTok</div><div class="ccs">Account VibeCoffee</div></div>
+            <span class="cst" style="background:rgba(245,200,66,.1);color:#d4a800;border:1px solid rgba(245,200,66,.2)">Setup</span>
+          </div>
+          <div class="ccb">
+            <div class="ccr"><span class="ccrl">Trạng thái</span><span class="ccrv">Đã tạo tài khoản</span></div>
+            <div class="ccr"><span class="ccrl">Nội dung</span><span class="ccrv" style="color:var(--rust)">Chưa có content</span></div>
+          </div>
+          <div class="ccact">Tiềm năng cao — ưu tiên short-form video cà phê muối</div>
+        </div>
+      </div>
+
+      <div class="wsec">
+        <div class="ws-t">🌐 Chi tiết Website — Cần hoàn thiện</div>
+        <div class="wsg">
+          <div class="wsc">
+            <div class="wsc-t">✅ Đã có <span class="wtag" style="background:rgba(90,122,92,.12);color:var(--sage);border:1px solid rgba(90,122,92,.2)">LIVE</span></div>
+            <div class="wsc-s">5 trang: Trang chủ · Giới thiệu · Sản phẩm · Tin tức · Liên hệ<br>Host: GitHub Pages (miễn phí)<br>URL hiện tại: coffee-box-site</div>
+          </div>
+          <div class="wsc" style="border-color:rgba(200,150,58,.25);background:rgba(200,150,58,.04)">
+            <div class="wsc-t">⏳ Cần làm <span class="wtag" style="background:rgba(200,150,58,.15);color:var(--gold);border:1px solid rgba(200,150,58,.25)">PENDING</span></div>
+            <div class="wsc-s">• Mua domain riêng (vibecoffee.vn?)<br>• Mua hosting<br>• Publish & cấu hình DNS<br>• Điền đầy đủ nội dung trang Sản phẩm</div>
+          </div>
+          <div class="wsc" style="border-color:rgba(192,74,42,.18);background:rgba(192,74,42,.03)">
+            <div class="wsc-t">💡 Gợi ý chi phí <span class="wtag" style="background:rgba(192,74,42,.1);color:var(--rust);border:1px solid rgba(192,74,42,.18)">NOTE</span></div>
+            <div class="wsc-s">Domain .vn: ~300k–500k/năm<br>Hosting shared: ~500k–1tr/năm<br>→ Nên mua trước khi launch SP1</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="sec-hd">
+        <div><div class="sec-ttl">Tiến độ Marketing</div><div class="sec-sub">Các task marketing theo trạng thái</div></div>
+      </div>
+
+      <div class="kb">
+        <div>
+          <div class="ch" style="background:rgba(90,122,92,.08);border-color:rgba(90,122,92,.2)">
+            <div class="cd" style="background:var(--sage)"></div><div class="cn" style="color:var(--sage)">Đã hoàn thành</div><div class="cc">3</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph">
+              <div class="tt"><div class="ti">🌐</div><div class="tn">Hoàn thiện website VibeCoffee</div><span class="tp">Cao</span></div>
+              <div class="td">Website live trên GitHub Pages. 5 trang đầy đủ. Tagline: "Trọn vị cà phê - Trọn từng khoảnh khắc."</div>
+              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
+              <div class="tm"><span class="tg">Web</span><span class="tdt">Mar 2026</span></div>
             </div>
-            <div class="tc-desc">Sản phẩm 2 trong lộ trình. Khởi động sau khi hoàn thiện mẫu phô mai</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:0%;background:var(--muted)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">R&D · SP2</span>
+            <div class="tc pm">
+              <div class="tt"><div class="ti">▶</div><div class="tn">Tạo video branding & đăng YouTube</div><span class="tp">TB</span></div>
+              <div class="td">Video branding VibeCoffee đã publish trên YouTube.</div>
+              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
+              <div class="tm"><span class="tg">Video · YT</span><span class="tdt">Mar 2026</span></div>
+            </div>
+            <div class="tc pm">
+              <div class="tt"><div class="ti">📱</div><div class="tn">Tạo tài khoản mạng xã hội</div><span class="tp">TB</span></div>
+              <div class="td">Đã setup TikTok, YouTube, Facebook cho VibeCoffee.</div>
+              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
+              <div class="tm"><span class="tg">Social</span><span class="tdt">Mar 2026</span></div>
             </div>
           </div>
+        </div>
 
-          <div class="task-card pri-low">
-            <div class="tc-top">
-              <div class="tc-icon">🥥</div>
-              <div class="tc-title">Bắt đầu R&D capuchino dừa</div>
-              <span class="tc-pri">Thấp</span>
-            </div>
-            <div class="tc-desc">Sản phẩm 3 trong lộ trình VibeCoffee. Sau khi SP1 và SP2 hoàn thiện</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:0%;background:var(--muted)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">R&D · SP3</span>
+        <div>
+          <div class="ch" style="background:rgba(74,122,158,.08);border-color:rgba(74,122,158,.2)">
+            <div class="cd" style="background:var(--sky)"></div><div class="cn" style="color:var(--sky)">Đang thực hiện</div><div class="cc">1</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph">
+              <div class="tt"><div class="ti">🌍</div><div class="tn">Mua domain & hosting · publish</div><span class="tp">Cao</span></div>
+              <div class="td">Chuyển từ GitHub Pages sang domain riêng. Đang chuẩn bị mua domain + hosting.</div>
+              <div class="tpg"><div class="tb" style="width:20%;background:var(--sky)"></div></div>
+              <div class="tm"><span class="tg">Web</span><span class="tdt">Tháng 4</span></div>
             </div>
           </div>
+        </div>
 
-          <div class="task-card pri-medium">
-            <div class="tc-top">
-              <div class="tc-icon">🚀</div>
-              <div class="tc-title">Lên kế hoạch go-to-market SP1</div>
-              <span class="tc-pri">TB</span>
-            </div>
-            <div class="tc-desc">Phân phối, kênh bán, chiến lược launch cho cà phê muối phô mai sau khi chốt công thức</div>
-            <div class="tc-progress"><div class="tc-bar" style="width:0%;background:var(--muted)"></div></div>
-            <div class="tc-meta">
-              <span class="tc-tag">Marketing</span>
+        <div>
+          <div class="ch" style="background:rgba(200,150,58,.08);border-color:rgba(200,150,58,.2)">
+            <div class="cd" style="background:var(--gold)"></div><div class="cn" style="color:var(--brown2)">Chờ review</div><div class="cc">1</div>
+          </div>
+          <div class="cb">
+            <div class="tc pm">
+              <div class="tt"><div class="ti">🔗</div><div class="tn">Kết nối domain vào website</div><span class="tp">TB</span></div>
+              <div class="td">Sau khi mua domain: trỏ DNS, cấu hình hosting, publish website chính thức.</div>
+              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
+              <div class="tm"><span class="tg">Web · DNS</span></div>
             </div>
           </div>
+        </div>
 
+        <div>
+          <div class="ch" style="background:rgba(58,42,26,.04);border-color:var(--border)">
+            <div class="cd" style="background:var(--muted)"></div><div class="cn" style="color:var(--muted)">Chưa bắt đầu</div><div class="cc">2</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph">
+              <div class="tt"><div class="ti">📲</div><div class="tn">Xây dựng content TikTok & Facebook</div><span class="tp">Cao</span></div>
+              <div class="td">Lên lịch đăng bài, sản xuất nội dung. Cần kế hoạch content cho launch SP1.</div>
+              <div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div>
+              <div class="tm"><span class="tg">Social · Content</span></div>
+            </div>
+            <div class="tc pm">
+              <div class="tt"><div class="ti">🚀</div><div class="tn">Lên kế hoạch go-to-market SP1</div><span class="tp">TB</span></div>
+              <div class="td">Phân phối, kênh bán, chiến lược launch cà phê muối phô mai sau khi chốt công thức.</div>
+              <div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div>
+              <div class="tm"><span class="tg">Marketing · Launch</span></div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
 
-    <!-- PRICE TABLE -->
-    <div class="price-section">
-      <div class="price-title">Bảng giá nguyên liệu — MQ Ingredients</div>
-      <div class="price-sub">Báo giá ngày 19/03/2026 · Hiệu lực 30 ngày · Chưa bao gồm VAT 8%</div>
-
-      <div class="price-note">
-        <span>⚠</span>
-        <div><strong>Lưu ý:</strong> Báo giá hiệu lực đến <strong>~18/04/2026</strong>. Cần xác nhận đơn hàng trước hạn để giữ giá. Báo giá không áp dụng cho hàng vận chuyển bằng đường air.</div>
-      </div>
-
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th style="width:40px">#</th>
-            <th>Tên sản phẩm</th>
-            <th>Mã Code</th>
-            <th>MOQ (kg)</th>
-            <th>Đơn giá (VNĐ/kg)</th>
-            <th>Nguồn gốc</th>
-            <th>Liên quan SP</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td><strong>Bột kem béo thực vật</strong></td>
-            <td style="font-family:'DM Mono',monospace;font-size:11px">MQ-KF48</td>
-            <td>1,000</td>
-            <td class="price-val">58,800</td>
-            <td><span class="badge-indo">Indo</span></td>
-            <td style="font-size:11px;color:var(--muted)">Tất cả</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td><strong>Bột kem béo thực vật</strong></td>
-            <td style="font-family:'DM Mono',monospace;font-size:11px">MQ-KF48</td>
-            <td>1,000</td>
-            <td class="price-val">40,950</td>
-            <td><span class="badge-cn">China</span></td>
-            <td style="font-size:11px;color:var(--muted)">Tất cả</td>
-          </tr>
-          <tr class="highlight-row">
-            <td rowspan="2">3</td>
-            <td rowspan="2"><strong>Bột cà phê hòa tan</strong> ⭐</td>
-            <td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">MQ-RA06</td>
-            <td>1,000</td>
-            <td class="price-val">278,600</td>
-            <td rowspan="2"><span class="badge-vn">Việt Nam</span></td>
-            <td rowspan="2" style="font-size:11px;color:var(--rust);font-weight:600">Nguyên liệu chính!</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>500</td>
-            <td class="price-val">289,800</td>
-          </tr>
-          <tr>
-            <td rowspan="2">4</td>
-            <td rowspan="2"><strong>Bột hương cà phê</strong></td>
-            <td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">99057</td>
-            <td>100</td>
-            <td class="price-val">1,065,000</td>
-            <td rowspan="2"><span class="badge-sg">Singapore</span></td>
-            <td rowspan="2" style="font-size:11px;color:var(--muted)">Hương liệu</td>
-          </tr>
-          <tr>
-            <td>50</td>
-            <td class="price-val">1,130,000</td>
-          </tr>
-          <tr>
-            <td rowspan="2">5</td>
-            <td rowspan="2"><strong>Bột hương vanilla</strong></td>
-            <td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">99027</td>
-            <td>100</td>
-            <td class="price-val">480,000</td>
-            <td rowspan="2"><span class="badge-sg">Singapore</span></td>
-            <td rowspan="2" style="font-size:11px;color:var(--muted)">Muối capuchino</td>
-          </tr>
-          <tr>
-            <td>50</td>
-            <td class="price-val">510,000</td>
-          </tr>
-          <tr style="background:rgba(200,150,58,0.05)">
-            <td>—</td>
-            <td><strong>NDC (Hoàng Kim Phát tự cung cấp)</strong></td>
-            <td style="font-family:'DM Mono',monospace;font-size:11px">—</td>
-            <td>—</td>
-            <td class="price-val" style="color:var(--gold);font-weight:600">37,000 <span style="font-size:10px;font-weight:400">(có VAT)</span></td>
-            <td><span class="my-ndc">Tự cung cấp</span></td>
-            <td style="font-size:11px;color:var(--brown2);font-weight:600">Mẫu thứ 3</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="compare-box">
-        <div class="cmp-item">
-          <div class="cmp-label">NDC MQ (giá tham khảo)</div>
-          <div class="cmp-val">~xx,000đ</div>
-          <div class="cmp-sub">Chờ báo giá cụ thể</div>
+      <div class="ng">
+        <div class="nc">
+          <div class="nc-t">📌 Việc cần làm ngay — Marketing</div>
+          <ul class="nl">
+            <li>Mua domain (vibecoffee.vn?) + hosting → publish website chính thức</li>
+            <li>Lên kế hoạch content TikTok & Facebook trước ngày launch SP1</li>
+            <li>Ưu tiên TikTok short-form — tiềm năng viral cho cà phê muối</li>
+            <li>Điền đầy đủ thông tin sản phẩm vào trang Sản phẩm trên website</li>
+          </ul>
         </div>
-        <div class="cmp-divider"></div>
-        <div class="cmp-item">
-          <div class="cmp-label">NDC tự cung cấp</div>
-          <div class="cmp-val">37,000đ</div>
-          <div class="cmp-sub">Đã bao gồm VAT 8%</div>
-        </div>
-        <div class="cmp-divider"></div>
-        <div class="cmp-item">
-          <div class="cmp-label">Báo giá hiệu lực đến</div>
-          <div class="cmp-val">18/04</div>
-          <div class="cmp-sub">Cần xác nhận sớm</div>
+        <div class="nc">
+          <div class="nc-t">💡 Gợi ý chiến lược</div>
+          <ul class="nl">
+            <li>TikTok: video "review cà phê muối" + ASMR pha chế rất viral</li>
+            <li>Facebook: target người 25–40 tuổi thích cà phê specialty</li>
+            <li>YouTube: series hậu trường sản xuất / câu chuyện thương hiệu</li>
+            <li>Nên có landing page riêng cho SP1 trước khi launch chính thức</li>
+          </ul>
         </div>
       </div>
-    </div>
 
-    <!-- PACKAGING PRICE TABLE -->
-    <div class="price-section" style="margin-top:32px;">
-      <div class="price-title">Báo giá bao bì hộp — Sài Gòn In KD</div>
-      <div class="price-sub">Báo giá ngày 28/03/2026 · Hộp cà phê hòa tan Ivory 350gsm · Kích thước: 16.5 × 12 × 8 cm</div>
-
-      <table class="price-table">
-        <thead>
-          <tr>
-            <th>Loại</th>
-            <th>Số lượng</th>
-            <th>Đơn giá (đ/hộp)</th>
-            <th>Thành tiền</th>
-            <th>Chất liệu</th>
-            <th>Ghi chú</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Hộp cà phê hòa tan</td>
-            <td style="font-family:'DM Mono',monospace;">3,000 c</td>
-            <td class="price-val">2,900</td>
-            <td class="price-val">8,700,000</td>
-            <td>Ivory 350 gsm</td>
-            <td style="font-size:11px;color:var(--muted)">Phương án dự phòng</td>
-          </tr>
-          <tr class="highlight-row">
-            <td>Hộp cà phê hòa tan</td>
-            <td style="font-family:'DM Mono',monospace;font-weight:600;">5,000 c ✓</td>
-            <td class="price-val">2,500</td>
-            <td class="price-val" style="color:var(--gold);font-weight:700;">12,500,000</td>
-            <td>Ivory 350 gsm</td>
-            <td style="font-size:11px;color:var(--rust);font-weight:600;">Đã chốt phương án này</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <div class="compare-box" style="margin-top:12px;grid-template-columns:1fr 1fr 1fr 1fr;">
-        <div class="cmp-item">
-          <div class="cmp-label">Số lượng chốt</div>
-          <div class="cmp-val">5,000</div>
-          <div class="cmp-sub">hộp</div>
-        </div>
-        <div class="cmp-divider"></div>
-        <div class="cmp-item">
-          <div class="cmp-label">Đơn giá</div>
-          <div class="cmp-val">2,500đ</div>
-          <div class="cmp-sub">/ hộp</div>
-        </div>
-        <div class="cmp-divider"></div>
-        <div class="cmp-item">
-          <div class="cmp-label">Tổng chi phí</div>
-          <div class="cmp-val">12.5tr</div>
-          <div class="cmp-sub">chưa tính VAT</div>
-        </div>
-        <div class="cmp-divider"></div>
-        <div class="cmp-item">
-          <div class="cmp-label">Trạng thái</div>
-          <div class="cmp-val" style="font-size:13px;color:#f5c842;">⏳ Chờ TK</div>
-          <div class="cmp-sub">Gửi file ~tuần 31/03</div>
-        </div>
-      </div>
-    </div>
-
-    <!-- NOTES -->
-    <div class="notes-grid">
-      <div class="note-card">
-        <div class="note-card-title">📌 Việc cần làm ngay (Tháng 4/2026)</div>
-        <ul class="note-list">
-          <li>Chờ kết quả 3 mẫu R&D từ Mr Đăng (MQ) — NDC Gia Vũ đã giao đủ</li>
-          <li>Confirm báo giá MQ trước 18/04 (hết hiệu lực)</li>
-          <li>So sánh vị & chi phí 3 mẫu NDC để chọn công thức</li>
-          <li>Chuẩn bị ngân sách 100 triệu cho đơn đầu tiên</li>
-          <li><strong style="color:var(--rust)">Tuần 31/03:</strong> Hoàn thiện file thiết kế bao bì → gửi Sài Gòn In KD</li>
-          <li>Dự trù 12,500,000đ chi phí in 5,000 hộp bao bì</li>
-        </ul>
-      </div>
-      <div class="note-card">
-        <div class="note-card-title">⚠️ Rủi ro & lưu ý</div>
-        <ul class="note-list">
-          <li>Báo giá MQ chưa gồm VAT 8% — cộng thêm khi tính giá thành</li>
-          <li>Thời gian giao hàng 3–7 ngày sau khi PO và thanh toán</li>
-          <li>MOQ bột cà phê hòa tan: 500–1,000kg — cần tính lượng tồn kho</li>
-          <li>NDC tự cung cấp 37k/kg đã VAT — cần so sánh với giá NDC của MQ</li>
-          <li>Điều kiện R&D free: phải lấy hầu hết nguyên liệu từ MQ</li>
-          <li>Sài Gòn In KD chỉ thiết kế đơn giản — cần bên ngoài nếu muốn thiết kế premium</li>
-        </ul>
-      </div>
-    </div>
+    </div><!-- /tab-mkt -->
 
   </main>
 </div>
 
+<script>
+function switchTab(id, btn) {
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+}
+</script>
 </body>
 </html>
