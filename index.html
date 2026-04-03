@@ -179,7 +179,52 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .wsc-s{font-size:11px;color:var(--muted);line-height:1.6;}
 .wtag{display:inline-block;font-size:9px;padding:2px 7px;border-radius:5px;font-weight:600;letter-spacing:.05em;}
 
-@media(max-width:1100px){.kb,.mkt-kb{grid-template-columns:1fr 1fr;}.mhero{grid-template-columns:1fr 1fr;}.cg{grid-template-columns:1fr;}.wsg{grid-template-columns:1fr 1fr;}}
+.t-badge-b{background:rgba(74,122,158,.2);color:#7ab4e0;border:1px solid rgba(74,122,158,.3);}
+.tab-btn.active .t-badge-b{background:rgba(74,122,158,.3);}
+
+/* ===== TMDT TAB ===== */
+.tmdt-hero{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:24px;}
+.th-card{background:white;border:1px solid var(--border);border-radius:12px;padding:16px;text-align:center;}
+.th-ico{font-size:24px;margin-bottom:6px;}
+.th-val{font-family:'DM Mono',monospace;font-size:20px;font-weight:600;color:var(--brown);margin-bottom:2px;}
+.th-lbl{font-size:11px;color:var(--muted);}
+.th-badge{display:inline-block;font-size:10px;padding:2px 9px;border-radius:8px;margin-top:5px;font-weight:600;}
+
+.platform-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-bottom:24px;}
+.pcard{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;transition:transform .15s,box-shadow .15s,border-color .15s;}
+.pcard:hover{transform:translateY(-2px);box-shadow:0 6px 20px var(--shadow);border-color:var(--border2);}
+.pcard-header{padding:16px 18px 14px;display:flex;align-items:center;gap:12px;}
+.pcard-logo{width:44px;height:44px;border-radius:11px;display:flex;align-items:center;justify-content:center;font-size:22px;flex-shrink:0;}
+.pcard-name{font-size:16px;font-weight:700;color:var(--brown);}
+.pcard-sub{font-size:11px;color:var(--muted);margin-top:1px;}
+.pcard-status{margin-left:auto;font-size:10px;padding:4px 10px;border-radius:9px;font-weight:600;flex-shrink:0;}
+.pcard-body{padding:0 18px 16px;display:flex;flex-direction:column;gap:8px;}
+.pcard-row{display:flex;align-items:center;justify-content:space-between;font-size:12px;padding:6px 0;border-bottom:1px solid var(--border);}
+.pcard-row:last-child{border-bottom:none;}
+.pcard-rl{color:var(--muted);}
+.pcard-rv{font-weight:500;color:var(--brown2);}
+.pcard-progress{height:5px;background:var(--cream3);border-radius:3px;overflow:hidden;margin-top:12px;}
+.pcard-bar{height:100%;border-radius:3px;transition:width .5s ease;}
+.pcard-pct{font-size:10px;color:var(--muted);margin-top:4px;text-align:right;}
+.pcard-tasks{margin-top:10px;display:flex;flex-direction:column;gap:5px;}
+.ptask{display:flex;align-items:center;gap:8px;font-size:11px;padding:6px 8px;border-radius:7px;background:var(--cream2);border:1px solid var(--border);}
+.ptask-dot{width:6px;height:6px;border-radius:50%;flex-shrink:0;}
+.ptask-txt{flex:1;color:var(--brown2);}
+.ptask-done{color:var(--sage) !important;}
+.ptask-doing{color:var(--sky) !important;}
+
+.tmdt-checklist{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-bottom:20px;}
+.cl-card{background:white;border:1px solid var(--border);border-radius:11px;padding:14px 16px;}
+.cl-title{font-size:12px;font-weight:600;color:var(--brown);margin-bottom:10px;display:flex;align-items:center;gap:7px;}
+.cl-item{display:flex;align-items:flex-start;gap:8px;padding:5px 0;border-bottom:1px solid var(--border);font-size:11px;}
+.cl-item:last-child{border-bottom:none;}
+.cl-check{width:14px;height:14px;border-radius:3px;display:flex;align-items:center;justify-content:center;font-size:9px;flex-shrink:0;margin-top:1px;}
+.cl-done{background:rgba(90,122,92,.15);color:var(--sage);border:1px solid rgba(90,122,92,.25);}
+.cl-doing{background:rgba(74,122,158,.12);color:var(--sky);border:1px solid rgba(74,122,158,.22);}
+.cl-todo{background:var(--cream2);color:var(--muted);border:1px solid var(--border);}
+.cl-txt{color:var(--brown2);line-height:1.45;}
+
+@media(max-width:1100px){.platform-grid,.tmdt-checklist,.tmdt-hero{grid-template-columns:1fr 1fr;}}
 </style>
 </head>
 <body>
@@ -200,6 +245,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   </button>
   <button class="tab-btn" onclick="switchTab('mkt',this)">
     📣 Marketing <span class="t-badge t-badge-g">7 tasks</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab('tmdt',this)">
+    🛒 Kênh TMĐT <span class="t-badge t-badge-b">3 sàn</span>
   </button>
 </nav>
 
@@ -780,25 +828,245 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
     </div><!-- /tab-mkt -->
 
+    <!-- ====== TAB 3: KÊNH TMĐT ====== -->
+    <div id="tab-tmdt" class="tab-panel">
+
+      <!-- HERO STATS -->
+      <div class="tmdt-hero">
+        <div class="th-card">
+          <div class="th-ico">🛒</div>
+          <div class="th-val">3</div>
+          <div class="th-lbl">Sàn TMĐT</div>
+          <span class="th-badge" style="background:rgba(90,122,92,.1);color:var(--sage);border:1px solid rgba(90,122,92,.2)">Đã tạo TK ✓</span>
+        </div>
+        <div class="th-card">
+          <div class="th-ico">🎨</div>
+          <div class="th-val">~50%</div>
+          <div class="th-lbl">Trang trí shop</div>
+          <span class="th-badge" style="background:rgba(74,122,158,.1);color:var(--sky);border:1px solid rgba(74,122,158,.2)">Đang làm</span>
+        </div>
+        <div class="th-card">
+          <div class="th-ico">📦</div>
+          <div class="th-val">—</div>
+          <div class="th-lbl">Sản phẩm live</div>
+          <span class="th-badge" style="background:rgba(200,150,58,.1);color:var(--gold);border:1px solid rgba(200,150,58,.2)">Chờ hàng</span>
+        </div>
+        <div class="th-card">
+          <div class="th-ico">🚀</div>
+          <div class="th-val">—</div>
+          <div class="th-lbl">Đơn đầu tiên</div>
+          <span class="th-badge" style="background:rgba(200,150,58,.1);color:var(--gold);border:1px solid rgba(200,150,58,.2)">Chờ launch</span>
+        </div>
+      </div>
+
+      <!-- 3 PLATFORM CARDS -->
+      <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--brown);margin-bottom:14px">Chi tiết từng sàn</div>
+      <div class="platform-grid">
+
+        <!-- TIKTOK SHOP -->
+        <div class="pcard">
+          <div class="pcard-header">
+            <div class="pcard-logo" style="background:rgba(20,20,20,.07)">🎵</div>
+            <div>
+              <div class="pcard-name">TikTok Shop</div>
+              <div class="pcard-sub">VibeCoffee Official</div>
+            </div>
+            <span class="pcard-status" style="background:rgba(74,122,158,.1);color:var(--sky);border:1px solid rgba(74,122,158,.2)">Đang setup</span>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-row"><span class="pcard-rl">Loại tài khoản</span><span class="pcard-rv">Shop bán hàng</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Trạng thái</span><span class="pcard-rv" style="color:var(--sky)">Trang trí shop</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Sản phẩm</span><span class="pcard-rv" style="color:var(--muted)">Đang upload</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Tiềm năng</span><span class="pcard-rv" style="color:var(--rust);font-weight:600">⭐ Rất cao (viral)</span></div>
+            <div class="pcard-progress"><div class="pcard-bar" style="width:45%;background:var(--sky)"></div></div>
+            <div class="pcard-pct">Setup 45% hoàn thành</div>
+            <div class="pcard-tasks">
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sage)"></div><span class="ptask-txt ptask-done">✓ Tạo tài khoản shop</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Trang trí gian hàng</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Upload sản phẩm & mô tả</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Thiết lập vận chuyển</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Kết nối TikTok video → Shop</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Livestream bán hàng</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SHOPEE -->
+        <div class="pcard">
+          <div class="pcard-header">
+            <div class="pcard-logo" style="background:rgba(238,77,45,.08)">🛍️</div>
+            <div>
+              <div class="pcard-name">Shopee</div>
+              <div class="pcard-sub">VibeCoffee Shop</div>
+            </div>
+            <span class="pcard-status" style="background:rgba(74,122,158,.1);color:var(--sky);border:1px solid rgba(74,122,158,.2)">Đang setup</span>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-row"><span class="pcard-rl">Loại tài khoản</span><span class="pcard-rv">Shopee Mall / Shop</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Trạng thái</span><span class="pcard-rv" style="color:var(--sky)">Trang trí shop</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Sản phẩm</span><span class="pcard-rv" style="color:var(--muted)">Đang upload</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Tiềm năng</span><span class="pcard-rv" style="color:var(--gold);font-weight:600">⭐ Cao (thị phần lớn)</span></div>
+            <div class="pcard-progress"><div class="pcard-bar" style="width:50%;background:#ee4d2d"></div></div>
+            <div class="pcard-pct">Setup 50% hoàn thành</div>
+            <div class="pcard-tasks">
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sage)"></div><span class="ptask-txt ptask-done">✓ Tạo tài khoản shop</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Trang trí gian hàng</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Upload sản phẩm & mô tả</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Thiết lập vận chuyển</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Đăng ký Shopee Mall (nếu cần)</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Cài đặt Flash Sale & Voucher</span></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LAZADA -->
+        <div class="pcard">
+          <div class="pcard-header">
+            <div class="pcard-logo" style="background:rgba(0,102,255,.07)">🔵</div>
+            <div>
+              <div class="pcard-name">Lazada</div>
+              <div class="pcard-sub">VibeCoffee Store</div>
+            </div>
+            <span class="pcard-status" style="background:rgba(74,122,158,.1);color:var(--sky);border:1px solid rgba(74,122,158,.2)">Đang setup</span>
+          </div>
+          <div class="pcard-body">
+            <div class="pcard-row"><span class="pcard-rl">Loại tài khoản</span><span class="pcard-rv">LazMall / Seller</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Trạng thái</span><span class="pcard-rv" style="color:var(--sky)">Trang trí shop</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Sản phẩm</span><span class="pcard-rv" style="color:var(--muted)">Đang upload</span></div>
+            <div class="pcard-row"><span class="pcard-rl">Tiềm năng</span><span class="pcard-rv" style="color:var(--sage);font-weight:600">TB (thị phần nhỏ hơn)</span></div>
+            <div class="pcard-progress"><div class="pcard-bar" style="width:40%;background:#0066ff"></div></div>
+            <div class="pcard-pct">Setup 40% hoàn thành</div>
+            <div class="pcard-tasks">
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sage)"></div><span class="ptask-txt ptask-done">✓ Tạo tài khoản shop</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Trang trí gian hàng</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Upload sản phẩm & mô tả</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Thiết lập vận chuyển</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Cài đặt khuyến mãi</span></div>
+              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Kết nối với Shopee ads</span></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- CHECKLIST SETUP -->
+      <div style="font-size:13px;font-weight:600;color:var(--brown);margin-bottom:12px">Checklist setup chung — 3 sàn</div>
+      <div class="tmdt-checklist">
+
+        <div class="cl-card">
+          <div class="cl-title">✅ Đã hoàn thành</div>
+          <div class="cl-item"><div class="cl-check cl-done">✓</div><div class="cl-txt">Tạo tài khoản TikTok Shop</div></div>
+          <div class="cl-item"><div class="cl-check cl-done">✓</div><div class="cl-txt">Tạo tài khoản Shopee Shop</div></div>
+          <div class="cl-item"><div class="cl-check cl-done">✓</div><div class="cl-txt">Tạo tài khoản Lazada</div></div>
+          <div class="cl-item"><div class="cl-check cl-done">✓</div><div class="cl-txt">Đăng nhập & xác minh tài khoản</div></div>
+        </div>
+
+        <div class="cl-card">
+          <div class="cl-title">⟳ Đang thực hiện</div>
+          <div class="cl-item"><div class="cl-check cl-doing">⟳</div><div class="cl-txt">Trang trí gian hàng (banner, avatar, mô tả shop)</div></div>
+          <div class="cl-item"><div class="cl-check cl-doing">⟳</div><div class="cl-txt">Upload hình ảnh sản phẩm</div></div>
+          <div class="cl-item"><div class="cl-check cl-doing">⟳</div><div class="cl-txt">Viết mô tả sản phẩm chi tiết</div></div>
+          <div class="cl-item"><div class="cl-check cl-doing">⟳</div><div class="cl-txt">Đặt giá bán & SKU từng sàn</div></div>
+        </div>
+
+        <div class="cl-card">
+          <div class="cl-title">◦ Chưa bắt đầu</div>
+          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Thiết lập đơn vị vận chuyển (GHN, GHTK, J&T)</div></div>
+          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Tạo voucher & flash sale khai trương</div></div>
+          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Kết nối TikTok video với TikTok Shop</div></div>
+          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Chạy Shopee Ads / TikTok Ads TMĐT</div></div>
+          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Chuẩn bị kho hàng & quy trình đóng gói</div></div>
+        </div>
+
+      </div>
+
+      <!-- KANBAN TMDT -->
+      <div style="font-size:13px;font-weight:600;color:var(--brown);margin-bottom:12px">Tiến độ task TMĐT</div>
+      <div class="kb" style="margin-bottom:20px">
+        <div>
+          <div class="ch" style="background:rgba(90,122,92,.08);border-color:rgba(90,122,92,.2)">
+            <div class="cd" style="background:var(--sage)"></div><div class="cn" style="color:var(--sage)">Đã hoàn thành</div><div class="cc">3</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph"><div class="tt"><div class="ti">🎵</div><div class="tn">Tạo TK TikTok Shop</div><span class="tp">Cao</span></div><div class="td">Tài khoản bán hàng TikTok Shop đã tạo và xác minh.</div><div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div><div class="tm"><span class="tg">TikTok Shop</span><span class="tdt">Apr 2026</span></div></div>
+            <div class="tc ph"><div class="tt"><div class="ti">🛍️</div><div class="tn">Tạo TK Shopee Shop</div><span class="tp">Cao</span></div><div class="td">Tài khoản bán hàng Shopee đã tạo và xác minh.</div><div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div><div class="tm"><span class="tg">Shopee</span><span class="tdt">Apr 2026</span></div></div>
+            <div class="tc ph"><div class="tt"><div class="ti">🔵</div><div class="tn">Tạo TK Lazada</div><span class="tp">Cao</span></div><div class="td">Tài khoản bán hàng Lazada đã tạo và xác minh.</div><div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div><div class="tm"><span class="tg">Lazada</span><span class="tdt">Apr 2026</span></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="ch" style="background:rgba(74,122,158,.08);border-color:rgba(74,122,158,.2)">
+            <div class="cd" style="background:var(--sky)"></div><div class="cn" style="color:var(--sky)">Đang thực hiện</div><div class="cc">2</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph"><div class="tt"><div class="ti">🎨</div><div class="tn">Trang trí shop cả 3 sàn</div><span class="tp">Cao</span></div><div class="td">Banner, avatar, mô tả shop, bộ nhận diện thương hiệu VibeCoffee trên từng sàn.</div><div class="tpg"><div class="tb" style="width:50%;background:var(--sky)"></div></div><div class="tm"><span class="tg">Design · TMĐT</span></div></div>
+            <div class="tc ph"><div class="tt"><div class="ti">📝</div><div class="tn">Upload SP & viết mô tả</div><span class="tp">Cao</span></div><div class="td">Đăng sản phẩm cà phê muối phô mai: hình ảnh, mô tả chi tiết, giá bán, SKU cho 3 sàn.</div><div class="tpg"><div class="tb" style="width:35%;background:var(--sky)"></div></div><div class="tm"><span class="tg">Content · SP</span></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="ch" style="background:rgba(200,150,58,.08);border-color:rgba(200,150,58,.2)">
+            <div class="cd" style="background:var(--gold)"></div><div class="cn" style="color:var(--brown2)">Chờ thực hiện</div><div class="cc">3</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph"><div class="tt"><div class="ti">🚚</div><div class="tn">Thiết lập vận chuyển</div><span class="tp">Cao</span></div><div class="td">Kết nối GHN / GHTK / J&T cho cả 3 sàn. Cài đặt phí ship, vùng giao hàng.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div><div class="tm"><span class="tg">Vận chuyển</span></div></div>
+            <div class="tc pm"><div class="tt"><div class="ti">🎁</div><div class="tn">Voucher khai trương shop</div><span class="tp">TB</span></div><div class="td">Tạo voucher giảm giá, flash sale khai trương để thu hút đơn hàng đầu tiên.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div><div class="tm"><span class="tg">Promotion</span></div></div>
+            <div class="tc pm"><div class="tt"><div class="ti">🔗</div><div class="tn">Kết nối TikTok video → Shop</div><span class="tp">TB</span></div><div class="td">Gắn link sản phẩm TikTok Shop vào các video content marketing.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div><div class="tm"><span class="tg">TikTok · Affiliate</span></div></div>
+          </div>
+        </div>
+        <div>
+          <div class="ch" style="background:rgba(58,42,26,.04);border-color:var(--border)">
+            <div class="cd" style="background:var(--muted)"></div><div class="cn" style="color:var(--muted)">Chưa bắt đầu</div><div class="cc">3</div>
+          </div>
+          <div class="cb">
+            <div class="tc ph"><div class="tt"><div class="ti">📦</div><div class="tn">Chuẩn bị kho hàng & đóng gói</div><span class="tp">Cao</span></div><div class="td">Quy trình nhận hàng từ gia công → kiểm tra → đóng gói → xuất kho TMĐT.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div><div class="tm"><span class="tg">Operations</span></div></div>
+            <div class="tc pm"><div class="tt"><div class="ti">📊</div><div class="tn">Chạy Ads TMĐT</div><span class="tp">TB</span></div><div class="td">Shopee Ads, TikTok Shop Ads để tăng visibility sau khi shop live.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div><div class="tm"><span class="tg">Ads · TMĐT</span></div></div>
+            <div class="tc pl"><div class="tt"><div class="ti">⭐</div><div class="tn">Xây dựng review & rating</div><span class="tp">Thấp</span></div><div class="td">Chiến lược thu thập đánh giá 5 sao từ khách hàng đầu tiên.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div><div class="tm"><span class="tg">CRM · Review</span></div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- NOTES -->
+      <div class="ng">
+        <div class="nc">
+          <div class="nc-t">📌 Việc cần làm ngay — TMĐT</div>
+          <ul class="nl">
+            <li>Hoàn thiện trang trí shop cả 3 sàn (banner, avatar, mô tả)</li>
+            <li>Upload đủ hình ảnh & mô tả sản phẩm chất lượng cao</li>
+            <li>Kết nối đơn vị vận chuyển (GHN hoặc GHTK) cho từng sàn</li>
+            <li>Chuẩn bị voucher khai trương trước ngày launch</li>
+            <li>Kết nối video TikTok Marketing với TikTok Shop</li>
+          </ul>
+        </div>
+        <div class="nc">
+          <div class="nc-t">💡 Chiến lược ưu tiên theo sàn</div>
+          <ul class="nl">
+            <li><strong style="color:var(--brown2)">TikTok Shop:</strong> Ưu tiên #1 — kết nối trực tiếp với video viral, chi phí ads thấp</li>
+            <li><strong style="color:var(--brown2)">Shopee:</strong> Ưu tiên #2 — thị phần lớn nhất, traffic organic tốt</li>
+            <li><strong style="color:var(--brown2)">Lazada:</strong> Ưu tiên #3 — duy trì hiện diện, ít đầu tư ads hơn</li>
+            <li>Đồng bộ giá bán và chương trình khuyến mãi giữa các sàn</li>
+            <li>Chụp ảnh sản phẩm chuyên nghiệp trước khi upload lên sàn</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /tab-tmdt -->
+
   </main>
 </div>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 function switchTab(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p =>    p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b =>
-    b.classList.remove('active'));
+  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
-
   const sidebar = document.querySelector('.sidebar');
   const page = document.querySelector('.page');
-  if (id === 'mkt') {
-    sidebar.style.display = 'none';
-    page.style.gridTemplateColumns = '1fr';
-  } else {
+  if (id === 'sx') {
     sidebar.style.display = '';
     page.style.gridTemplateColumns = '252px 1fr';
+  } else {
+    sidebar.style.display = 'none';
+    page.style.gridTemplateColumns = '1fr';
   }
 }
 </script>
