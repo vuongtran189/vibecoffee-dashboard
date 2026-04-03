@@ -785,4 +785,22 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 function switchTab(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p =>
+  document.querySelectorAll('.tab-panel').forEach(p =>    p.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b =>
+    b.classList.remove('active'));
+  document.getElementById('tab-' + id).classList.add('active');
+  btn.classList.add('active');
+
+  const sidebar = document.querySelector('.sidebar');
+  const page = document.querySelector('.page');
+  if (id === 'mkt') {
+    sidebar.style.display = 'none';
+    page.style.gridTemplateColumns = '1fr';
+  } else {
+    sidebar.style.display = '';
+    page.style.gridTemplateColumns = '252px 1fr';
+  }
+}
+</script>
+</body>
+</html>
