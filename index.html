@@ -225,6 +225,57 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .cl-txt{color:var(--brown2);line-height:1.45;}
 
 @media(max-width:1100px){.platform-grid,.tmdt-checklist,.tmdt-hero{grid-template-columns:1fr 1fr;}}
+
+/* ===== PNL TAB ===== */
+.pnl-hero{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-bottom:24px;}
+.pnl-hcard{border-radius:12px;padding:16px 18px;text-align:center;border:1px solid var(--border);}
+.pnl-hcard.profit{background:rgba(90,122,92,.08);border-color:rgba(90,122,92,.25);}
+.pnl-hcard.cost{background:rgba(192,74,42,.06);border-color:rgba(192,74,42,.2);}
+.pnl-hcard.neutral{background:white;}
+.pnl-ico{font-size:22px;margin-bottom:5px;}
+.pnl-val{font-family:'DM Mono',monospace;font-size:20px;font-weight:700;margin-bottom:2px;}
+.pnl-lbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;}
+.pnl-sub{font-size:11px;margin-top:4px;font-weight:500;}
+
+.channel-tabs{display:flex;gap:6px;margin-bottom:20px;}
+.ch-tab{font-size:12px;font-weight:500;padding:6px 16px;border-radius:20px;border:1px solid var(--border);background:white;cursor:pointer;transition:all .15s;color:var(--muted);}
+.ch-tab.active,.ch-tab:hover{background:var(--brown);color:var(--gold2);border-color:var(--brown);}
+.ch-tab.soon{color:var(--muted);cursor:default;background:var(--cream2);}
+
+.pnl-table-wrap{background:white;border:1px solid var(--border);border-radius:14px;overflow:hidden;margin-bottom:20px;}
+.pnl-table-head{background:var(--espresso);padding:14px 20px;display:flex;align-items:center;gap:12px;}
+.pnl-table-ttl{font-size:14px;font-weight:600;color:var(--gold2);}
+.pnl-table-sub{font-size:11px;color:rgba(255,255,255,.4);margin-left:auto;}
+
+.pnl-section{padding:0 20px;}
+.pnl-section-title{font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:14px 0 8px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:6px;}
+.pnl-row{display:grid;grid-template-columns:1fr 120px 120px 140px;align-items:center;padding:9px 0;border-bottom:1px solid var(--border);gap:12px;}
+.pnl-row:last-child{border-bottom:none;}
+.pnl-row.subtotal{background:rgba(58,42,26,.025);margin:0 -20px;padding:9px 20px;font-weight:600;}
+.pnl-row.total-row{background:var(--espresso);margin:0 -20px;padding:12px 20px;font-weight:700;}
+.pnl-row.profit-row{background:rgba(90,122,92,.08);margin:0 -20px;padding:12px 20px;font-weight:700;border-top:2px solid rgba(90,122,92,.3);}
+.pnl-item-name{font-size:13px;color:var(--brown2);}
+.pnl-item-name .note{font-size:11px;color:var(--muted);font-weight:400;display:block;margin-top:1px;}
+.pnl-pct{font-family:'DM Mono',monospace;font-size:12px;color:var(--muted);text-align:right;}
+.pnl-amt{font-family:'DM Mono',monospace;font-size:13px;font-weight:600;color:var(--brown);text-align:right;}
+.pnl-amt.neg{color:var(--rust);}
+.pnl-amt.pos{color:var(--sage);}
+.pnl-amt.total{color:white;font-size:14px;}
+.pnl-amt.profit-val{color:var(--sage);font-size:15px;}
+.pnl-bar-cell{position:relative;height:6px;background:var(--cream3);border-radius:3px;overflow:hidden;}
+.pnl-bar-fill{position:absolute;left:0;top:0;height:100%;border-radius:3px;}
+
+.pnl-note-box{background:rgba(200,150,58,.07);border:1px solid rgba(200,150,58,.2);border-radius:10px;padding:14px 16px;margin-bottom:20px;font-size:12px;color:var(--brown2);line-height:1.7;}
+.pnl-note-box strong{color:var(--gold);}
+
+.scenario-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:20px;}
+.sc-card{background:white;border:1px solid var(--border);border-radius:11px;padding:15px 16px;}
+.sc-title{font-size:12px;font-weight:600;color:var(--brown);margin-bottom:10px;display:flex;align-items:center;gap:6px;}
+.sc-row{display:flex;justify-content:space-between;font-size:11px;margin-bottom:5px;}
+.sc-lbl{color:var(--muted);}
+.sc-val{font-family:'DM Mono',monospace;font-weight:600;color:var(--brown2);}
+.sc-profit{font-family:'DM Mono',monospace;font-size:16px;font-weight:700;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
+
 </style>
 </head>
 <body>
@@ -249,7 +300,19 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   <button class="tab-btn" onclick="switchTab('tmdt',this)">
     🛒 Kênh TMĐT <span class="t-badge t-badge-b">3 sàn</span>
   </button>
+  <button class="tab-btn" onclick="switchTab('pnl',this)">
+    📊 Plan PNL <span class="t-badge" style="background:rgba(192,74,42,.2);color:#f08060;border:1px solid rgba(192,74,42,.3)">TikTok live</span>
+  </button>
 </nav>
+
+<!-- UPDATE NOTIFICATION BAR -->
+<div id="update-bar" style="background:rgba(200,150,58,.1);border-bottom:1px solid rgba(200,150,58,.2);padding:7px 28px;display:flex;align-items:center;gap:10px;font-size:11px;color:var(--brown2);min-height:34px;transition:background .2s;">
+  <span style="font-size:14px" id="update-icon">⚙️</span>
+  <span style="font-weight:600;color:var(--gold);white-space:nowrap" id="update-date">06/04/2026</span>
+  <span style="color:rgba(58,42,26,.3)">·</span>
+  <span id="update-text" style="line-height:1.4"></span>
+  <span style="margin-left:auto;font-size:10px;color:var(--muted);white-space:nowrap" id="update-who"></span>
+</div>
 
 <div class="page">
 
@@ -1149,15 +1212,295 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
     </div><!-- /tab-tmdt -->
 
+    <!-- ====== TAB 4: PLAN PNL ====== -->
+    <div id="tab-pnl" class="tab-panel">
+
+      <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--brown);margin-bottom:4px">Kế hoạch PNL theo kênh bán hàng</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:20px">Cà phê muối phô mai · 1 hộp 10 sticks · Giá niêm yết 86,000đ · COGS 35,500đ/hộp</div>
+
+      <!-- HERO SUMMARY -->
+      <div class="pnl-hero">
+        <div class="pnl-hcard neutral">
+          <div class="pnl-ico">🏷️</div>
+          <div class="pnl-val" style="color:var(--brown)">86,000đ</div>
+          <div class="pnl-lbl">Giá niêm yết</div>
+          <div class="pnl-sub" style="color:var(--muted)">Giá bán / hộp</div>
+        </div>
+        <div class="pnl-hcard neutral">
+          <div class="pnl-ico">💸</div>
+          <div class="pnl-val" style="color:var(--sky)">83,420đ</div>
+          <div class="pnl-lbl">Thực thu</div>
+          <div class="pnl-sub" style="color:var(--sky)">86,000 × 97% (−3% KM)</div>
+        </div>
+        <div class="pnl-hcard cost">
+          <div class="pnl-ico">📦</div>
+          <div class="pnl-val" style="color:var(--rust)">35,500đ</div>
+          <div class="pnl-lbl">COGS / hộp</div>
+          <div class="pnl-sub" style="color:var(--rust)">Giá vốn hàng hoá</div>
+        </div>
+        <div class="pnl-hcard cost">
+          <div class="pnl-ico">🏪</div>
+          <div class="pnl-val" style="color:var(--rust)">71,371đ</div>
+          <div class="pnl-lbl">Tổng chi phí</div>
+          <div class="pnl-sub" style="color:var(--rust)">35,500 + 20,855 + 2,503 + 12,513</div>
+        </div>
+        <div class="pnl-hcard profit">
+          <div class="pnl-ico">✅</div>
+          <div class="pnl-val" style="color:var(--sage)">12,049đ</div>
+          <div class="pnl-lbl">Lợi nhuận ròng</div>
+          <div class="pnl-sub" style="color:var(--sage)">~14.4% trên thực thu</div>
+        </div>
+      </div>
+
+      <!-- CHANNEL TABS -->
+      <div class="channel-tabs">
+        <button class="ch-tab active">🎵 TikTok Shop</button>
+        <button class="ch-tab soon">🛍️ Shopee <span style="font-size:10px;opacity:.6">(sắp có)</span></button>
+        <button class="ch-tab soon">🔵 Lazada <span style="font-size:10px;opacity:.6">(sắp có)</span></button>
+        <button class="ch-tab soon">🌐 Website <span style="font-size:10px;opacity:.6">(sắp có)</span></button>
+      </div>
+
+      <!-- NOTE BOX -->
+      <div class="pnl-note-box">
+        <strong>⚠️ Lưu ý cách tính:</strong> Tất cả % phí sàn, tiếp thị liên kết và Ads đều được tính trên <strong>giá thực thu 83,420đ</strong> (= 86,000đ × 97% sau khi giảm 3%), <strong>không phải giá niêm yết</strong>.<br>
+        Khoản có thể tối ưu nhiều nhất: <strong style="color:var(--rust)">Phí Ads 15% (12,513đ)</strong> — tùy hiệu quả chiến dịch, có thể giảm xuống 8–10% để tăng biên lợi nhuận.
+      </div>
+
+      <!-- PNL TABLE -->
+      <div class="pnl-table-wrap">
+        <div class="pnl-table-head">
+          <div>
+            <div class="pnl-table-ttl">🎵 TikTok Shop — PNL chi tiết / hộp</div>
+            <div class="pnl-table-sub">Giá niêm yết 86,000đ · Thực thu 83,420đ · Tháng 04/2026</div>
+          </div>
+        </div>
+
+        <!-- DOANH THU -->
+        <div class="pnl-section">
+          <div class="pnl-section-title" style="color:var(--sage)">💰 DOANH THU</div>
+          <div class="pnl-row">
+            <div class="pnl-item-name">Giá bán niêm yết<span class="note">Giá gốc trên sàn TikTok Shop</span></div>
+            <div class="pnl-pct">100%</div>
+            <div class="pnl-amt">86,000đ</div>
+            <div></div>
+          </div>
+          <div class="pnl-row">
+            <div class="pnl-item-name">Giảm giá 3%<span class="note">Voucher / flash sale / khuyến mãi</span></div>
+            <div class="pnl-pct">−3%</div>
+            <div class="pnl-amt neg">−2,580đ</div>
+            <div class="pnl-bar-cell"><div class="pnl-bar-fill" style="width:3%;background:var(--rust)"></div></div>
+          </div>
+          <div class="pnl-row subtotal">
+            <div class="pnl-item-name" style="color:var(--sky)">Thực thu từ khách (Revenue)</div>
+            <div class="pnl-pct" style="color:var(--sky)">97%</div>
+            <div class="pnl-amt" style="color:var(--sky)">83,420đ</div>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- CHI PHÍ SÀN -->
+        <div class="pnl-section">
+          <div class="pnl-section-title" style="color:var(--gold)">🏪 PHÍ SÀN & CHI PHÍ BÁN HÀNG <span style="font-size:10px;font-weight:400;color:var(--muted)">(tính trên thực thu 83,420đ)</span></div>
+          <div class="pnl-row">
+            <div class="pnl-item-name">Phí sàn TikTok 25%<span class="note">Hoa hồng sàn + phí dịch vụ · 25% × 83,420đ</span></div>
+            <div class="pnl-pct">25%</div>
+            <div class="pnl-amt neg">−20,855đ</div>
+            <div class="pnl-bar-cell"><div class="pnl-bar-fill" style="width:43%;background:var(--gold)"></div></div>
+          </div>
+          <div class="pnl-row">
+            <div class="pnl-item-name">Tiếp thị liên kết (Affiliate) 3%<span class="note">KOL/KOC commission · 3% × 83,420đ</span></div>
+            <div class="pnl-pct">3%</div>
+            <div class="pnl-amt neg">−2,503đ</div>
+            <div class="pnl-bar-cell"><div class="pnl-bar-fill" style="width:5%;background:var(--gold)"></div></div>
+          </div>
+          <div class="pnl-row">
+            <div class="pnl-item-name" style="color:var(--rust);font-weight:600">Chạy Ads 15%<span class="note" style="color:var(--rust)">TikTok Ads · 15% × 83,420đ — Khoản có thể tối ưu!</span></div>
+            <div class="pnl-pct" style="color:var(--rust);font-weight:600">15%</div>
+            <div class="pnl-amt neg" style="font-size:14px">−12,513đ</div>
+            <div class="pnl-bar-cell"><div class="pnl-bar-fill" style="width:26%;background:var(--rust)"></div></div>
+          </div>
+          <div class="pnl-row subtotal">
+            <div class="pnl-item-name" style="color:var(--gold)">Tổng phí sàn + Ads</div>
+            <div class="pnl-pct" style="color:var(--gold)">43%</div>
+            <div class="pnl-amt" style="color:var(--gold)">35,871đ</div>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- COGS -->
+        <div class="pnl-section">
+          <div class="pnl-section-title" style="color:var(--rust)">📦 GIÁ VỐN HÀNG HOÁ (COGS)</div>
+          <div class="pnl-row">
+            <div class="pnl-item-name">Giá vốn hàng hóa<span class="note">Nguyên liệu + Gia công + Bao bì / hộp</span></div>
+            <div class="pnl-pct">42.6%</div>
+            <div class="pnl-amt neg">−35,500đ</div>
+            <div class="pnl-bar-cell"><div class="pnl-bar-fill" style="width:73%;background:var(--rust)"></div></div>
+          </div>
+        </div>
+
+        <!-- TỔNG & LỢI NHUẬN -->
+        <div class="pnl-section">
+          <div class="pnl-row total-row">
+            <div class="pnl-item-name" style="color:rgba(255,255,255,.65)">Tổng chi phí (COGS + Phí sàn + Ads)</div>
+            <div class="pnl-pct" style="color:rgba(255,255,255,.45)">85.6%</div>
+            <div class="pnl-amt total">71,371đ</div>
+            <div></div>
+          </div>
+          <div class="pnl-row profit-row">
+            <div>
+              <div style="font-size:14px;font-weight:700;color:var(--sage)">✅ Lợi nhuận ròng / hộp</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">83,420đ − 71,371đ = 12,049đ</div>
+            </div>
+            <div class="pnl-pct" style="color:var(--sage);font-size:14px;font-weight:700">14.4%</div>
+            <div class="pnl-amt profit-val">+12,049đ</div>
+            <div></div>
+          </div>
+        </div>
+
+        <!-- BAR CHART VISUAL -->
+        <div class="pnl-section" style="padding-bottom:20px">
+          <div class="pnl-section-title">📊 CƠ CẤU 83,420đ THỰC THU</div>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:12px">
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:100px;font-size:11px;color:var(--brown2);text-align:right;flex-shrink:0">Giá vốn</div>
+              <div style="flex:1;height:22px;background:var(--cream3);border-radius:4px;overflow:hidden;position:relative">
+                <div style="height:100%;width:42.6%;background:#E06040;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px"><span style="font-size:10px;color:white;font-weight:600">42.6%</span></div>
+              </div>
+              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--rust);text-align:right;flex-shrink:0">35,500đ</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:100px;font-size:11px;color:var(--brown2);text-align:right;flex-shrink:0">Phí sàn 25%</div>
+              <div style="flex:1;height:22px;background:var(--cream3);border-radius:4px;overflow:hidden;position:relative">
+                <div style="height:100%;width:25%;background:#9B77D4;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px"><span style="font-size:10px;color:white;font-weight:600">25%</span></div>
+              </div>
+              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:#7a5cad;text-align:right;flex-shrink:0">20,855đ</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:100px;font-size:11px;color:var(--rust);font-weight:600;text-align:right;flex-shrink:0">Ads 15% ⚡</div>
+              <div style="flex:1;height:22px;background:var(--cream3);border-radius:4px;overflow:hidden;position:relative">
+                <div style="height:100%;width:15%;background:var(--rust);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px"><span style="font-size:10px;color:white;font-weight:600">15%</span></div>
+              </div>
+              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--rust);text-align:right;flex-shrink:0">12,513đ</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:100px;font-size:11px;color:var(--brown2);text-align:right;flex-shrink:0">Tiếp thị LK 3%</div>
+              <div style="flex:1;height:22px;background:var(--cream3);border-radius:4px;overflow:hidden;position:relative">
+                <div style="height:100%;width:3%;background:#8A9CAA;border-radius:4px"></div>
+              </div>
+              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--muted);text-align:right;flex-shrink:0">2,503đ</div>
+            </div>
+            <div style="display:flex;align-items:center;gap:10px">
+              <div style="width:100px;font-size:11px;color:var(--sage);font-weight:600;text-align:right;flex-shrink:0">Lợi nhuận</div>
+              <div style="flex:1;height:22px;background:var(--cream3);border-radius:4px;overflow:hidden;position:relative">
+                <div style="height:100%;width:14.4%;background:var(--sage);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px"><span style="font-size:10px;color:white;font-weight:600">14.4%</span></div>
+              </div>
+              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--sage);text-align:right;flex-shrink:0">12,049đ</div>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /pnl-table-wrap -->
+
+      <!-- SCENARIO ANALYSIS -->
+      <div style="font-size:13px;font-weight:600;color:var(--brown);margin-bottom:12px">📈 Phân tích kịch bản — Tối ưu phí Ads</div>
+      <div class="scenario-grid">
+        <div class="sc-card" style="border-color:rgba(192,74,42,.25);background:rgba(192,74,42,.03)">
+          <div class="sc-title">🔴 Hiện tại — Ads 15%</div>
+          <div class="sc-row"><span class="sc-lbl">Thực thu</span><span class="sc-val">83,420đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">35,500đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">Phí sàn + Affiliate</span><span class="sc-val">23,358đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">Ads (15%)</span><span class="sc-val" style="color:var(--rust)">12,513đ</span></div>
+          <div class="sc-profit" style="color:var(--rust)">LN: 12,049đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 14.4%</span></div>
+        </div>
+        <div class="sc-card" style="border-color:rgba(200,150,58,.3);background:rgba(200,150,58,.04)">
+          <div class="sc-title">🟡 Tối ưu — Ads 10%</div>
+          <div class="sc-row"><span class="sc-lbl">Thực thu</span><span class="sc-val">83,420đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">35,500đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">Phí sàn + Affiliate</span><span class="sc-val">23,358đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">Ads (10%)</span><span class="sc-val" style="color:var(--gold)">8,342đ</span></div>
+          <div class="sc-profit" style="color:var(--gold)">LN: 16,220đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 19.4%</span></div>
+        </div>
+        <div class="sc-card" style="border-color:rgba(90,122,92,.3);background:rgba(90,122,92,.05)">
+          <div class="sc-title">🟢 Tốt nhất — Ads 8%</div>
+          <div class="sc-row"><span class="sc-lbl">Thực thu</span><span class="sc-val">83,420đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">35,500đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">Phí sàn + Affiliate</span><span class="sc-val">23,358đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">Ads (8%)</span><span class="sc-val" style="color:var(--sage)">6,674đ</span></div>
+          <div class="sc-profit" style="color:var(--sage)">LN: 17,888đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 21.4%</span></div>
+        </div>
+      </div>
+
+      <!-- NOTES -->
+      <div class="ng">
+        <div class="nc">
+          <div class="nc-t">📌 Điểm cần tối ưu</div>
+          <ul class="nl">
+            <li><strong style="color:var(--rust)">Phí Ads 15% (12,513đ)</strong> — khoản lớn nhất có thể giảm tùy ROAS chiến dịch</li>
+            <li>Giảm Ads về 10% → LN tăng từ 14.4% lên 19.4% (+4,171đ/hộp)</li>
+            <li>Affiliate 3% có thể điều chỉnh theo từng KOL/KOC partner</li>
+            <li>Tăng sản lượng → COGS giảm theo MOQ → biên LN tăng tự nhiên</li>
+            <li>Flash sale / voucher 3% linh hoạt theo chiến dịch launch</li>
+          </ul>
+        </div>
+        <div class="nc">
+          <div class="nc-t">⏳ Kênh sắp cập nhật PNL</div>
+          <ul class="nl">
+            <li><strong style="color:var(--brown2)">Shopee:</strong> Phí hoa hồng ~5–7% + Shopee Ads ~10%</li>
+            <li><strong style="color:var(--brown2)">Lazada:</strong> Phí commission ~5–8% + Lazada Ads</li>
+            <li><strong style="color:var(--brown2)">Website vibecoffee.vn:</strong> Không phí sàn, chỉ phí thanh toán ~2–3% + Ads</li>
+            <li>Website có biên LN cao nhất vì không mất phí sàn 25%</li>
+          </ul>
+        </div>
+      </div>
+
+    </div><!-- /tab-pnl -->
+
   </main>
 </div>
 
 <script>
+const updates = {
+  sx: {
+    icon: '⚙️',
+    date: '06/04/2026',
+    text: 'Chốt COGS final 3,526đ/stick (D05 · NL 2,153 + GC 1,043 + BB hộp 250 + BB gói 80) · DCV đang thiết kế file bao bì dàn trải',
+    who: 'MQ Ms Thủy + DCV'
+  },
+  mkt: {
+    icon: '📣',
+    date: '06/04/2026',
+    text: 'Website vibecoffee.vn đã live trên hosting + SEO triển khai ✓ · Đang review nội dung lần cuối · Cần build admin & hệ thống thanh toán online',
+    who: 'vibecoffee.vn'
+  },
+  tmdt: {
+    icon: '🛒',
+    date: '08/04/2026',
+    text: 'Đã tạo TK TikTok Shop · Shopee · Lazada · Đang trang trí shop & upload sản phẩm, viết mô tả · Chờ launch sau khi có hàng',
+    who: '3 sàn setup'
+  },
+  pnl: {
+    icon: '📊',
+    date: '08/04/2026',
+    text: 'Plan PNL TikTok Shop: Thực thu 83,420đ · Tổng chi 71,371đ · LN 12,049đ/hộp (~14.4%) · Ads 15% là khoản tối ưu được · Shopee / Lazada / Website sắp cập nhật',
+    who: 'TikTok live ✓'
+  }
+};
+
 function switchTab(id, btn) {
   document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
   document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
   document.getElementById('tab-' + id).classList.add('active');
   btn.classList.add('active');
+
+  // Update notification bar
+  const u = updates[id];
+  if (u) {
+    document.getElementById('update-icon').textContent = u.icon;
+    document.getElementById('update-date').textContent = u.date;
+    document.getElementById('update-text').textContent = u.text;
+    document.getElementById('update-who').textContent = u.who;
+  }
+
   const sidebar = document.querySelector('.sidebar');
   const page = document.querySelector('.page');
   if (id === 'sx') {
@@ -1168,6 +1511,12 @@ function switchTab(id, btn) {
     page.style.gridTemplateColumns = '1fr';
   }
 }
+
+// Init update bar on load
+document.getElementById('update-icon').textContent = updates.sx.icon;
+document.getElementById('update-date').textContent = updates.sx.date;
+document.getElementById('update-text').textContent = updates.sx.text;
+document.getElementById('update-who').textContent = updates.sx.who;
 </script>
 </body>
 </html>
