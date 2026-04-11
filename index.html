@@ -276,6 +276,56 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .sc-val{font-family:'DM Mono',monospace;font-weight:600;color:var(--brown2);}
 .sc-profit{font-family:'DM Mono',monospace;font-size:16px;font-weight:700;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
 
+/* ===== CHI PHÍ TAB ===== */
+.cp-hero{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px;}
+.cp-hcard{background:white;border:1px solid var(--border);border-radius:12px;padding:15px 16px;text-align:center;}
+.cp-hval{font-family:'DM Mono',monospace;font-size:19px;font-weight:700;margin-bottom:2px;}
+.cp-hlbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;}
+.cp-hsub{font-size:11px;margin-top:3px;}
+
+.month-tabs{display:flex;gap:5px;margin-bottom:20px;flex-wrap:wrap;}
+.month-tab{font-size:11px;font-weight:600;padding:5px 14px;border-radius:16px;border:1px solid var(--border);background:white;cursor:pointer;transition:all .15s;color:var(--muted);}
+.month-tab:hover{border-color:var(--border2);color:var(--brown2);}
+.month-tab.active{background:var(--brown);color:var(--gold2);border-color:var(--brown);}
+
+.cp-table-wrap{background:white;border:1px solid var(--border);border-radius:13px;overflow:hidden;margin-bottom:20px;}
+.cp-thead{background:var(--brown);display:grid;grid-template-columns:40px 1fr 100px 130px 100px 110px;gap:0;font-size:11px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;}
+.cp-thead > div, .cp-row > div{padding:9px 12px;}
+.cp-row{display:grid;grid-template-columns:40px 1fr 100px 130px 100px 110px;gap:0;border-bottom:1px solid var(--border);font-size:12px;align-items:center;transition:background .1s;}
+.cp-row:last-child{border-bottom:none;}
+.cp-row:hover{background:rgba(200,150,58,.04);}
+.cp-row.total-r{background:rgba(58,42,26,.04);font-weight:700;border-top:2px solid var(--border2);}
+.cp-stt{color:var(--muted);font-family:'DM Mono',monospace;font-size:11px;}
+.cp-name{color:var(--brown2);font-weight:500;}
+.cp-qty{color:var(--muted);text-align:right;font-family:'DM Mono',monospace;}
+.cp-amt{color:var(--rust);font-weight:600;text-align:right;font-family:'DM Mono',monospace;}
+.cp-date{color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;}
+.cp-cat{display:inline-block;font-size:10px;padding:2px 8px;border-radius:5px;font-weight:600;}
+
+.cp-section-head{background:rgba(58,42,26,.04);padding:9px 14px;font-size:11px;font-weight:700;color:var(--brown);text-transform:uppercase;letter-spacing:.07em;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
+.cp-section-total{margin-left:auto;font-family:'DM Mono',monospace;color:var(--rust);}
+
+.cp-add-form{background:white;border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:18px;}
+.cp-form-title{font-size:12px;font-weight:600;color:var(--brown);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
+.cp-form-grid{display:grid;grid-template-columns:1fr 1fr 120px 130px 130px auto;gap:8px;align-items:end;}
+.cp-input{background:var(--cream2);border:1px solid var(--border2);border-radius:7px;padding:7px 10px;font-size:12px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;width:100%;transition:border-color .15s;}
+.cp-input:focus{border-color:var(--gold);}
+.cp-input::placeholder{color:var(--muted);}
+.cp-select{background:var(--cream2);border:1px solid var(--border2);border-radius:7px;padding:7px 10px;font-size:12px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;width:100%;cursor:pointer;}
+.cp-btn-add{background:var(--brown);color:var(--gold2);border:none;border-radius:7px;padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:opacity .15s;font-family:'DM Sans',sans-serif;}
+.cp-btn-add:hover{opacity:.85;}
+.cp-btn-del{background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:14px;padding:4px;border-radius:4px;transition:color .15s;}
+.cp-btn-del:hover{color:var(--rust);}
+.cp-input-lbl{font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:500;}
+
+.cp-bar-chart{display:flex;flex-direction:column;gap:7px;margin-top:14px;}
+.cp-bar-row{display:flex;align-items:center;gap:10px;}
+.cp-bar-lbl{width:150px;font-size:11px;color:var(--brown2);text-align:right;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.cp-bar-track{flex:1;height:18px;background:var(--cream3);border-radius:4px;overflow:hidden;}
+.cp-bar-fill2{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;min-width:4px;transition:width .4s ease;}
+.cp-bar-val{width:100px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--rust);text-align:right;flex-shrink:0;}
+
+
 </style>
 </head>
 <body>
@@ -286,7 +336,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
     <div class="hstat"><div class="hstat-val c-gold">3</div><div class="hstat-lbl">Sản phẩm</div></div>
     <div class="hstat"><div class="hstat-val c-rust">5</div><div class="hstat-lbl">Nhà cung cấp</div></div>
     <div class="hstat"><div class="hstat-val c-sage">4</div><div class="hstat-lbl">Kênh MKT</div></div>
-    <div class="date-badge">06/04/2026 · COGS 3,526đ/stick ✓</div>
+    <div class="date-badge">06/04/2026 · COGS 3,415đ/stick ✓</div>
   </div>
 </header>
 
@@ -302,6 +352,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   </button>
   <button class="tab-btn" onclick="switchTab('pnl',this)">
     📊 Plan PNL <span class="t-badge" style="background:rgba(192,74,42,.2);color:#f08060;border:1px solid rgba(192,74,42,.3)">TikTok live</span>
+  </button>
+  <button class="tab-btn" onclick="switchTab('chiphi',this)">
+    💰 Chi phí HKP <span class="t-badge" style="background:rgba(90,122,92,.18);color:#86c88a;border:1px solid rgba(90,122,92,.3)">2026</span>
   </button>
 </nav>
 
@@ -357,9 +410,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
             <div style="font-size:11px;color:rgba(255,255,255,.55);margin-bottom:9px">• NDC: MOQ 1 tấn</div>
             <div style="background:rgba(200,150,58,.18);border-radius:7px;padding:9px 11px;border:1px solid rgba(200,150,58,.3)">
               <div style="font-size:10px;color:var(--gold2);margin-bottom:5px;text-transform:uppercase;letter-spacing:.06em">TỔNG COGS / stick</div>
-              <div style="font-family:'DM Mono',monospace;font-size:20px;font-weight:700;color:var(--gold2)">3,526đ</div>
-              <div style="font-size:10px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.6">NL 2,153 + GC 1,043<br>+ BB hộp 250 + BB gói 80</div>
-              <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:3px">1 hộp 10 stick = 35,260đ</div>
+              <div style="font-family:'DM Mono',monospace;font-size:20px;font-weight:700;color:var(--gold2)">3,415đ</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.55);margin-top:4px;line-height:1.6">NL 2,153 + GC 932<br>+ BB hộp 250 + BB gói 80</div>
+              <div style="font-size:10px;color:rgba(255,255,255,.35);margin-top:3px">1 hộp 10 stick = 34,150đ</div>
             </div>
           </div>
         </div>
@@ -426,8 +479,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
           <div class="ir"><span class="il">Tel</span><span class="iv ih" style="color:#f5c842">0906.783.976</span></div>
           <div class="ir"><span class="il">Email</span><span class="iv" style="font-size:10px;color:rgba(255,255,255,.55)"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="107479757d3e7e776569757e50737f76767575737f7e737560643e667e">[email&#160;protected]</a></span></div>
           <div class="ir"><span class="il">MST</span><span class="iv" style="font-size:10px;color:rgba(255,255,255,.45)">0316192403</span></div>
-          <div class="ir"><span class="il">MOQ</span><span class="iv ih" style="color:#f5c842">30,000 sticks/SKU</span></div>
-          <div class="ir"><span class="il">Gia công</span><span class="iv ih" style="color:#a8e6ab">966đ/stick</span></div>
+          <div class="ir"><span class="il">MOQ</span><span class="iv ih" style="color:#f5c842">46,000 sticks/SKU</span></div>
+          <div class="ir"><span class="il">Gia công</span><span class="iv ih" style="color:#a8e6ab">862.50đ/stick (BG1004)</span></div>
           <div style="margin-top:9px;padding-top:9px;border-top:1px solid rgba(255,255,255,.1);display:flex;align-items:center;gap:7px">
             <div style="width:7px;height:7px;border-radius:50%;background:#f5c842"></div>
             <span style="font-size:11px;color:white">Đã nhận báo giá 03/03/2026</span>
@@ -435,8 +488,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         </div>
         <div class="tl">
           <div class="tl-ttl">Lịch sử 03/03</div>
-          <div class="tl-r"><span class="tl-d">03/03</span><span>Yêu cầu báo giá gia công sticks</span></div>
-          <div class="tl-r"><span class="tl-d">03/03</span><span>Nhận BG0303 — 966đ/stick</span></div>
+          <div class="tl-r"><span class="tl-d">03/03</span><span>BG0303: 966đ → BG1004: 862.50đ</span></div>
+          <div class="tl-r"><span class="tl-d">03/03</span><span>Nhận BG1004 — 862.50đ/stick (mới)</span></div>
           <div class="tl-r"><span class="tl-d">03/03</span><span>Thống nhất thông số: 20gr, 10 gói/hộp</span></div>
           <div class="tl-r"><span style="color:#f5c842;font-family:'DM Mono',monospace;font-size:10px">⏳</span><span style="color:var(--sky)">Hẹn ghé xưởng trao đổi trực tiếp</span></div>
         </div>
@@ -488,8 +541,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
             </div>
             <div style="background:rgba(255,255,255,.07);border-radius:7px;padding:7px 10px;text-align:center">
               <div style="font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Gia công</div>
-              <div style="font-family:'DM Mono',monospace;font-size:15px;font-weight:700;color:var(--gold2)">1,043đ</div>
-              <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px">966đ × 1.08 VAT</div>
+              <div style="font-family:'DM Mono',monospace;font-size:15px;font-weight:700;color:var(--gold2)">932đ</div>
+              <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px">862.50đ × 1.08 VAT</div>
             </div>
             <div style="background:rgba(255,255,255,.07);border-radius:7px;padding:7px 10px;text-align:center">
               <div style="font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Bao bì hộp</div>
@@ -505,11 +558,11 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         </div>
         <div style="text-align:right;flex-shrink:0;min-width:160px">
           <div style="font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px">Tổng COGS / stick</div>
-          <div style="font-family:'DM Mono',monospace;font-size:36px;font-weight:700;color:var(--gold2);line-height:1">3,526đ</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px">2,153 + 1,043 + 250 + 80</div>
+          <div style="font-family:'DM Mono',monospace;font-size:36px;font-weight:700;color:var(--gold2);line-height:1">3,415đ</div>
+          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px">2,153 + 932 + 250 + 80</div>
           <div style="margin-top:8px;background:rgba(200,150,58,.2);border-radius:7px;padding:6px 10px;border:1px solid rgba(200,150,58,.35)">
             <div style="font-size:10px;color:var(--gold2);font-weight:600">1 hộp 10 sticks</div>
-            <div style="font-family:'DM Mono',monospace;font-size:14px;color:var(--gold2);font-weight:600">= 35,260đ</div>
+            <div style="font-family:'DM Mono',monospace;font-size:14px;color:var(--gold2);font-weight:600">= 34,150đ</div>
           </div>
         </div>
       </div>
@@ -523,8 +576,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         </div>
         <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:13px 14px;text-align:center">
           <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">② Gia công</div>
-          <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:600;color:var(--brown)">1,043đ</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:2px">966đ + 8% VAT</div>
+          <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:600;color:var(--brown)">932đ</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">862.50đ + 8% VAT</div>
         </div>
         <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:13px 14px;text-align:center">
           <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">③ Bao bì hộp</div>
@@ -538,8 +591,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         </div>
         <div style="background:rgba(200,150,58,.08);border:2px solid rgba(200,150,58,.4);border-radius:10px;padding:13px 14px;text-align:center">
           <div style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">✅ Tổng COGS</div>
-          <div style="font-family:'DM Mono',monospace;font-size:22px;font-weight:700;color:var(--rust)">3,526đ</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:2px">/ stick · 35,260đ / hộp</div>
+          <div style="font-family:'DM Mono',monospace;font-size:22px;font-weight:700;color:var(--rust)">3,415đ</div>
+          <div style="font-size:10px;color:var(--muted);margin-top:2px">/ stick · 34,150đ / hộp</div>
         </div>
       </div>
 
@@ -578,8 +631,8 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
               <div class="tt"><div class="ti">✅</div><div class="tn">Chốt COGS final — Mẫu D05 NDC MQ</div><span class="tp">Cao</span></div>
               <div class="td">
                 <strong style="color:var(--brown2)">Công thức D05:</strong> 22gr/stick · NDC MQ · Đường cát 23k/kg<br>
-                <strong style="color:var(--brown2)">NL:</strong> 2,153đ · <strong style="color:var(--brown2)">GC:</strong> 1,043đ · <strong style="color:var(--brown2)">BB hộp:</strong> 250đ · <strong style="color:var(--brown2)">BB gói:</strong> 80đ<br>
-                <strong style="color:var(--rust);font-size:13px">Tổng COGS = 3,526đ/stick · 35,260đ/hộp</strong>
+                <strong style="color:var(--brown2)">NL:</strong> 2,153đ · <strong style="color:var(--brown2)">GC:</strong> 932đ · <strong style="color:var(--brown2)">BB hộp:</strong> 250đ · <strong style="color:var(--brown2)">BB gói:</strong> 80đ<br>
+                <strong style="color:var(--rust);font-size:13px">Tổng COGS = 3,415đ/stick · 34,150đ/hộp</strong>
               </div>
               <div class="tpg"><div class="tb" style="width:100%;background:var(--gold)"></div></div>
               <div class="tm"><span class="tg">COGS · MQ</span><span class="ta">Ms Thủy</span><span class="tdt">06/04 ✓</span></div>
@@ -594,7 +647,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
           <div class="cb">
             <div class="tc ph">
               <div class="tt"><div class="ti">🏭</div><div class="tn">Hẹn ghé xưởng Coffee Concept</div><span class="tp">Cao</span></div>
-              <div class="td">Đã có báo giá BG0303 (966đ/stick). Hạnh Diễm mời ghé xưởng trao đổi trực tiếp. Cần xác nhận lịch hẹn, xem quy trình gia công & kiểm tra kích thước cuộn bao bì.</div>
+              <div class="td">Đã nhận báo giá mới BG1004 (10/04/2026): 862.50đ/stick — giảm 104đ so với BG cũ. MOQ 46,000 sticks. KT gói: 60×162mm. Chưa bao gồm VAT.</div>
               <div class="tpg"><div class="tb" style="width:30%;background:var(--sky)"></div></div>
               <div class="tm"><span class="tg">Gia công · Coffee Concept</span><span class="ta">Hạnh Diễm</span></div>
             </div>
@@ -666,7 +719,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
             <tr><td>1</td><td><strong>Bột kem béo thực vật</strong></td><td style="font-family:'DM Mono',monospace;font-size:11px">MQ-KF48</td><td>1,000</td><td class="pv">58,800</td><td><span class="bi">Indo</span></td><td style="font-size:11px;color:var(--muted)">Tất cả SP</td></tr>
             <tr><td>2</td><td><strong>Bột kem béo thực vật</strong></td><td style="font-family:'DM Mono',monospace;font-size:11px">MQ-KF48</td><td>1,000</td><td class="pv">40,950</td><td><span class="bcn">China</span></td><td style="font-size:11px;color:var(--muted)">Tất cả SP</td></tr>
             <tr class="hr2"><td rowspan="2">3</td><td rowspan="2"><strong>Bột cà phê hòa tan ⭐</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">MQ-RA06</td><td>1,000</td><td class="pv">278,600</td><td rowspan="2"><span class="bvn">Việt Nam</span></td><td rowspan="2" style="font-size:11px;color:var(--rust);font-weight:600">Nguyên liệu chính!</td></tr>
-            <tr class="hr2"><td>500</td><td class="pv">289,800</td></tr>
+            <tr class="hr2"><td>550</td><td class="pv">289,800</td></tr>
             <tr><td rowspan="2">4</td><td rowspan="2"><strong>Bột hương cà phê</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">99057</td><td>100</td><td class="pv">1,065,000</td><td rowspan="2"><span class="bsg">Singapore</span></td><td rowspan="2" style="font-size:11px;color:var(--muted)">Hương liệu</td></tr>
             <tr><td>50</td><td class="pv">1,130,000</td></tr>
             <tr><td rowspan="2">5</td><td rowspan="2"><strong>Bột hương vanilla</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">99027</td><td>100</td><td class="pv">480,000</td><td rowspan="2"><span class="bsg">Singapore</span></td><td rowspan="2" style="font-size:11px;color:var(--muted)">Muối capuchino</td></tr>
@@ -706,23 +759,23 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
       <div class="ps2" style="margin-top:24px">
         <div class="pt">Báo giá gia công đóng gói — Coffee Concept</div>
-        <div class="ps3">Số báo giá BG0303_01 · Ngày 03/03/2026 · Chưa bao gồm VAT · Chưa bao gồm bao bì, hộp, thùng</div>
+        <div class="ps3">Số báo giá BG1004_01 · Ngày 10/04/2026 · Chưa bao gồm VAT · Chưa bao gồm bao bì, hộp, thùng</div>
         <div class="pn2" style="background:rgba(200,150,58,.06);border-color:rgba(200,150,58,.2);color:var(--brown2)"><span>ℹ</span><div>Bao bì do <strong>Vibe Coffee tự thiết kế và gửi đến kho</strong>. Nguyên liệu do anh Vương gửi đến. Thời gian gia công: <strong>20 ngày làm việc</strong> sau khi đặt cọc.</div></div>
         <table class="ptb">
           <thead><tr><th>#</th><th>Hạng mục</th><th>Thông số</th><th>ĐVT</th><th>Đơn giá (VNĐ)</th><th>Ghi chú</th></tr></thead>
           <tbody>
-            <tr><td>1</td><td><strong>Chi phí gia công Sticks</strong></td><td style="font-size:11px;color:var(--muted)">Chất liệu: OPP15/MPET12/LLDPE40 · KT sản xuất: 94×165mm · KT gói: 42×162mm</td><td>Stick</td><td class="pv">500</td><td style="font-size:11px;color:var(--muted)">KH có thể dùng bao bì riêng</td></tr>
-            <tr><td>2</td><td><strong>Hoàn thiện Hộp</strong></td><td style="font-size:11px;color:var(--muted)">Đóng gói 10 gói/hộp · 20gr/stick · Bao bì VibeCoffee thiết kế</td><td>Stick</td><td class="pv">400</td><td style="font-size:11px;color:var(--muted)">Bao bì do VibeCoffee gửi đến kho</td></tr>
-            <tr><td>3</td><td><strong>Thùng carton</strong></td><td style="font-size:11px;color:var(--muted)">Đóng thùng xuất kho, chia đều theo stick</td><td>Stick</td><td class="pv">66.67</td><td style="font-size:11px;color:var(--muted)">Tính theo đơn vị stick</td></tr>
-            <tr class="hr2"><td colspan="4"><strong>Tổng cộng / stick</strong></td><td class="pv" style="color:var(--gold);font-weight:700">966.67đ</td><td style="font-size:11px;color:var(--rust);font-weight:600">~966đ/stick ✓</td></tr>
+            <tr><td>1</td><td><strong>Chi phí gia công Sticks</strong></td><td style="font-size:11px;color:var(--muted)">Chất liệu: OPP15/MPET12/LLDPE40 · KT sản xuất: 120×165mm · KT gói: 60×162mm</td><td>Stick</td><td class="pv">500</td><td style="font-size:11px;color:var(--muted)">KH có thể dùng bao bì riêng</td></tr>
+            <tr><td>2</td><td><strong>Hoàn thiện Hộp</strong></td><td style="font-size:11px;color:var(--muted)">Đóng gói 10 gói/hộp · 20gr/stick · Bao bì VibeCoffee thiết kế</td><td>Stick</td><td class="pv">300</td><td style="font-size:11px;color:var(--muted)">Bao bì do VibeCoffee gửi đến kho</td></tr>
+            <tr><td>3</td><td><strong>Thùng carton</strong></td><td style="font-size:11px;color:var(--muted)">Đóng thùng xuất kho, chia đều theo stick</td><td>Stick</td><td class="pv">12.50</td><td style="font-size:11px;color:var(--muted)">Tính theo đơn vị stick</td></tr>
+            <tr class="hr2"><td colspan="4"><strong>Tổng cộng / stick</strong></td><td class="pv" style="color:var(--gold);font-weight:700">862.50đ</td><td style="font-size:11px;color:var(--rust);font-weight:600">~862.50đ/stick ✓ (BG1004)</td></tr>
           </tbody>
         </table>
         <div class="cmp" style="grid-template-columns:1fr 1fr 1fr 1fr">
-          <div class="ci2"><div class="cl">Đơn giá gia công</div><div class="cv">966đ</div><div class="cs">/ stick (chưa VAT)</div></div>
+          <div class="ci2"><div class="cl">Đơn giá gia công</div><div class="cv">862.50đ</div><div class="cs">/ stick (chưa VAT)</div></div>
           <div class="cdv"></div>
-          <div class="ci2"><div class="cl">MOQ tối thiểu</div><div class="cv">30,000</div><div class="cs">sticks / SKU</div></div>
+          <div class="ci2"><div class="cl">MOQ tối thiểu</div><div class="cv">46,000</div><div class="cs">sticks / SKU</div></div>
           <div class="cdv"></div>
-          <div class="ci2"><div class="cl">Chi phí tối thiểu</div><div class="cv">~29tr</div><div class="cs">30,000 × 966đ (chưa VAT)</div></div>
+          <div class="ci2"><div class="cl">Chi phí tối thiểu</div><div class="cv">~39.7tr</div><div class="cs">46,000 × 862.50đ (chưa VAT)</div></div>
           <div class="cdv"></div>
           <div class="ci2"><div class="cl">Thời gian gia công</div><div class="cv">20</div><div class="cs">ngày làm việc</div></div>
         </div>
@@ -748,7 +801,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
           <ul class="nl">
             <li>Báo giá MQ chưa gồm VAT 8% — cộng thêm khi tính giá thành</li>
             <li>Thời gian giao hàng MQ: 3–7 ngày sau PO và thanh toán</li>
-            <li>MOQ Coffee Concept: <strong>30,000 sticks/SKU</strong> — cần tính lượng sản xuất phù hợp</li>
+            <li>MOQ Coffee Concept: <strong>46,000 sticks/SKU</strong> — cần tính lượng sản xuất phù hợp</li>
             <li>Chi phí gia công Coffee Concept chưa gồm VAT + vật tư bao bì</li>
             <li>Kích thước cuộn bao bì phải đúng yêu cầu máy — cần check trước</li>
             <li>Điều kiện R&D free MQ: phải lấy hầu hết nguyên liệu từ MQ</li>
@@ -1216,7 +1269,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
     <div id="tab-pnl" class="tab-panel">
 
       <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--brown);margin-bottom:4px">Kế hoạch PNL theo kênh bán hàng</div>
-      <div style="font-size:12px;color:var(--muted);margin-bottom:20px">Cà phê muối phô mai · 1 hộp 10 sticks · Giá niêm yết 86,000đ · COGS 35,500đ/hộp</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:20px">Cà phê muối phô mai · 1 hộp 10 sticks · Giá niêm yết 86,000đ · COGS 34,150đ/hộp</div>
 
       <!-- HERO SUMMARY -->
       <div class="pnl-hero">
@@ -1234,21 +1287,21 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         </div>
         <div class="pnl-hcard cost">
           <div class="pnl-ico">📦</div>
-          <div class="pnl-val" style="color:var(--rust)">35,500đ</div>
+          <div class="pnl-val" style="color:var(--rust)">34,150đ</div>
           <div class="pnl-lbl">COGS / hộp</div>
           <div class="pnl-sub" style="color:var(--rust)">Giá vốn hàng hoá</div>
         </div>
         <div class="pnl-hcard cost">
           <div class="pnl-ico">🏪</div>
-          <div class="pnl-val" style="color:var(--rust)">71,371đ</div>
+          <div class="pnl-val" style="color:var(--rust)">70,021đ</div>
           <div class="pnl-lbl">Tổng chi phí</div>
-          <div class="pnl-sub" style="color:var(--rust)">35,500 + 20,855 + 2,503 + 12,513</div>
+          <div class="pnl-sub" style="color:var(--rust)">34,150 + 20,855 + 2,503 + 12,513</div>
         </div>
         <div class="pnl-hcard profit">
           <div class="pnl-ico">✅</div>
-          <div class="pnl-val" style="color:var(--sage)">12,049đ</div>
+          <div class="pnl-val" style="color:var(--sage)">13,399đ</div>
           <div class="pnl-lbl">Lợi nhuận ròng</div>
-          <div class="pnl-sub" style="color:var(--sage)">~14.4% trên thực thu</div>
+          <div class="pnl-sub" style="color:var(--sage)">~16.1% trên thực thu</div>
         </div>
       </div>
 
@@ -1333,7 +1386,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
           <div class="pnl-row">
             <div class="pnl-item-name">Giá vốn hàng hóa<span class="note">Nguyên liệu + Gia công + Bao bì / hộp</span></div>
             <div class="pnl-pct">42.6%</div>
-            <div class="pnl-amt neg">−35,500đ</div>
+            <div class="pnl-amt neg">−34,150đ</div>
             <div class="pnl-bar-cell"><div class="pnl-bar-fill" style="width:73%;background:var(--rust)"></div></div>
           </div>
         </div>
@@ -1343,16 +1396,16 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
           <div class="pnl-row total-row">
             <div class="pnl-item-name" style="color:rgba(255,255,255,.65)">Tổng chi phí (COGS + Phí sàn + Ads)</div>
             <div class="pnl-pct" style="color:rgba(255,255,255,.45)">85.6%</div>
-            <div class="pnl-amt total">71,371đ</div>
+            <div class="pnl-amt total">70,021đ</div>
             <div></div>
           </div>
           <div class="pnl-row profit-row">
             <div>
               <div style="font-size:14px;font-weight:700;color:var(--sage)">✅ Lợi nhuận ròng / hộp</div>
-              <div style="font-size:11px;color:var(--muted);margin-top:2px">83,420đ − 71,371đ = 12,049đ</div>
+              <div style="font-size:11px;color:var(--muted);margin-top:2px">83,420đ − 70,021đ = 13,399đ</div>
             </div>
-            <div class="pnl-pct" style="color:var(--sage);font-size:14px;font-weight:700">14.4%</div>
-            <div class="pnl-amt profit-val">+12,049đ</div>
+            <div class="pnl-pct" style="color:var(--sage);font-size:14px;font-weight:700">16.1%</div>
+            <div class="pnl-amt profit-val">+13,399đ</div>
             <div></div>
           </div>
         </div>
@@ -1366,7 +1419,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
               <div style="flex:1;height:22px;background:var(--cream3);border-radius:4px;overflow:hidden;position:relative">
                 <div style="height:100%;width:42.6%;background:#E06040;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px"><span style="font-size:10px;color:white;font-weight:600">42.6%</span></div>
               </div>
-              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--rust);text-align:right;flex-shrink:0">35,500đ</div>
+              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--rust);text-align:right;flex-shrink:0">34,150đ</div>
             </div>
             <div style="display:flex;align-items:center;gap:10px">
               <div style="width:100px;font-size:11px;color:var(--brown2);text-align:right;flex-shrink:0">Phí sàn 25%</div>
@@ -1392,9 +1445,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
             <div style="display:flex;align-items:center;gap:10px">
               <div style="width:100px;font-size:11px;color:var(--sage);font-weight:600;text-align:right;flex-shrink:0">Lợi nhuận</div>
               <div style="flex:1;height:22px;background:var(--cream3);border-radius:4px;overflow:hidden;position:relative">
-                <div style="height:100%;width:14.4%;background:var(--sage);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px"><span style="font-size:10px;color:white;font-weight:600">14.4%</span></div>
+                <div style="height:100%;width:16.1%;background:var(--sage);border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px"><span style="font-size:10px;color:white;font-weight:600">16.1%</span></div>
               </div>
-              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--sage);text-align:right;flex-shrink:0">12,049đ</div>
+              <div style="width:70px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--sage);text-align:right;flex-shrink:0">13,399đ</div>
             </div>
           </div>
         </div>
@@ -1407,26 +1460,26 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
         <div class="sc-card" style="border-color:rgba(192,74,42,.25);background:rgba(192,74,42,.03)">
           <div class="sc-title">🔴 Hiện tại — Ads 15%</div>
           <div class="sc-row"><span class="sc-lbl">Thực thu</span><span class="sc-val">83,420đ</span></div>
-          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">35,500đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">34,150đ</span></div>
           <div class="sc-row"><span class="sc-lbl">Phí sàn + Affiliate</span><span class="sc-val">23,358đ</span></div>
           <div class="sc-row"><span class="sc-lbl">Ads (15%)</span><span class="sc-val" style="color:var(--rust)">12,513đ</span></div>
-          <div class="sc-profit" style="color:var(--rust)">LN: 12,049đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 14.4%</span></div>
+          <div class="sc-profit" style="color:var(--rust)">LN: 13,399đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 16.1%</span></div>
         </div>
         <div class="sc-card" style="border-color:rgba(200,150,58,.3);background:rgba(200,150,58,.04)">
           <div class="sc-title">🟡 Tối ưu — Ads 10%</div>
           <div class="sc-row"><span class="sc-lbl">Thực thu</span><span class="sc-val">83,420đ</span></div>
-          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">35,500đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">34,150đ</span></div>
           <div class="sc-row"><span class="sc-lbl">Phí sàn + Affiliate</span><span class="sc-val">23,358đ</span></div>
           <div class="sc-row"><span class="sc-lbl">Ads (10%)</span><span class="sc-val" style="color:var(--gold)">8,342đ</span></div>
-          <div class="sc-profit" style="color:var(--gold)">LN: 16,220đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 19.4%</span></div>
+          <div class="sc-profit" style="color:var(--gold)">LN: 17,570đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 21.1%</span></div>
         </div>
         <div class="sc-card" style="border-color:rgba(90,122,92,.3);background:rgba(90,122,92,.05)">
           <div class="sc-title">🟢 Tốt nhất — Ads 8%</div>
           <div class="sc-row"><span class="sc-lbl">Thực thu</span><span class="sc-val">83,420đ</span></div>
-          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">35,500đ</span></div>
+          <div class="sc-row"><span class="sc-lbl">COGS</span><span class="sc-val">34,150đ</span></div>
           <div class="sc-row"><span class="sc-lbl">Phí sàn + Affiliate</span><span class="sc-val">23,358đ</span></div>
           <div class="sc-row"><span class="sc-lbl">Ads (8%)</span><span class="sc-val" style="color:var(--sage)">6,674đ</span></div>
-          <div class="sc-profit" style="color:var(--sage)">LN: 17,888đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 21.4%</span></div>
+          <div class="sc-profit" style="color:var(--sage)">LN: 19,238đ <span style="font-size:11px;font-weight:400;color:var(--muted)">/ hộp · 21.4%</span></div>
         </div>
       </div>
 
@@ -1436,7 +1489,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
           <div class="nc-t">📌 Điểm cần tối ưu</div>
           <ul class="nl">
             <li><strong style="color:var(--rust)">Phí Ads 15% (12,513đ)</strong> — khoản lớn nhất có thể giảm tùy ROAS chiến dịch</li>
-            <li>Giảm Ads về 10% → LN tăng từ 14.4% lên 19.4% (+4,171đ/hộp)</li>
+            <li>Giảm Ads về 10% → LN tăng từ 16.1% lên 21.1% (+4,171đ/hộp)</li>
             <li>Affiliate 3% có thể điều chỉnh theo từng KOL/KOC partner</li>
             <li>Tăng sản lượng → COGS giảm theo MOQ → biên LN tăng tự nhiên</li>
             <li>Flash sale / voucher 3% linh hoạt theo chiến dịch launch</li>
@@ -1455,68 +1508,303 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
     </div><!-- /tab-pnl -->
 
+    <!-- ====== TAB 5: CHI PHÍ HKP ====== -->
+    <div id="tab-chiphi" class="tab-panel">
+
+      <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--brown);margin-bottom:4px">Theo dõi Chi phí — Hoàng Kim Phát 2026</div>
+      <div style="font-size:12px;color:var(--muted);margin-bottom:18px">Quản lý chi phí doanh nghiệp theo từng tháng · Dữ liệu từ CHI PHÍ HKP 2026</div>
+
+      <!-- MONTH SELECTOR -->
+      <div class="month-tabs" id="month-tabs"></div>
+
+      <!-- HERO STATS -->
+      <div class="cp-hero" id="cp-hero"></div>
+
+      <!-- ADD FORM -->
+      <div class="cp-add-form">
+        <div class="cp-form-title">➕ Thêm khoản chi phí mới</div>
+        <div class="cp-form-grid">
+          <div>
+            <div class="cp-input-lbl">Khoản chi phí</div>
+            <input class="cp-input" id="cp-name" placeholder="Tên khoản chi..." />
+          </div>
+          <div>
+            <div class="cp-input-lbl">Danh mục</div>
+            <select class="cp-select" id="cp-cat">
+              <option value="Vận hành">🔧 Vận hành</option>
+              <option value="Marketing">📣 Marketing</option>
+              <option value="Sản xuất">⚗️ Sản xuất</option>
+              <option value="Nhân sự">👤 Nhân sự</option>
+              <option value="Thiết bị">🖥️ Thiết bị</option>
+              <option value="Khác">📦 Khác</option>
+            </select>
+          </div>
+          <div>
+            <div class="cp-input-lbl">Số lượng</div>
+            <input class="cp-input" id="cp-qty" type="number" placeholder="1" value="1" min="1" />
+          </div>
+          <div>
+            <div class="cp-input-lbl">Số tiền (đ)</div>
+            <input class="cp-input" id="cp-amt" type="number" placeholder="0" min="0" />
+          </div>
+          <div>
+            <div class="cp-input-lbl">Ngày</div>
+            <input class="cp-input" id="cp-date" type="date" />
+          </div>
+          <div>
+            <div class="cp-input-lbl">&nbsp;</div>
+            <button class="cp-btn-add" onclick="addExpense()">Thêm ↵</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- TABLE -->
+      <div class="cp-table-wrap">
+        <div class="cp-thead">
+          <div>#</div><div>Khoản chi phí</div><div style="text-align:right">SL</div><div style="text-align:right">Số tiền</div><div>Ngày</div><div>Danh mục</div>
+        </div>
+        <div id="cp-rows"></div>
+      </div>
+
+      <!-- CHART + NOTES -->
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
+        <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:16px">
+          <div style="font-size:12px;font-weight:600;color:var(--brown);margin-bottom:4px">📊 Cơ cấu chi phí theo danh mục</div>
+          <div style="font-size:11px;color:var(--muted);margin-bottom:12px" id="cp-chart-month">Tháng đang xem</div>
+          <div class="cp-bar-chart" id="cp-chart"></div>
+        </div>
+        <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:16px">
+          <div style="font-size:12px;font-weight:600;color:var(--brown);margin-bottom:12px">📋 Tổng hợp theo tháng</div>
+          <div id="cp-monthly-summary" style="display:flex;flex-direction:column;gap:8px"></div>
+        </div>
+      </div>
+
+    </div><!-- /tab-chiphi -->
+
   </main>
 </div>
 
 <script>
-const updates = {
-  sx: {
-    icon: '⚙️',
-    date: '06/04/2026',
-    text: 'Chốt COGS final 3,526đ/stick (D05 · NL 2,153 + GC 1,043 + BB hộp 250 + BB gói 80) · DCV đang thiết kế file bao bì dàn trải',
-    who: 'MQ Ms Thủy + DCV'
-  },
-  mkt: {
-    icon: '📣',
-    date: '06/04/2026',
-    text: 'Website vibecoffee.vn đã live trên hosting + SEO triển khai ✓ · Đang review nội dung lần cuối · Cần build admin & hệ thống thanh toán online',
-    who: 'vibecoffee.vn'
-  },
-  tmdt: {
-    icon: '🛒',
-    date: '08/04/2026',
-    text: 'Đã tạo TK TikTok Shop · Shopee · Lazada · Đang trang trí shop & upload sản phẩm, viết mô tả · Chờ launch sau khi có hàng',
-    who: '3 sàn setup'
-  },
-  pnl: {
-    icon: '📊',
-    date: '08/04/2026',
-    text: 'Plan PNL TikTok Shop: Thực thu 83,420đ · Tổng chi 71,371đ · LN 12,049đ/hộp (~14.4%) · Ads 15% là khoản tối ưu được · Shopee / Lazada / Website sắp cập nhật',
-    who: 'TikTok live ✓'
-  }
+const MONTHS=['Tháng 3/2026','Tháng 4/2026','Tháng 5/2026','Tháng 6/2026','Tháng 7/2026','Tháng 8/2026','Tháng 9/2026','Tháng 10/2026','Tháng 11/2026','Tháng 12/2026'];
+const CAT_COLORS={
+  'Nhân sự':{bg:'rgba(192,74,42,.12)',color:'var(--rust)'},
+  'Vận hành':{bg:'rgba(74,122,158,.12)',color:'var(--sky)'},
+  'Marketing':{bg:'rgba(200,150,58,.14)',color:'var(--brown2)'},
+  'Sản xuất':{bg:'rgba(90,122,92,.12)',color:'var(--sage)'},
+  'Thiết bị':{bg:'rgba(58,42,26,.08)',color:'var(--muted)'},
+  'Khác':{bg:'rgba(58,42,26,.08)',color:'var(--muted)'}
 };
+const BAR_COLORS=['#E06040','#4A7A9E','#C8963A','#5A7A5C','#8A7060','#9B77D4'];
+const SK='vibe_chiphi_v2';
+var expenses={};
+var currentMonth='Tháng 3/2026';
 
-function switchTab(id, btn) {
-  document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
-  document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
-  document.getElementById('tab-' + id).classList.add('active');
-  btn.classList.add('active');
+var SEED={};
+SEED['Tháng 3/2026']=[
+  {id:1,name:'Lương vận hành',cat:'Nhân sự',qty:1,amt:15000000,date:'03/03/2026'},
+  {id:2,name:'Ngân sách tạm ứng',cat:'Vận hành',qty:1,amt:1500000,date:'03/03/2026'},
+  {id:3,name:'Mua Sim hotline',cat:'Vận hành',qty:1,amt:1500000,date:'05/03/2026'},
+  {id:4,name:'Nạp cước tháng cho SIM',cat:'Vận hành',qty:1,amt:250000,date:'05/03/2026'},
+  {id:5,name:'Mua hộp cà phê mẫu',cat:'Sản xuất',qty:1,amt:59000,date:'06/03/2026'},
+  {id:6,name:'Mua thước Đỗ Ban',cat:'Thiết bị',qty:1,amt:30000,date:'06/03/2026'}
+];
+SEED['Tháng 4/2026']=[
+  {id:7,name:'Thiết kế bao bì (DCV)',cat:'Marketing',qty:1,amt:1000000,date:'06/04/2026'}
+];
 
-  // Update notification bar
-  const u = updates[id];
-  if (u) {
-    document.getElementById('update-icon').textContent = u.icon;
-    document.getElementById('update-date').textContent = u.date;
-    document.getElementById('update-text').textContent = u.text;
-    document.getElementById('update-who').textContent = u.who;
+function loadData(){
+  try{
+    var s=localStorage.getItem(SK);
+    expenses=s?JSON.parse(s):JSON.parse(JSON.stringify(SEED));
+  }catch(e){expenses=JSON.parse(JSON.stringify(SEED));}
+  for(var i=0;i<MONTHS.length;i++){if(!expenses[MONTHS[i]])expenses[MONTHS[i]]=[];}
+}
+function saveData(){try{localStorage.setItem(SK,JSON.stringify(expenses));}catch(e){}}
+function fmt(n){return Number(n).toLocaleString('vi-VN')+'đ';}
+function totalMonth(m){var r=expenses[m]||[];return r.reduce(function(s,x){return s+(x.qty||1)*x.amt;},0);}
+function totalAll(){return MONTHS.reduce(function(s,m){return s+totalMonth(m);},0);}
+
+function renderMonthTabs(){
+  var el=document.getElementById('month-tabs');
+  if(!el)return;
+  var html='';
+  for(var i=0;i<MONTHS.length;i++){
+    var m=MONTHS[i];
+    var cnt=(expenses[m]||[]).length;
+    var a=m===currentMonth?' active':'';
+    var badge=cnt>0?' <span style="font-size:10px;opacity:.6">('+cnt+')</span>':'';
+    html+='<button class="month-tab'+a+'" data-month="'+m+'" onclick="selectMonthBtn(this)">'+m+badge+'</button>';
   }
-
-  const sidebar = document.querySelector('.sidebar');
-  const page = document.querySelector('.page');
-  if (id === 'sx') {
-    sidebar.style.display = '';
-    page.style.gridTemplateColumns = '252px 1fr';
-  } else {
-    sidebar.style.display = 'none';
-    page.style.gridTemplateColumns = '1fr';
-  }
+  el.innerHTML=html;
 }
 
-// Init update bar on load
-document.getElementById('update-icon').textContent = updates.sx.icon;
-document.getElementById('update-date').textContent = updates.sx.date;
-document.getElementById('update-text').textContent = updates.sx.text;
-document.getElementById('update-who').textContent = updates.sx.who;
+function renderHero(){
+  var el=document.getElementById('cp-hero');
+  if(!el)return;
+  var rows=expenses[currentMonth]||[];
+  var total=rows.reduce(function(s,r){return s+(r.qty||1)*r.amt;},0);
+  var cats={};rows.forEach(function(r){cats[r.cat]=1;});
+  var catCount=Object.keys(cats).length;
+  el.innerHTML=
+    '<div class="cp-hcard"><div class="cp-hval" style="color:var(--brown);font-size:15px">'+currentMonth+'</div><div class="cp-hlbl">Kỳ báo cáo</div><div class="cp-hsub" style="color:var(--muted)">'+rows.length+' khoản chi</div></div>'+
+    '<div class="cp-hcard" style="background:rgba(192,74,42,.06);border-color:rgba(192,74,42,.2)"><div class="cp-hval" style="color:var(--rust)">'+fmt(total)+'</div><div class="cp-hlbl">Tổng chi phí</div><div class="cp-hsub" style="color:var(--rust)">'+currentMonth+'</div></div>'+
+    '<div class="cp-hcard"><div class="cp-hval" style="color:var(--sky)">'+catCount+'</div><div class="cp-hlbl">Danh mục</div><div class="cp-hsub" style="color:var(--muted)">loại chi phí</div></div>'+
+    '<div class="cp-hcard" style="background:rgba(200,150,58,.07);border-color:rgba(200,150,58,.2)"><div class="cp-hval" style="color:var(--gold)">'+fmt(totalAll())+'</div><div class="cp-hlbl">Tổng 2026</div><div class="cp-hsub" style="color:var(--muted)">Tất cả tháng</div></div>';
+}
+
+function renderTable(){
+  var el=document.getElementById('cp-rows');
+  if(!el)return;
+  var rows=expenses[currentMonth]||[];
+  var total=rows.reduce(function(s,r){return s+(r.qty||1)*r.amt;},0);
+  var groups={};
+  rows.forEach(function(r){if(!groups[r.cat])groups[r.cat]=[];groups[r.cat].push(r);});
+  var html='';var stt=1;
+  if(!rows.length){
+    html='<div style="padding:32px;text-align:center;color:var(--muted);font-size:13px">Chưa có khoản chi. Thêm bên trên ↑</div>';
+  } else {
+    Object.keys(groups).forEach(function(cat){
+      var items=groups[cat];
+      var catTotal=items.reduce(function(s,r){return s+(r.qty||1)*r.amt;},0);
+      var c=CAT_COLORS[cat]||CAT_COLORS['Khác'];
+      html+='<div class="cp-section-head"><span class="cp-cat" style="background:'+c.bg+';color:'+c.color+'">'+cat+'</span><span class="cp-section-total">'+fmt(catTotal)+'</span></div>';
+      items.forEach(function(r){
+        var rid=r.id;
+        html+='<div class="cp-row">';
+        html+='<div class="cp-stt">'+stt+'</div>';
+        html+='<div class="cp-name">'+r.name+'</div>';
+        html+='<div class="cp-qty">'+(r.qty||1)+'</div>';
+        html+='<div class="cp-amt">'+fmt((r.qty||1)*r.amt)+'</div>';
+        html+='<div class="cp-date">'+r.date+'</div>';
+        html+='<div style="display:flex;align-items:center;gap:6px">';
+        html+='<span class="cp-cat" style="background:'+c.bg+';color:'+c.color+'">'+cat+'</span>';
+        html+='<button class="cp-btn-del" data-id="'+rid+'" data-month="'+currentMonth+'" onclick="delRow(this)" title="Xóa">✕</button>';
+        html+='</div></div>';
+        stt++;
+      });
+    });
+    html+='<div class="cp-row total-r"><div class="cp-stt" style="color:var(--brown)">∑</div><div class="cp-name" style="color:var(--brown)">TỔNG CỘNG</div><div></div><div class="cp-amt" style="color:var(--rust);font-size:14px">'+fmt(total)+'</div><div></div><div></div></div>';
+  }
+  el.innerHTML=html;
+}
+
+function renderChart(){
+  var el=document.getElementById('cp-chart');
+  var el2=document.getElementById('cp-chart-month');
+  if(!el)return;
+  var rows=expenses[currentMonth]||[];
+  var total=rows.reduce(function(s,r){return s+(r.qty||1)*r.amt;},0)||1;
+  var groups={};
+  rows.forEach(function(r){groups[r.cat]=(groups[r.cat]||0)+(r.qty||1)*r.amt;});
+  var sorted=Object.entries(groups).sort(function(a,b){return b[1]-a[1];});
+  if(el2)el2.textContent=currentMonth;
+  if(!sorted.length){el.innerHTML='<div style="color:var(--muted);font-size:12px;padding:12px 0">Chưa có dữ liệu</div>';return;}
+  el.innerHTML=sorted.map(function(entry,i){
+    var cat=entry[0];var amt=entry[1];
+    var pct=Math.round(amt/total*100);
+    var color=BAR_COLORS[i%BAR_COLORS.length];
+    return '<div class="cp-bar-row"><div class="cp-bar-lbl">'+cat+'</div><div class="cp-bar-track"><div class="cp-bar-fill2" style="width:'+pct+'%;background:'+color+'">'+(pct>=8?'<span style="font-size:10px;color:white;font-weight:600">'+pct+'%</span>':'')+'</div></div><div class="cp-bar-val">'+fmt(amt)+'</div></div>';
+  }).join('');
+}
+
+function renderSummary(){
+  var el=document.getElementById('cp-monthly-summary');
+  if(!el)return;
+  var totals=MONTHS.map(function(m){return totalMonth(m);});
+  var maxTotal=Math.max.apply(null,totals.concat([1]));
+  el.innerHTML=MONTHS.map(function(m){
+    var t=totalMonth(m);
+    var isActive=m===currentMonth;
+    var pct=Math.round(t/maxTotal*100);
+    return '<div style="cursor:pointer;margin-bottom:6px" data-month="'+m+'" onclick="selectMonthData(this)">'+
+      '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">'+
+      '<span style="font-weight:'+(isActive?700:400)+';color:'+(isActive?'var(--brown)':'var(--muted)')+'">'+m+'</span>'+
+      '<span style="font-family:monospace;font-weight:600;color:'+(t>0?'var(--rust)':'var(--muted)')+'">'+( t>0?fmt(t):'—')+'</span></div>'+
+      '<div style="height:5px;background:var(--cream3);border-radius:3px;overflow:hidden">'+
+      '<div style="height:100%;width:'+pct+'%;background:'+(isActive?'var(--rust)':'var(--muted)')+';border-radius:3px"></div></div></div>';
+  }).join('');
+}
+
+function renderAll(){
+  renderMonthTabs();
+  renderHero();
+  renderTable();
+  renderChart();
+  renderSummary();
+}
+
+function selectMonthBtn(btn){
+  currentMonth=btn.getAttribute('data-month');
+  renderAll();
+}
+function selectMonthData(el){
+  currentMonth=el.getAttribute('data-month');
+  renderAll();
+}
+
+function addExpense(){
+  var name=document.getElementById('cp-name').value.trim();
+  var cat=document.getElementById('cp-cat').value;
+  var qty=parseInt(document.getElementById('cp-qty').value)||1;
+  var amt=parseFloat(document.getElementById('cp-amt').value)||0;
+  var dateVal=document.getElementById('cp-date').value;
+  if(!name){document.getElementById('cp-name').focus();return;}
+  if(!amt){document.getElementById('cp-amt').focus();return;}
+  if(!expenses[currentMonth])expenses[currentMonth]=[];
+  var d=dateVal?dateVal.split('-').reverse().join('/'):new Date().toLocaleDateString('vi-VN');
+  expenses[currentMonth].push({id:Date.now(),name:name,cat:cat,qty:qty,amt:amt,date:d});
+  saveData();renderAll();
+  document.getElementById('cp-name').value='';
+  document.getElementById('cp-amt').value='';
+  document.getElementById('cp-qty').value='1';
+}
+
+function delRow(btn){
+  var id=btn.getAttribute('data-id');
+  var month=btn.getAttribute('data-month');
+  expenses[month]=(expenses[month]||[]).filter(function(r){return String(r.id)!==String(id);});
+  saveData();renderAll();
+}
+
+// TAB SWITCHING
+var updates={
+  sx:{icon:'⚙️',date:'06/04/2026',text:'Chốt COGS final 3,415đ/stick (D05) · DCV đang thiết kế bao bì · Thanh toán 1,000,000đ',who:'MQ + DCV'},
+  mkt:{icon:'📣',date:'06/04/2026',text:'vibecoffee.vn live + SEO ✓ · Đang review nội dung · Cần build admin & thanh toán online',who:'vibecoffee.vn'},
+  tmdt:{icon:'🛒',date:'08/04/2026',text:'Đã tạo TK TikTok Shop · Shopee · Lazada · Đang trang trí shop · Chờ launch',who:'3 sàn'},
+  pnl:{icon:'📊',date:'08/04/2026',text:'TikTok: Thực thu 83,420đ · LN 13,399đ/hộp (16.1%) · Ads 15% tối ưu được',who:'TikTok live'},
+  chiphi:{icon:'💰',date:'09/04/2026',text:'T3: 16.84tr · T4: 1tr (DCV) · Có thể thêm/xóa chi phí từng tháng trực tiếp trên dashboard',who:'HKP 2026'}
+};
+
+function switchTab(id,btn){
+  document.querySelectorAll('.tab-panel').forEach(function(p){p.classList.remove('active');});
+  document.querySelectorAll('.tab-btn').forEach(function(b){b.classList.remove('active');});
+  document.getElementById('tab-'+id).classList.add('active');
+  btn.classList.add('active');
+  var u=updates[id];
+  if(u){
+    document.getElementById('update-icon').textContent=u.icon;
+    document.getElementById('update-date').textContent=u.date;
+    document.getElementById('update-text').textContent=u.text;
+    document.getElementById('update-who').textContent=u.who;
+  }
+  var sidebar=document.querySelector('.sidebar');
+  var page=document.querySelector('.page');
+  if(id==='sx'){sidebar.style.display='';page.style.gridTemplateColumns='252px 1fr';}
+  else{sidebar.style.display='none';page.style.gridTemplateColumns='1fr';}
+}
+
+// INIT
+loadData();
+renderAll();
+var todayStr=new Date().toISOString().split('T')[0];
+var cpDate=document.getElementById('cp-date');
+if(cpDate)cpDate.value=todayStr;
+var u0=updates.sx;
+document.getElementById('update-icon').textContent=u0.icon;
+document.getElementById('update-date').textContent=u0.date;
+document.getElementById('update-text').textContent=u0.text;
+document.getElementById('update-who').textContent=u0.who;
+
 </script>
 </body>
 </html>
