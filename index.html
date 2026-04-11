@@ -276,54 +276,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 .sc-val{font-family:'DM Mono',monospace;font-weight:600;color:var(--brown2);}
 .sc-profit{font-family:'DM Mono',monospace;font-size:16px;font-weight:700;margin-top:8px;padding-top:8px;border-top:1px solid var(--border);}
 
-/* ===== CHI PHÍ TAB ===== */
-.cp-hero{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:22px;}
-.cp-hcard{background:white;border:1px solid var(--border);border-radius:12px;padding:15px 16px;text-align:center;}
-.cp-hval{font-family:'DM Mono',monospace;font-size:19px;font-weight:700;margin-bottom:2px;}
-.cp-hlbl{font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;}
-.cp-hsub{font-size:11px;margin-top:3px;}
 
-.month-tabs{display:flex;gap:5px;margin-bottom:20px;flex-wrap:wrap;}
-.month-tab{font-size:11px;font-weight:600;padding:5px 14px;border-radius:16px;border:1px solid var(--border);background:white;cursor:pointer;transition:all .15s;color:var(--muted);}
-.month-tab:hover{border-color:var(--border2);color:var(--brown2);}
-.month-tab.active{background:var(--brown);color:var(--gold2);border-color:var(--brown);}
-
-.cp-table-wrap{background:white;border:1px solid var(--border);border-radius:13px;overflow:hidden;margin-bottom:20px;}
-.cp-thead{background:var(--brown);display:grid;grid-template-columns:40px 1fr 100px 130px 100px 110px;gap:0;font-size:11px;font-weight:600;color:rgba(255,255,255,.7);letter-spacing:.04em;}
-.cp-thead > div, .cp-row > div{padding:9px 12px;}
-.cp-row{display:grid;grid-template-columns:40px 1fr 100px 130px 100px 110px;gap:0;border-bottom:1px solid var(--border);font-size:12px;align-items:center;transition:background .1s;}
-.cp-row:last-child{border-bottom:none;}
-.cp-row:hover{background:rgba(200,150,58,.04);}
-.cp-row.total-r{background:rgba(58,42,26,.04);font-weight:700;border-top:2px solid var(--border2);}
-.cp-stt{color:var(--muted);font-family:'DM Mono',monospace;font-size:11px;}
-.cp-name{color:var(--brown2);font-weight:500;}
-.cp-qty{color:var(--muted);text-align:right;font-family:'DM Mono',monospace;}
-.cp-amt{color:var(--rust);font-weight:600;text-align:right;font-family:'DM Mono',monospace;}
-.cp-date{color:var(--muted);font-size:11px;font-family:'DM Mono',monospace;}
-.cp-cat{display:inline-block;font-size:10px;padding:2px 8px;border-radius:5px;font-weight:600;}
-
-.cp-section-head{background:rgba(58,42,26,.04);padding:9px 14px;font-size:11px;font-weight:700;color:var(--brown);text-transform:uppercase;letter-spacing:.07em;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:8px;}
-.cp-section-total{margin-left:auto;font-family:'DM Mono',monospace;color:var(--rust);}
-
-.cp-add-form{background:white;border:1px solid var(--border);border-radius:12px;padding:16px 18px;margin-bottom:18px;}
-.cp-form-title{font-size:12px;font-weight:600;color:var(--brown);margin-bottom:12px;display:flex;align-items:center;gap:6px;}
-.cp-form-grid{display:grid;grid-template-columns:1fr 1fr 120px 130px 130px auto;gap:8px;align-items:end;}
-.cp-input{background:var(--cream2);border:1px solid var(--border2);border-radius:7px;padding:7px 10px;font-size:12px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;width:100%;transition:border-color .15s;}
-.cp-input:focus{border-color:var(--gold);}
-.cp-input::placeholder{color:var(--muted);}
-.cp-select{background:var(--cream2);border:1px solid var(--border2);border-radius:7px;padding:7px 10px;font-size:12px;color:var(--text);font-family:'DM Sans',sans-serif;outline:none;width:100%;cursor:pointer;}
-.cp-btn-add{background:var(--brown);color:var(--gold2);border:none;border-radius:7px;padding:8px 16px;font-size:12px;font-weight:600;cursor:pointer;white-space:nowrap;transition:opacity .15s;font-family:'DM Sans',sans-serif;}
-.cp-btn-add:hover{opacity:.85;}
-.cp-btn-del{background:transparent;border:none;color:var(--muted);cursor:pointer;font-size:14px;padding:4px;border-radius:4px;transition:color .15s;}
-.cp-btn-del:hover{color:var(--rust);}
-.cp-input-lbl{font-size:10px;color:var(--muted);margin-bottom:4px;font-weight:500;}
-
-.cp-bar-chart{display:flex;flex-direction:column;gap:7px;margin-top:14px;}
-.cp-bar-row{display:flex;align-items:center;gap:10px;}
-.cp-bar-lbl{width:150px;font-size:11px;color:var(--brown2);text-align:right;flex-shrink:0;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
-.cp-bar-track{flex:1;height:18px;background:var(--cream3);border-radius:4px;overflow:hidden;}
-.cp-bar-fill2{height:100%;border-radius:4px;display:flex;align-items:center;justify-content:flex-end;padding-right:6px;min-width:4px;transition:width .4s ease;}
-.cp-bar-val{width:100px;font-family:'DM Mono',monospace;font-size:11px;font-weight:600;color:var(--rust);text-align:right;flex-shrink:0;}
 
 
 </style>
@@ -353,9 +306,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
   <button class="tab-btn" onclick="switchTab('pnl',this)">
     📊 Plan PNL <span class="t-badge" style="background:rgba(192,74,42,.2);color:#f08060;border:1px solid rgba(192,74,42,.3)">TikTok live</span>
   </button>
-  <button class="tab-btn" onclick="switchTab('chiphi',this)">
-    💰 Chi phí HKP <span class="t-badge" style="background:rgba(90,122,92,.18);color:#86c88a;border:1px solid rgba(90,122,92,.3)">2026</span>
-  </button>
+
 </nav>
 
 <!-- UPDATE NOTIFICATION BAR -->
@@ -1508,271 +1459,18 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
     </div><!-- /tab-pnl -->
 
-    <!-- ====== TAB 5: CHI PHÍ HKP ====== -->
-    <div id="tab-chiphi" class="tab-panel">
 
-      <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--brown);margin-bottom:4px">Theo dõi Chi phí — Hoàng Kim Phát 2026</div>
-      <div style="font-size:12px;color:var(--muted);margin-bottom:18px">Quản lý chi phí doanh nghiệp theo từng tháng · Dữ liệu từ CHI PHÍ HKP 2026</div>
-
-      <!-- MONTH SELECTOR -->
-      <div class="month-tabs" id="month-tabs"></div>
-
-      <!-- HERO STATS -->
-      <div class="cp-hero" id="cp-hero"></div>
-
-      <!-- ADD FORM -->
-      <div class="cp-add-form">
-        <div class="cp-form-title">➕ Thêm khoản chi phí mới</div>
-        <div class="cp-form-grid">
-          <div>
-            <div class="cp-input-lbl">Khoản chi phí</div>
-            <input class="cp-input" id="cp-name" placeholder="Tên khoản chi..." />
-          </div>
-          <div>
-            <div class="cp-input-lbl">Danh mục</div>
-            <select class="cp-select" id="cp-cat">
-              <option value="Vận hành">🔧 Vận hành</option>
-              <option value="Marketing">📣 Marketing</option>
-              <option value="Sản xuất">⚗️ Sản xuất</option>
-              <option value="Nhân sự">👤 Nhân sự</option>
-              <option value="Thiết bị">🖥️ Thiết bị</option>
-              <option value="Khác">📦 Khác</option>
-            </select>
-          </div>
-          <div>
-            <div class="cp-input-lbl">Số lượng</div>
-            <input class="cp-input" id="cp-qty" type="number" placeholder="1" value="1" min="1" />
-          </div>
-          <div>
-            <div class="cp-input-lbl">Số tiền (đ)</div>
-            <input class="cp-input" id="cp-amt" type="number" placeholder="0" min="0" />
-          </div>
-          <div>
-            <div class="cp-input-lbl">Ngày</div>
-            <input class="cp-input" id="cp-date" type="date" />
-          </div>
-          <div>
-            <div class="cp-input-lbl">&nbsp;</div>
-            <button class="cp-btn-add" onclick="addExpense()">Thêm ↵</button>
-          </div>
-        </div>
-      </div>
-
-      <!-- TABLE -->
-      <div class="cp-table-wrap">
-        <div class="cp-thead">
-          <div>#</div><div>Khoản chi phí</div><div style="text-align:right">SL</div><div style="text-align:right">Số tiền</div><div>Ngày</div><div>Danh mục</div>
-        </div>
-        <div id="cp-rows"></div>
-      </div>
-
-      <!-- CHART + NOTES -->
-      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:20px">
-        <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:16px">
-          <div style="font-size:12px;font-weight:600;color:var(--brown);margin-bottom:4px">📊 Cơ cấu chi phí theo danh mục</div>
-          <div style="font-size:11px;color:var(--muted);margin-bottom:12px" id="cp-chart-month">Tháng đang xem</div>
-          <div class="cp-bar-chart" id="cp-chart"></div>
-        </div>
-        <div style="background:white;border:1px solid var(--border);border-radius:12px;padding:16px">
-          <div style="font-size:12px;font-weight:600;color:var(--brown);margin-bottom:12px">📋 Tổng hợp theo tháng</div>
-          <div id="cp-monthly-summary" style="display:flex;flex-direction:column;gap:8px"></div>
-        </div>
-      </div>
-
-    </div><!-- /tab-chiphi -->
 
   </main>
 </div>
 
 <script>
-const MONTHS=['Tháng 3/2026','Tháng 4/2026','Tháng 5/2026','Tháng 6/2026','Tháng 7/2026','Tháng 8/2026','Tháng 9/2026','Tháng 10/2026','Tháng 11/2026','Tháng 12/2026'];
-const CAT_COLORS={
-  'Nhân sự':{bg:'rgba(192,74,42,.12)',color:'var(--rust)'},
-  'Vận hành':{bg:'rgba(74,122,158,.12)',color:'var(--sky)'},
-  'Marketing':{bg:'rgba(200,150,58,.14)',color:'var(--brown2)'},
-  'Sản xuất':{bg:'rgba(90,122,92,.12)',color:'var(--sage)'},
-  'Thiết bị':{bg:'rgba(58,42,26,.08)',color:'var(--muted)'},
-  'Khác':{bg:'rgba(58,42,26,.08)',color:'var(--muted)'}
-};
-const BAR_COLORS=['#E06040','#4A7A9E','#C8963A','#5A7A5C','#8A7060','#9B77D4'];
-const SK='vibe_chiphi_v2';
-var expenses={};
-var currentMonth='Tháng 3/2026';
-
-var SEED={};
-SEED['Tháng 3/2026']=[
-  {id:1,name:'Lương vận hành',cat:'Nhân sự',qty:1,amt:15000000,date:'03/03/2026'},
-  {id:2,name:'Ngân sách tạm ứng',cat:'Vận hành',qty:1,amt:1500000,date:'03/03/2026'},
-  {id:3,name:'Mua Sim hotline',cat:'Vận hành',qty:1,amt:1500000,date:'05/03/2026'},
-  {id:4,name:'Nạp cước tháng cho SIM',cat:'Vận hành',qty:1,amt:250000,date:'05/03/2026'},
-  {id:5,name:'Mua hộp cà phê mẫu',cat:'Sản xuất',qty:1,amt:59000,date:'06/03/2026'},
-  {id:6,name:'Mua thước Đỗ Ban',cat:'Thiết bị',qty:1,amt:30000,date:'06/03/2026'}
-];
-SEED['Tháng 4/2026']=[
-  {id:7,name:'Thiết kế bao bì (DCV)',cat:'Marketing',qty:1,amt:1000000,date:'06/04/2026'}
-];
-
-function loadData(){
-  try{
-    var s=localStorage.getItem(SK);
-    expenses=s?JSON.parse(s):JSON.parse(JSON.stringify(SEED));
-  }catch(e){expenses=JSON.parse(JSON.stringify(SEED));}
-  for(var i=0;i<MONTHS.length;i++){if(!expenses[MONTHS[i]])expenses[MONTHS[i]]=[];}
-}
-function saveData(){try{localStorage.setItem(SK,JSON.stringify(expenses));}catch(e){}}
-function fmt(n){return Number(n).toLocaleString('vi-VN')+'đ';}
-function totalMonth(m){var r=expenses[m]||[];return r.reduce(function(s,x){return s+(x.qty||1)*x.amt;},0);}
-function totalAll(){return MONTHS.reduce(function(s,m){return s+totalMonth(m);},0);}
-
-function renderMonthTabs(){
-  var el=document.getElementById('month-tabs');
-  if(!el)return;
-  var html='';
-  for(var i=0;i<MONTHS.length;i++){
-    var m=MONTHS[i];
-    var cnt=(expenses[m]||[]).length;
-    var a=m===currentMonth?' active':'';
-    var badge=cnt>0?' <span style="font-size:10px;opacity:.6">('+cnt+')</span>':'';
-    html+='<button class="month-tab'+a+'" data-month="'+m+'" onclick="selectMonthBtn(this)">'+m+badge+'</button>';
-  }
-  el.innerHTML=html;
-}
-
-function renderHero(){
-  var el=document.getElementById('cp-hero');
-  if(!el)return;
-  var rows=expenses[currentMonth]||[];
-  var total=rows.reduce(function(s,r){return s+(r.qty||1)*r.amt;},0);
-  var cats={};rows.forEach(function(r){cats[r.cat]=1;});
-  var catCount=Object.keys(cats).length;
-  el.innerHTML=
-    '<div class="cp-hcard"><div class="cp-hval" style="color:var(--brown);font-size:15px">'+currentMonth+'</div><div class="cp-hlbl">Kỳ báo cáo</div><div class="cp-hsub" style="color:var(--muted)">'+rows.length+' khoản chi</div></div>'+
-    '<div class="cp-hcard" style="background:rgba(192,74,42,.06);border-color:rgba(192,74,42,.2)"><div class="cp-hval" style="color:var(--rust)">'+fmt(total)+'</div><div class="cp-hlbl">Tổng chi phí</div><div class="cp-hsub" style="color:var(--rust)">'+currentMonth+'</div></div>'+
-    '<div class="cp-hcard"><div class="cp-hval" style="color:var(--sky)">'+catCount+'</div><div class="cp-hlbl">Danh mục</div><div class="cp-hsub" style="color:var(--muted)">loại chi phí</div></div>'+
-    '<div class="cp-hcard" style="background:rgba(200,150,58,.07);border-color:rgba(200,150,58,.2)"><div class="cp-hval" style="color:var(--gold)">'+fmt(totalAll())+'</div><div class="cp-hlbl">Tổng 2026</div><div class="cp-hsub" style="color:var(--muted)">Tất cả tháng</div></div>';
-}
-
-function renderTable(){
-  var el=document.getElementById('cp-rows');
-  if(!el)return;
-  var rows=expenses[currentMonth]||[];
-  var total=rows.reduce(function(s,r){return s+(r.qty||1)*r.amt;},0);
-  var groups={};
-  rows.forEach(function(r){if(!groups[r.cat])groups[r.cat]=[];groups[r.cat].push(r);});
-  var html='';var stt=1;
-  if(!rows.length){
-    html='<div style="padding:32px;text-align:center;color:var(--muted);font-size:13px">Chưa có khoản chi. Thêm bên trên ↑</div>';
-  } else {
-    Object.keys(groups).forEach(function(cat){
-      var items=groups[cat];
-      var catTotal=items.reduce(function(s,r){return s+(r.qty||1)*r.amt;},0);
-      var c=CAT_COLORS[cat]||CAT_COLORS['Khác'];
-      html+='<div class="cp-section-head"><span class="cp-cat" style="background:'+c.bg+';color:'+c.color+'">'+cat+'</span><span class="cp-section-total">'+fmt(catTotal)+'</span></div>';
-      items.forEach(function(r){
-        var rid=r.id;
-        html+='<div class="cp-row">';
-        html+='<div class="cp-stt">'+stt+'</div>';
-        html+='<div class="cp-name">'+r.name+'</div>';
-        html+='<div class="cp-qty">'+(r.qty||1)+'</div>';
-        html+='<div class="cp-amt">'+fmt((r.qty||1)*r.amt)+'</div>';
-        html+='<div class="cp-date">'+r.date+'</div>';
-        html+='<div style="display:flex;align-items:center;gap:6px">';
-        html+='<span class="cp-cat" style="background:'+c.bg+';color:'+c.color+'">'+cat+'</span>';
-        html+='<button class="cp-btn-del" data-id="'+rid+'" data-month="'+currentMonth+'" onclick="delRow(this)" title="Xóa">✕</button>';
-        html+='</div></div>';
-        stt++;
-      });
-    });
-    html+='<div class="cp-row total-r"><div class="cp-stt" style="color:var(--brown)">∑</div><div class="cp-name" style="color:var(--brown)">TỔNG CỘNG</div><div></div><div class="cp-amt" style="color:var(--rust);font-size:14px">'+fmt(total)+'</div><div></div><div></div></div>';
-  }
-  el.innerHTML=html;
-}
-
-function renderChart(){
-  var el=document.getElementById('cp-chart');
-  var el2=document.getElementById('cp-chart-month');
-  if(!el)return;
-  var rows=expenses[currentMonth]||[];
-  var total=rows.reduce(function(s,r){return s+(r.qty||1)*r.amt;},0)||1;
-  var groups={};
-  rows.forEach(function(r){groups[r.cat]=(groups[r.cat]||0)+(r.qty||1)*r.amt;});
-  var sorted=Object.entries(groups).sort(function(a,b){return b[1]-a[1];});
-  if(el2)el2.textContent=currentMonth;
-  if(!sorted.length){el.innerHTML='<div style="color:var(--muted);font-size:12px;padding:12px 0">Chưa có dữ liệu</div>';return;}
-  el.innerHTML=sorted.map(function(entry,i){
-    var cat=entry[0];var amt=entry[1];
-    var pct=Math.round(amt/total*100);
-    var color=BAR_COLORS[i%BAR_COLORS.length];
-    return '<div class="cp-bar-row"><div class="cp-bar-lbl">'+cat+'</div><div class="cp-bar-track"><div class="cp-bar-fill2" style="width:'+pct+'%;background:'+color+'">'+(pct>=8?'<span style="font-size:10px;color:white;font-weight:600">'+pct+'%</span>':'')+'</div></div><div class="cp-bar-val">'+fmt(amt)+'</div></div>';
-  }).join('');
-}
-
-function renderSummary(){
-  var el=document.getElementById('cp-monthly-summary');
-  if(!el)return;
-  var totals=MONTHS.map(function(m){return totalMonth(m);});
-  var maxTotal=Math.max.apply(null,totals.concat([1]));
-  el.innerHTML=MONTHS.map(function(m){
-    var t=totalMonth(m);
-    var isActive=m===currentMonth;
-    var pct=Math.round(t/maxTotal*100);
-    return '<div style="cursor:pointer;margin-bottom:6px" data-month="'+m+'" onclick="selectMonthData(this)">'+
-      '<div style="display:flex;justify-content:space-between;font-size:11px;margin-bottom:3px">'+
-      '<span style="font-weight:'+(isActive?700:400)+';color:'+(isActive?'var(--brown)':'var(--muted)')+'">'+m+'</span>'+
-      '<span style="font-family:monospace;font-weight:600;color:'+(t>0?'var(--rust)':'var(--muted)')+'">'+( t>0?fmt(t):'—')+'</span></div>'+
-      '<div style="height:5px;background:var(--cream3);border-radius:3px;overflow:hidden">'+
-      '<div style="height:100%;width:'+pct+'%;background:'+(isActive?'var(--rust)':'var(--muted)')+';border-radius:3px"></div></div></div>';
-  }).join('');
-}
-
-function renderAll(){
-  renderMonthTabs();
-  renderHero();
-  renderTable();
-  renderChart();
-  renderSummary();
-}
-
-function selectMonthBtn(btn){
-  currentMonth=btn.getAttribute('data-month');
-  renderAll();
-}
-function selectMonthData(el){
-  currentMonth=el.getAttribute('data-month');
-  renderAll();
-}
-
-function addExpense(){
-  var name=document.getElementById('cp-name').value.trim();
-  var cat=document.getElementById('cp-cat').value;
-  var qty=parseInt(document.getElementById('cp-qty').value)||1;
-  var amt=parseFloat(document.getElementById('cp-amt').value)||0;
-  var dateVal=document.getElementById('cp-date').value;
-  if(!name){document.getElementById('cp-name').focus();return;}
-  if(!amt){document.getElementById('cp-amt').focus();return;}
-  if(!expenses[currentMonth])expenses[currentMonth]=[];
-  var d=dateVal?dateVal.split('-').reverse().join('/'):new Date().toLocaleDateString('vi-VN');
-  expenses[currentMonth].push({id:Date.now(),name:name,cat:cat,qty:qty,amt:amt,date:d});
-  saveData();renderAll();
-  document.getElementById('cp-name').value='';
-  document.getElementById('cp-amt').value='';
-  document.getElementById('cp-qty').value='1';
-}
-
-function delRow(btn){
-  var id=btn.getAttribute('data-id');
-  var month=btn.getAttribute('data-month');
-  expenses[month]=(expenses[month]||[]).filter(function(r){return String(r.id)!==String(id);});
-  saveData();renderAll();
-}
-
 // TAB SWITCHING
 var updates={
   sx:{icon:'⚙️',date:'06/04/2026',text:'Chốt COGS final 3,415đ/stick (D05) · DCV đang thiết kế bao bì · Thanh toán 1,000,000đ',who:'MQ + DCV'},
   mkt:{icon:'📣',date:'06/04/2026',text:'vibecoffee.vn live + SEO ✓ · Đang review nội dung · Cần build admin & thanh toán online',who:'vibecoffee.vn'},
   tmdt:{icon:'🛒',date:'08/04/2026',text:'Đã tạo TK TikTok Shop · Shopee · Lazada · Đang trang trí shop · Chờ launch',who:'3 sàn'},
   pnl:{icon:'📊',date:'08/04/2026',text:'TikTok: Thực thu 83,420đ · LN 13,399đ/hộp (16.1%) · Ads 15% tối ưu được',who:'TikTok live'},
-  chiphi:{icon:'💰',date:'09/04/2026',text:'T3: 16.84tr · T4: 1tr (DCV) · Có thể thêm/xóa chi phí từng tháng trực tiếp trên dashboard',who:'HKP 2026'}
 };
 
 function switchTab(id,btn){
@@ -1794,11 +1492,6 @@ function switchTab(id,btn){
 }
 
 // INIT
-loadData();
-renderAll();
-var todayStr=new Date().toISOString().split('T')[0];
-var cpDate=document.getElementById('cp-date');
-if(cpDate)cpDate.value=todayStr;
 var u0=updates.sx;
 document.getElementById('update-icon').textContent=u0.icon;
 document.getElementById('update-date').textContent=u0.date;
