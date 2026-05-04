@@ -474,802 +474,96 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 
     <!-- ====== TAB 1: SẢN XUẤT & R&D ====== -->
     <div id="tab-sx" class="tab-panel active">
-
-      <div class="sec-hd">
-        <div><div class="sec-ttl">Tiến độ Sản xuất & R&D</div><div class="sec-sub">VibeCoffee — Cà phê muối phô mai (SP đầu tiên)</div></div>
+  <div class="sec-hd">
+    <div><div class="sec-ttl">Monthly Tracker - Production and Compliance</div><div class="sec-sub">Rule: completed tasks do not move to next month</div></div>
+  </div>
+  <div class="wsec">
+    <div class="ws-t">Month 05/2026 - Current</div>
+    <div class="tmdt-checklist" style="grid-template-columns:1fr 1fr;">
+      <div class="cl-card">
+        <div class="cl-title">This Week Milestones</div>
+        <div class="cl-item"><div class="cl-check cl-doing">~</div><div class="cl-txt">Quatest3 scheduled result on 05/05/2026 for product test under Circular 29.</div></div>
+        <div class="cl-item"><div class="cl-check cl-doing">~</div><div class="cl-txt">MQ scheduled 5kg sample this week for processing test run.</div></div>
+        <div class="cl-item"><div class="cl-check cl-doing">~</div><div class="cl-txt">MQ preparing raw material supply contract, first order value 100M VND.</div></div>
+        <div class="cl-item"><div class="cl-check cl-doing">~</div><div class="cl-txt">Barcode registration result expected this week.</div></div>
       </div>
-
-      <!-- COGS MILESTONE BANNER -->
-      <div style="background:linear-gradient(135deg,#3B2A1A,#5C3D20);border-radius:14px;padding:18px 22px;margin-bottom:20px;display:grid;grid-template-columns:1fr auto;align-items:center;gap:20px;border:1px solid rgba(200,150,58,.4)">
-        <div>
-          <div style="font-size:10px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--gold2);margin-bottom:6px">✅ TỔNG COGS ĐÃ CHỐT — 06/04/2026</div>
-          <div style="font-size:15px;font-weight:600;color:white;margin-bottom:6px">Cà phê muối phô mai · Mẫu D05 · 22gr/stick · 10 stick/hộp</div>
-          <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin-top:8px">
-            <div style="background:rgba(255,255,255,.07);border-radius:7px;padding:7px 10px;text-align:center">
-              <div style="font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Nguyên liệu</div>
-              <div style="font-family:'DM Mono',monospace;font-size:15px;font-weight:700;color:var(--gold2)">2,153đ</div>
-              <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px">Đã VAT · MQ D05</div>
-            </div>
-            <div style="background:rgba(255,255,255,.07);border-radius:7px;padding:7px 10px;text-align:center">
-              <div style="font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Gia công</div>
-              <div style="font-family:'DM Mono',monospace;font-size:15px;font-weight:700;color:var(--gold2)">932đ</div>
-              <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px">862.50đ × 1.08 VAT</div>
-            </div>
-            <div style="background:rgba(255,255,255,.07);border-radius:7px;padding:7px 10px;text-align:center">
-              <div style="font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Bao bì hộp</div>
-              <div style="font-family:'DM Mono',monospace;font-size:15px;font-weight:700;color:var(--gold2)">250đ</div>
-              <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px">2,500đ ÷ 10 stick</div>
-            </div>
-            <div style="background:rgba(255,255,255,.07);border-radius:7px;padding:7px 10px;text-align:center">
-              <div style="font-size:9px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.06em;margin-bottom:3px">Bao bì gói</div>
-              <div style="font-family:'DM Mono',monospace;font-size:15px;font-weight:700;color:var(--gold2)">80đ</div>
-              <div style="font-size:9px;color:rgba(255,255,255,.35);margin-top:2px">Bao bì stick</div>
-            </div>
-          </div>
-        </div>
-        <div style="text-align:right;flex-shrink:0;min-width:160px">
-          <div style="font-size:10px;color:rgba(255,255,255,.45);text-transform:uppercase;letter-spacing:.07em;margin-bottom:4px">Tổng COGS / stick</div>
-          <div style="font-family:'DM Mono',monospace;font-size:36px;font-weight:700;color:var(--gold2);line-height:1">3,415đ</div>
-          <div style="font-size:11px;color:rgba(255,255,255,.4);margin-top:4px">2,153 + 932 + 250 + 80</div>
-          <div style="margin-top:8px;background:rgba(200,150,58,.2);border-radius:7px;padding:6px 10px;border:1px solid rgba(200,150,58,.35)">
-            <div style="font-size:10px;color:var(--gold2);font-weight:600">1 hộp 10 sticks</div>
-            <div style="font-family:'DM Mono',monospace;font-size:14px;color:var(--gold2);font-weight:600">= 34,150đ</div>
-          </div>
-        </div>
+      <div class="cl-card">
+        <div class="cl-title">Tasks blocked by barcode</div>
+        <div class="cl-item"><div class="cl-check cl-todo">o</div><div class="cl-txt">After barcode: send to box design vendor to finalize box sample and prepare box printing plan.</div></div>
+        <div class="cl-item"><div class="cl-check cl-todo">o</div><div class="cl-txt">Send barcode to stick film packaging design vendor to finalize film roll.</div></div>
+        <div class="cl-item"><div class="cl-check cl-todo">o</div><div class="cl-txt">Prepare documents and process for product conformity declaration.</div></div>
+        <div class="cl-item"><div class="cl-check cl-todo">o</div><div class="cl-txt">Set exact production start date after declaration is approved.</div></div>
       </div>
-
-      <!-- COGS BREAKDOWN -->
-      <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-bottom:22px">
-        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:13px 14px;text-align:center">
-          <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">① Nguyên liệu</div>
-          <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:600;color:var(--brown)">2,153đ</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:2px">Đã VAT · MQ mẫu D05</div>
-        </div>
-        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:13px 14px;text-align:center">
-          <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">② Gia công</div>
-          <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:600;color:var(--brown)">932đ</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:2px">862.50đ + 8% VAT</div>
-        </div>
-        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:13px 14px;text-align:center">
-          <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">③ Bao bì hộp</div>
-          <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:600;color:var(--brown)">250đ</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:2px">2,500đ ÷ 10 stick</div>
-        </div>
-        <div style="background:white;border:1px solid var(--border);border-radius:10px;padding:13px 14px;text-align:center">
-          <div style="font-size:10px;color:var(--muted);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">④ Bao bì gói</div>
-          <div style="font-family:'DM Mono',monospace;font-size:18px;font-weight:600;color:var(--brown)">80đ</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:2px">Bao bì stick / gói</div>
-        </div>
-        <div style="background:rgba(200,150,58,.08);border:2px solid rgba(200,150,58,.4);border-radius:10px;padding:13px 14px;text-align:center">
-          <div style="font-size:10px;color:var(--gold);text-transform:uppercase;letter-spacing:.07em;margin-bottom:5px">✅ Tổng COGS</div>
-          <div style="font-family:'DM Mono',monospace;font-size:22px;font-weight:700;color:var(--rust)">3,415đ</div>
-          <div style="font-size:10px;color:var(--muted);margin-top:2px">/ stick · 34,150đ / hộp</div>
-        </div>
-      </div>
-
-      <div class="kb">
-
-        <div>
-          <div class="ch" style="background:rgba(90,122,92,.08);border-color:rgba(90,122,92,.2)">
-            <div class="cd" style="background:var(--sage)"></div><div class="cn" style="color:var(--sage)">Đã hoàn thành</div><div class="cc">10</div>
-          </div>
-          <div class="cb">
-            <div class="tc pm">
-              <div class="tt"><div class="ti">📋</div><div class="tn">Lập kế hoạch sản phẩm VibeCoffee</div><span class="tp">TB</span></div>
-              <div class="td">Xác định lộ trình 3 sản phẩm: phô mai → truyền thống → capuchino dừa</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Strategy</span><span class="tdt">Mar 2026</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">📨</div><div class="tn">Liên hệ & gửi mẫu cho MQ Ingredients</div><span class="tp">Cao</span></div>
-              <div class="td">Đã gửi mẫu cho Ms Thủy. Mr Đăng tiếp nhận R&D. Xác nhận điều kiện hợp tác.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">NCC · MQ</span><span class="ta">Ms Thủy</span><span class="tdt">30/03</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🧂</div><div class="tn">Nhận 2 mẫu NDC từ Công ty Gia Vũ</div><span class="tp">Cao</span></div>
-              <div class="td">Thanh Trang (Gia Vũ) giao ~15:00. Đã nhận đủ 2 mẫu NDC — mẫu thứ 3 (37,000đ/kg đã VAT).</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">NDC · Gia Vũ</span><span class="ta">Thanh Trang</span><span class="tdt">16/03</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🧪</div><div class="tn">R&D 3 mẫu cà phê muối phô mai</div><span class="tp">Cao</span></div>
-              <div class="td">Đã nhận đủ 3 mẫu từ MQ:<br>• Mẫu 1: NDC của MQ ✓ <strong style="color:var(--sage)">→ Đã chốt</strong><br>• Mẫu 1.1: NDC bên ngoài<br>• Mẫu 1.2: NDC của MQ (mẫu khác)</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">R&D · MQ</span><span class="ta">Mr Đăng</span><span class="tdt">02/04 ✓</span></div>
-            </div>
-            <div class="tc ph" style="border-color:rgba(200,150,58,.35);background:rgba(200,150,58,.05)">
-              <div class="tt"><div class="ti">✅</div><div class="tn">Chốt COGS final — Mẫu D05 NDC MQ</div><span class="tp">Cao</span></div>
-              <div class="td">
-                <strong style="color:var(--brown2)">Công thức D05:</strong> 22gr/stick · NDC MQ · Đường cát 23k/kg<br>
-                <strong style="color:var(--brown2)">NL:</strong> 2,153đ · <strong style="color:var(--brown2)">GC:</strong> 932đ · <strong style="color:var(--brown2)">BB hộp:</strong> 250đ · <strong style="color:var(--brown2)">BB gói:</strong> 80đ<br>
-                <strong style="color:var(--rust);font-size:13px">Tổng COGS = 3,415đ/stick · 34,150đ/hộp</strong>
-              </div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">COGS · MQ</span><span class="ta">Ms Thủy</span><span class="tdt">06/04 ✓</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🎨</div><div class="tn">Hoàn thiện thiết kế hộp & cuộn màng bao bì</div><span class="tp">Cao</span></div>
-              <div class="td">Đã xong thiết kế hộp (DCV) và cuộn màng bao bì stick cà phê. Đã gửi xưởng in, đặt cuộn màng sản xuất.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Bao bì · DCV</span><span class="ta">Ms Thanh Trúc</span><span class="tdt">Apr 2026 ✓</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🧫</div><div class="tn">Gửi mẫu kiểm nghiệm thực phẩm</div><span class="tp">Cao</span></div>
-              <div class="td">MQ gửi 500g mẫu D05: 100g → xưởng Coffee Concept (gia công thử) · 400g → Cơ sở kiểm nghiệm 42 Trần Quang Khải, P.Tân Định, Q.1, TP.HCM.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Kiểm nghiệm · Q1</span><span class="tdt">Apr 2026 ✓</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🧪</div><div class="tn">Gửi mẫu chạy thử tại Coffee Concept</div><span class="tp">Cao</span></div>
-              <div class="td">Đã gửi mẫu chạy thử & lưu mẫu tại CC (20/04). Hạnh Diễm phản hồi: hạt hơi to, không mịn như CF dừa — cần điều chỉnh độ mịn. Chờ kiểm định xong mới final bao bì.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Gia công · CC</span><span class="ta">Hạnh Diễm</span><span class="tdt">20/04 ✓</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🎞️</div><div class="tn">Liên hệ đơn vị in cuộn màng bao bì</div><span class="tp">Cao</span></div>
-              <div class="td">Đã liên hệ NCC in cuộn màng (20/04). BG: PET/MPET/PE 80micro · cuộn 120mm · 11,800đ/m2 · MOQ 2,500m2 · Trục in 1,900,000đ/trục · Giao 12–15 ngày. Hẹn ghé xưởng 21/04 lúc 10h. Địa chỉ: 52B Đoàn Hồng Phước, P.Hoà Thạnh, Tân Phú.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Bao bì · Cuộn màng</span><span class="tdt">20–21/04 ✓</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="ch" style="background:rgba(74,122,158,.08);border-color:rgba(74,122,158,.2)">
-            <div class="cd" style="background:var(--sky)"></div><div class="cn" style="color:var(--sky)">Đang thực hiện</div><div class="cc">4</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🏭</div><div class="tn">Hẹn ghé xưởng Coffee Concept</div><span class="tp">Cao</span></div>
-              <div class="td">Đã nhận báo giá mới BG1004 (10/04/2026): 862.50đ/stick — giảm 104đ so với BG cũ. MOQ 46,000 sticks. KT gói: 60×162mm. Chưa bao gồm VAT.</div>
-              <div class="tpg"><div class="tb" style="width:30%;background:var(--sky)"></div></div>
-              <div class="tm"><span class="tg">Gia công · Coffee Concept</span><span class="ta">Hạnh Diễm</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">💰</div><div class="tn">Lên kế hoạch tài chính đơn đầu</div><span class="tp">Cao</span></div>
-              <div class="td">Chuẩn bị ngân sách tối thiểu 100tr cho đơn đầu tiên (điều kiện R&D free MQ).</div>
-              <div class="tpg"><div class="tb" style="width:30%;background:var(--sky)"></div></div>
-              <div class="tm"><span class="tg">Finance</span><span class="tdt">Tháng 4</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🔬</div><div class="tn">Chờ kết quả kiểm nghiệm thực phẩm</div><span class="tp">Cao</span></div>
-              <div class="td">Đã gửi mẫu kiểm nghiệm cho <strong style="color:var(--brown2)">Quatest3</strong>. Lấy kết quả: <strong style="color:var(--rust)">24/04/2026</strong>. Sau KN: nộp hồ sơ công bố hợp quy SP.đ</strong> (100% + VAT). Gửi file tách nền icon & KT 16.5×12×8cm. DCV đang thiết kế file dàn trải để in.</div>
-              <div class="tpg"><div class="tb" style="width:80%;background:var(--sky)"></div></div>
-              <div class="tm"><span class="tg">Quatest3</span><span class="tdt">KQ: 24/04</span><span class="tdt">06/04 →</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">⚙️</div><div class="tn">Điều chỉnh độ mịn sản phẩm</div><span class="tp">Cao</span></div>
-              <div class="td">CC phản hồi hạt hơi to, chưa mịn. Cần làm việc với MQ để điều chỉnh công thức D05 cho độ mịn phù hợp trước khi sản xuất đại trà.</div>
-              <div class="tpg"><div class="tb" style="width:20%;background:var(--sky)"></div></div>
-              <div class="tm"><span class="tg">R&D · MQ</span><span class="ta">Mr Đăng</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="ch" style="background:rgba(200,150,58,.08);border-color:rgba(200,150,58,.2)">
-            <div class="cd" style="background:var(--gold)"></div><div class="cn" style="color:var(--brown2)">Chờ review</div><div class="cc">6</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🖨️</div><div class="tn">Gửi file & đặt in 5,000 hộp</div><span class="tp">Cao</span></div>
-              <div class="td">Sau khi có file TK: Sài Gòn In KD in 5,000 hộp × 2,500đ = 12,500,000đ.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">Bao bì · In ấn</span><span class="tdt">Sau file TK</span></div>
-            </div>
-            <div class="tc pm">
-              <div class="tt"><div class="ti">📄</div><div class="tn">Review hợp đồng với MQ</div><span class="tp">TB</span></div>
-              <div class="td">Review trước khi đặt đơn đầu. Báo giá HHL đến ~18/04/2026.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">Legal</span><span class="tdt">Trước 18/04</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">📋</div><div class="tn">Đăng ký hồ sơ công bố hợp quy SP</div><span class="tp">Cao</span></div>
-              <div class="td">Sau khi có kết quả kiểm nghiệm: đăng ký hồ sơ công bố hợp quy cho sản phẩm Cà phê muối phô mai VibeCoffee.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">Pháp lý · Hợp quy</span><span class="tdt">Sau KN</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🔢</div><div class="tn">Đăng ký mã vạch sản phẩm</div><span class="tp">Cao</span></div>
-              <div class="td">Đăng ký mã vạch (barcode EAN-13) cho sản phẩm cà phê muối phô mai VibeCoffee. Cần trước khi lên sàn TMĐT.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">Pháp lý · Mã vạch</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">™️</div><div class="tn">Đăng ký thương hiệu VIBE COFFEE & logo</div><span class="tp">Cao</span></div>
-              <div class="td">Đăng ký bảo hộ thương hiệu VIBECOFFEE và logo tại Cục Sở hữu trí tuệ Việt Nam. Cần chuẩn bị hồ sơ: mẫu nhãn hiệu, danh mục hàng hoá/dịch vụ, giấy tờ pháp nhân.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">Pháp lý · IP</span></div>
-            </div>
-            <div class="tc pm">
-              <div class="tt"><div class="ti">🎞️</div><div class="tn">Chốt & đặt in cuộn màng bao bì stick</div><span class="tp">TB</span></div>
-              <div class="td">Sau khi duyệt file thiết kế: đặt in cuộn màng PET/MPET/PE 80micro · 120mm · 11,800đ/m2 · MOQ 2,500m2. Trục in 1,900,000đ/trục (BH 2 năm).</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">Bao bì · Cuộn màng</span><span class="tdt">Sau duyệt file</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="ch" style="background:rgba(58,42,26,.04);border-color:var(--border)">
-            <div class="cd" style="background:var(--muted)"></div><div class="cn" style="color:var(--muted)">Chưa bắt đầu</div><div class="cc">2</div>
-          </div>
-          <div class="cb">
-            <div class="tc pm">
-              <div class="tt"><div class="ti">🧂</div><div class="tn">R&D cà phê muối truyền thống</div><span class="tp">TB</span></div>
-              <div class="td">SP2 trong lộ trình. Khởi động sau khi hoàn thiện SP1.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div>
-              <div class="tm"><span class="tg">R&D · SP2</span></div>
-            </div>
-            <div class="tc pl">
-              <div class="tt"><div class="ti">🥥</div><div class="tn">R&D capuchino dừa</div><span class="tp">Thấp</span></div>
-              <div class="td">SP3. Sau khi SP1 và SP2 hoàn thiện.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div>
-              <div class="tm"><span class="tg">R&D · SP3</span></div>
-            </div>
-          </div>
-        </div>
-
-      </div>
-
-      <!-- Price tables -->
-      <div class="ps2">
-        <div class="pt">Bảng giá nguyên liệu — MQ Ingredients</div>
-        <div class="ps3">Báo giá 19/03/2026 · Hiệu lực 30 ngày · Chưa bao gồm VAT 8%</div>
-        <div class="pn2"><span>⚠</span><div><strong>Lưu ý:</strong> Báo giá hiệu lực đến <strong>~18/04/2026</strong>. Cần xác nhận trước hạn. Không áp dụng hàng vận chuyển air.</div></div>
-        <table class="ptb">
-          <thead><tr><th>#</th><th>Tên sản phẩm</th><th>Mã Code</th><th>MOQ (kg)</th><th>Đơn giá (VNĐ/kg)</th><th>Nguồn gốc</th><th>Ghi chú</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td><strong>Bột kem béo thực vật</strong></td><td style="font-family:'DM Mono',monospace;font-size:11px">MQ-KF48</td><td>1,000</td><td class="pv">58,800</td><td><span class="bi">Indo</span></td><td style="font-size:11px;color:var(--muted)">Tất cả SP</td></tr>
-            <tr><td>2</td><td><strong>Bột kem béo thực vật</strong></td><td style="font-family:'DM Mono',monospace;font-size:11px">MQ-KF48</td><td>1,000</td><td class="pv">40,950</td><td><span class="bcn">China</span></td><td style="font-size:11px;color:var(--muted)">Tất cả SP</td></tr>
-            <tr class="hr2"><td rowspan="2">3</td><td rowspan="2"><strong>Bột cà phê hòa tan ⭐</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">MQ-RA06</td><td>1,000</td><td class="pv">278,600</td><td rowspan="2"><span class="bvn">Việt Nam</span></td><td rowspan="2" style="font-size:11px;color:var(--rust);font-weight:600">Nguyên liệu chính!</td></tr>
-            <tr class="hr2"><td>550</td><td class="pv">289,800</td></tr>
-            <tr><td rowspan="2">4</td><td rowspan="2"><strong>Bột hương cà phê</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">99057</td><td>100</td><td class="pv">1,065,000</td><td rowspan="2"><span class="bsg">Singapore</span></td><td rowspan="2" style="font-size:11px;color:var(--muted)">Hương liệu</td></tr>
-            <tr><td>50</td><td class="pv">1,130,000</td></tr>
-            <tr><td rowspan="2">5</td><td rowspan="2"><strong>Bột hương vanilla</strong></td><td rowspan="2" style="font-family:'DM Mono',monospace;font-size:11px">99027</td><td>100</td><td class="pv">480,000</td><td rowspan="2"><span class="bsg">Singapore</span></td><td rowspan="2" style="font-size:11px;color:var(--muted)">Muối capuchino</td></tr>
-            <tr><td>50</td><td class="pv">510,000</td></tr>
-            <tr style="background:rgba(200,150,58,.05)"><td>—</td><td><strong>NDC (Gia Vũ — tự cung cấp)</strong></td><td style="font-family:'DM Mono',monospace;font-size:11px">—</td><td>—</td><td class="pv" style="color:var(--gold);font-weight:600">37,000 <span style="font-size:10px;font-weight:400">(có VAT)</span></td><td><span class="bn">Tự cung cấp</span></td><td style="font-size:11px;color:var(--brown2);font-weight:600">Mẫu thứ 3</td></tr>
-          </tbody>
-        </table>
-        <div class="cmp" style="grid-template-columns:1fr 1fr 1fr">
-          <div class="ci2"><div class="cl">NDC tự cung cấp</div><div class="cv">37,000đ</div><div class="cs">Đã bao gồm VAT 8%</div></div>
-          <div class="cdv"></div>
-          <div class="ci2"><div class="cl">Báo giá hiệu lực đến</div><div class="cv">18/04</div><div class="cs">Cần xác nhận sớm</div></div>
-          <div class="cdv"></div>
-          <div class="ci2"><div class="cl">Đơn hàng đầu tối thiểu</div><div class="cv">100tr</div><div class="cs">Điều kiện R&D free</div></div>
-        </div>
-      </div>
-
-      <div class="ps2" style="margin-top:24px">
-        <div class="pt">Báo giá bao bì hộp — Sài Gòn In KD</div>
-        <div class="ps3">28/03/2026 · Hộp Ivory 350gsm · 16.5 × 12 × 8 cm</div>
-        <table class="ptb">
-          <thead><tr><th>Số lượng</th><th>Đơn giá</th><th>Thành tiền</th><th>Chất liệu</th><th>Ghi chú</th></tr></thead>
-          <tbody>
-            <tr><td>3,000 hộp</td><td class="pv">2,900đ/c</td><td class="pv">8,700,000</td><td>Ivory 350 gsm</td><td style="font-size:11px;color:var(--muted)">Phương án dự phòng</td></tr>
-            <tr class="hr2"><td><strong>5,000 hộp ✓</strong></td><td class="pv">2,500đ/c</td><td class="pv">12,500,000</td><td>Ivory 350 gsm</td><td style="font-size:11px;color:var(--rust);font-weight:600">Đã chốt</td></tr>
-          </tbody>
-        </table>
-        <div class="cmp" style="grid-template-columns:1fr 1fr 1fr 1fr">
-          <div class="ci2"><div class="cl">Số lượng</div><div class="cv">5,000</div><div class="cs">hộp</div></div>
-          <div class="cdv"></div>
-          <div class="ci2"><div class="cl">Đơn giá</div><div class="cv">2,500đ</div><div class="cs">/ hộp</div></div>
-          <div class="cdv"></div>
-          <div class="ci2"><div class="cl">Tổng chi phí</div><div class="cv">12.5tr</div><div class="cs">chưa VAT</div></div>
-          <div class="cdv"></div>
-          <div class="ci2"><div class="cl">Trạng thái</div><div class="cv" style="font-size:13px;color:#f5c842">⏳ Chờ TK</div><div class="cs">Gửi ~tuần 31/03</div></div>
-        </div>
-      </div>
-
-      <div class="ps2" style="margin-top:24px">
-        <div class="pt">Báo giá gia công đóng gói — Coffee Concept</div>
-        <div class="ps3">Số báo giá BG1004_01 · Ngày 10/04/2026 · Chưa bao gồm VAT · Chưa bao gồm bao bì, hộp, thùng</div>
-        <div class="pn2" style="background:rgba(200,150,58,.06);border-color:rgba(200,150,58,.2);color:var(--brown2)"><span>ℹ</span><div>Bao bì do <strong>Vibe Coffee tự thiết kế và gửi đến kho</strong>. Nguyên liệu do anh Vương gửi đến. Thời gian gia công: <strong>20 ngày làm việc</strong> sau khi đặt cọc.</div></div>
-        <table class="ptb">
-          <thead><tr><th>#</th><th>Hạng mục</th><th>Thông số</th><th>ĐVT</th><th>Đơn giá (VNĐ)</th><th>Ghi chú</th></tr></thead>
-          <tbody>
-            <tr><td>1</td><td><strong>Chi phí gia công Sticks</strong></td><td style="font-size:11px;color:var(--muted)">Chất liệu: OPP15/MPET12/LLDPE40 · KT sản xuất: 120×165mm · KT gói: 60×162mm</td><td>Stick</td><td class="pv">500</td><td style="font-size:11px;color:var(--muted)">KH có thể dùng bao bì riêng</td></tr>
-            <tr><td>2</td><td><strong>Hoàn thiện Hộp</strong></td><td style="font-size:11px;color:var(--muted)">Đóng gói 10 gói/hộp · 20gr/stick · Bao bì VibeCoffee thiết kế</td><td>Stick</td><td class="pv">300</td><td style="font-size:11px;color:var(--muted)">Bao bì do VibeCoffee gửi đến kho</td></tr>
-            <tr><td>3</td><td><strong>Thùng carton</strong></td><td style="font-size:11px;color:var(--muted)">Đóng thùng xuất kho, chia đều theo stick</td><td>Stick</td><td class="pv">12.50</td><td style="font-size:11px;color:var(--muted)">Tính theo đơn vị stick</td></tr>
-            <tr class="hr2"><td colspan="4"><strong>Tổng cộng / stick</strong></td><td class="pv" style="color:var(--gold);font-weight:700">862.50đ</td><td style="font-size:11px;color:var(--rust);font-weight:600">~862.50đ/stick ✓ (BG1004)</td></tr>
-          </tbody>
-        </table>
-        <div class="cmp" style="grid-template-columns:1fr 1fr 1fr 1fr">
-          <div class="ci2"><div class="cl">Đơn giá gia công</div><div class="cv">862.50đ</div><div class="cs">/ stick (chưa VAT)</div></div>
-          <div class="cdv"></div>
-          <div class="ci2"><div class="cl">MOQ tối thiểu</div><div class="cv">46,000</div><div class="cs">sticks / SKU</div></div>
-          <div class="cdv"></div>
-          <div class="ci2"><div class="cl">Chi phí tối thiểu</div><div class="cv">~39.7tr</div><div class="cs">46,000 × 862.50đ (chưa VAT)</div></div>
-          <div class="cdv"></div>
-          <div class="ci2"><div class="cl">Thời gian gia công</div><div class="cv">20</div><div class="cs">ngày làm việc</div></div>
-        </div>
-        <div style="margin-top:10px;background:rgba(200,150,58,.07);border:1px solid rgba(200,150,58,.2);border-radius:8px;padding:10px 14px;font-size:12px;color:var(--brown2)">
-          <strong style="color:var(--gold)">Lưu ý:</strong> Đơn giá chưa gồm phí vận chuyển, VAT, bao bì, hộp, thùng carton. Cần kiểm tra kích thước cuộn bao bì đúng theo yêu cầu máy đọc. Hẹn ghé xưởng trao đổi trực tiếp với Hạnh Diễm.
-        </div>
-      </div>
-
-      <div class="ng">
-        <div class="nc">
-          <div class="nc-t">📌 Việc cần làm ngay (Tháng 4)</div>
-          <ul class="nl">
-            <li><strong style="color:var(--sage)">✓ Thiết kế bao bì xong</strong> · Đã gửi in hộp & đặt cuộn màng stick</li>
-            <li><strong style="color:var(--sage)">✓ Gửi mẫu kiểm nghiệm</strong> 400g tại 42 Trần Quang Khải Q.1</li>
-            <li><strong style="color:var(--sky)">⟳ Đang chờ</strong> kết quả kiểm nghiệm thực phẩm Q.1</li>
-            <li>Sau KN: nộp hồ sơ công bố hợp quy + đăng ký mã vạch + đăng ký TH</li>
-            <li>Confirm báo giá MQ trước 18/04 (hết hiệu lực)</li>
-            <li>Chuẩn bị ngân sách 100 triệu cho đơn đầu tiên</li>
-            <li>Hẹn lịch ghé xưởng Coffee Concept (Hạnh Diễm) trao đổi</li>
-          </ul>
-        </div>
-        <div class="nc">
-          <div class="nc-t">⚠️ Rủi ro & lưu ý</div>
-          <ul class="nl">
-            <li>Báo giá MQ chưa gồm VAT 8% — cộng thêm khi tính giá thành</li>
-            <li>Thời gian giao hàng MQ: 3–7 ngày sau PO và thanh toán</li>
-            <li>MOQ Coffee Concept: <strong>46,000 sticks/SKU</strong> — cần tính lượng sản xuất phù hợp</li>
-            <li>Chi phí gia công Coffee Concept chưa gồm VAT + vật tư bao bì</li>
-            <li>Kích thước cuộn bao bì phải đúng yêu cầu máy — cần check trước</li>
-            <li>Điều kiện R&D free MQ: phải lấy hầu hết nguyên liệu từ MQ</li>
-          </ul>
-        </div>
-      </div>
-
-    </div><!-- /tab-sx -->
+    </div>
+  </div>
+  <div class="wsec">
+    <div class="ws-t">Month 06/2026 - Carry only unfinished work</div>
+    <ul class="nl">
+      <li>Finalize box sample and printing plan if unfinished in month 05.</li>
+      <li>Finalize stick film roll if unfinished in month 05.</li>
+      <li>Submit and track conformity declaration if unfinished in month 05.</li>
+      <li>Lock production launch date after declaration milestone.</li>
+    </ul>
+  </div>
+</div><!-- /tab-sx -->
 
 
     <!-- ====== TAB 2: MARKETING ====== -->
     <div id="tab-mkt" class="tab-panel">
-
-      <div class="mhero">
-        <div class="ms"><div class="ms-ico">🌐</div><div class="ms-val">1</div><div class="ms-lbl">Website live</div><div><span class="ms-b lb">vibecoffee.vn</span></div></div>
-        <div class="ms"><div class="ms-ico">🔍</div><div class="ms-val">✓</div><div class="ms-lbl">SEO đã triển khai</div><div><span class="ms-b lb">DONE</span></div></div>
-        <div class="ms"><div class="ms-ico">📱</div><div class="ms-val">3</div><div class="ms-lbl">Mạng xã hội</div><div><span class="ms-b sb2">SETUP</span></div></div>
-        <div class="ms"><div class="ms-ico">🛒</div><div class="ms-val">—</div><div class="ms-lbl">Thanh toán online</div><div><span class="ms-b pb">PENDING</span></div></div>
+  <div class="sec-hd">
+    <div><div class="sec-ttl">Monthly Tracker - Marketing</div><div class="sec-sub">Daily content planning and execution by channel</div></div>
+  </div>
+  <div class="wsec">
+    <div class="ws-t">Month 05/2026 - Current plan</div>
+    <div class="tmdt-checklist" style="grid-template-columns:1fr 1fr;">
+      <div class="cl-card">
+        <div class="cl-title">TikTok and Facebook</div>
+        <div class="cl-item"><div class="cl-check cl-doing">~</div><div class="cl-txt">Update daily TikTok content plan (10s-50s videos using built mascot models).</div></div>
+        <div class="cl-item"><div class="cl-check cl-todo">o</div><div class="cl-txt">Prepare daily Facebook content plan and Fanpage viral strategy.</div></div>
       </div>
-
-      <div class="sec-hd">
-        <div><div class="sec-ttl">Kênh truyền thông</div><div class="sec-sub">Trạng thái các kênh marketing VibeCoffee</div></div>
+      <div class="cl-card">
+        <div class="cl-title">Website and Shop visual</div>
+        <div class="cl-item"><div class="cl-check cl-todo">o</div><div class="cl-txt">Update standard image set for website.</div></div>
+        <div class="cl-item"><div class="cl-check cl-doing">~</div><div class="cl-txt">Decorate Shopee shop in VibeCoffee visual style.</div></div>
       </div>
-
-      <div class="cg">
-        <div class="ccard">
-          <div class="cch">
-            <div class="cci" style="background:rgba(90,122,92,.12)">🌐</div>
-            <div><div class="ccn">Website chính thức</div><div class="ccs">vibecoffee.vn · Hosting + Domain riêng</div></div>
-            <span class="cst" style="background:rgba(86,200,120,.1);color:#5ac87a;border:1px solid rgba(86,200,120,.2)">Live ✓</span>
-          </div>
-          <div class="ccb">
-            <div class="ccr"><span class="ccrl">Domain</span><span class="ccrv" style="color:var(--sage)">vibecoffee.vn ✓</span></div>
-            <div class="ccr"><span class="ccrl">Hosting</span><span class="ccrv" style="color:var(--sage)">Đã upload lên hosting ✓</span></div>
-            <div class="ccr"><span class="ccrl">SEO</span><span class="ccrv" style="color:var(--sage)">Đã triển khai tối ưu hóa ✓</span></div>
-            <div class="ccr"><span class="ccrl">Nội dung</span><span class="ccrv" style="color:var(--sky)">Cần review & final lần cuối</span></div>
-          </div>
-          <a href="https://vibecoffee.vn/" target="_blank" class="cclink">🔗 Xem vibecoffee.vn →</a>
-        </div>
-
-        <div class="ccard">
-          <div class="cch">
-            <div class="cci" style="background:rgba(255,60,60,.08)">▶</div>
-            <div><div class="ccn">YouTube</div><div class="ccs">Video branding đã publish</div></div>
-            <span class="cst" style="background:rgba(86,200,120,.1);color:#5ac87a;border:1px solid rgba(86,200,120,.2)">Live ✓</span>
-          </div>
-          <div class="ccb">
-            <div class="ccr"><span class="ccrl">Loại nội dung</span><span class="ccrv">Video branding thương hiệu</span></div>
-            <div class="ccr"><span class="ccrl">Trạng thái</span><span class="ccrv" style="color:var(--sage)">Đã đăng tải ✓</span></div>
-          </div>
-          <a href="https://www.youtube.com/watch?v=84jYbXm0oyE" target="_blank" class="cclink">▶ Xem video branding →</a>
-        </div>
-
-        <div class="ccard">
-          <div class="cch">
-            <div class="cci" style="background:rgba(74,122,158,.1)">📘</div>
-            <div><div class="ccn">Facebook</div><div class="ccs">Fanpage VibeCoffee</div></div>
-            <span class="cst" style="background:rgba(245,200,66,.1);color:#d4a800;border:1px solid rgba(245,200,66,.2)">Setup</span>
-          </div>
-          <div class="ccb">
-            <div class="ccr"><span class="ccrl">Trạng thái</span><span class="ccrv">Đã tạo tài khoản</span></div>
-            <div class="ccr"><span class="ccrl">Nội dung</span><span class="ccrv" style="color:var(--rust)">Chưa có content</span></div>
-          </div>
-          <div class="ccact">Cần lên kế hoạch content & lịch đăng bài trước launch</div>
-        </div>
-
-        <div class="ccard">
-          <div class="cch">
-            <div class="cci" style="background:rgba(58,42,26,.06)">🎵</div>
-            <div><div class="ccn">TikTok</div><div class="ccs">Account VibeCoffee</div></div>
-            <span class="cst" style="background:rgba(245,200,66,.1);color:#d4a800;border:1px solid rgba(245,200,66,.2)">Setup</span>
-          </div>
-          <div class="ccb">
-            <div class="ccr"><span class="ccrl">Trạng thái</span><span class="ccrv">Đã tạo tài khoản</span></div>
-            <div class="ccr"><span class="ccrl">Nội dung</span><span class="ccrv" style="color:var(--rust)">Chưa có content</span></div>
-          </div>
-          <div class="ccact">Tiềm năng cao — ưu tiên short-form video cà phê muối</div>
-        </div>
-      </div>
-
-      <div class="wsec">
-        <div class="ws-t">🌐 Website vibecoffee.vn — Trạng thái triển khai</div>
-        <div class="wsg">
-          <div class="wsc">
-            <div class="wsc-t">✅ Đã hoàn thành <span class="wtag" style="background:rgba(90,122,92,.12);color:var(--sage);border:1px solid rgba(90,122,92,.2)">LIVE</span></div>
-            <div class="wsc-s">
-              • Domain riêng: <strong>vibecoffee.vn</strong> ✓<br>
-              • Upload lên hosting ✓<br>
-              • Triển khai tối ưu hóa SEO ✓<br>
-              • Video branding YouTube ✓
-            </div>
-          </div>
-          <div class="wsc" style="border-color:rgba(74,122,158,.25);background:rgba(74,122,158,.04)">
-            <div class="wsc-t">⟳ Đang thực hiện <span class="wtag" style="background:rgba(74,122,158,.15);color:var(--sky);border:1px solid rgba(74,122,158,.25)">IN PROGRESS</span></div>
-            <div class="wsc-s">
-              • Review toàn bộ nội dung website<br>
-              • Chỉnh sửa lần cuối để final<br>
-              • Build trang quản trị chuyên nghiệp<br>
-              • Xây dựng hệ thống thanh toán online
-            </div>
-          </div>
-          <div class="wsc" style="border-color:rgba(192,74,42,.18);background:rgba(192,74,42,.03)">
-            <div class="wsc-t">💡 Gợi ý kỹ thuật <span class="wtag" style="background:rgba(192,74,42,.1);color:var(--rust);border:1px solid rgba(192,74,42,.18)">NOTE</span></div>
-            <div class="wsc-s">
-              • Admin: WordPress / custom CMS<br>
-              • Thanh toán: VNPay / Momo / ZaloPay<br>
-              • Tích hợp đơn hàng với TMĐT<br>
-              • SSL & bảo mật website
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="sec-hd">
-        <div><div class="sec-ttl">Tiến độ Marketing</div><div class="sec-sub">Các task marketing theo trạng thái</div></div>
-      </div>
-
-      <div class="kb">
-        <div>
-          <div class="ch" style="background:rgba(90,122,92,.08);border-color:rgba(90,122,92,.2)">
-            <div class="cd" style="background:var(--sage)"></div><div class="cn" style="color:var(--sage)">Đã hoàn thành</div><div class="cc">7</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🌐</div><div class="tn">Hoàn thiện website VibeCoffee</div><span class="tp">Cao</span></div>
-              <div class="td">Website 5 trang đầy đủ. Tagline: "Trọn vị cà phê - Trọn từng khoảnh khắc."</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Web</span><span class="tdt">Mar 2026</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🌍</div><div class="tn">Mua domain & upload lên hosting</div><span class="tp">Cao</span></div>
-              <div class="td">Domain <strong>vibecoffee.vn</strong> đã mua và upload lên hosting thành công. Website đã live trên domain chính thức.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Web · Domain</span><span class="tdt">Apr 2026 ✓</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">🔍</div><div class="tn">Triển khai SEO cho website</div><span class="tp">Cao</span></div>
-              <div class="td">Đã tối ưu hóa SEO toàn bộ website vibecoffee.vn — meta tags, sitemap, cấu trúc nội dung.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">SEO · Web</span><span class="tdt">Apr 2026 ✓</span></div>
-            </div>
-            <div class="tc pm">
-              <div class="tt"><div class="ti">▶</div><div class="tn">Video branding & YouTube</div><span class="tp">TB</span></div>
-              <div class="td">Video branding VibeCoffee đã publish trên YouTube.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Video · YT</span><span class="tdt">Mar 2026</span></div>
-            </div>
-            <div class="tc pm">
-              <div class="tt"><div class="ti">📱</div><div class="tn">Tạo tài khoản mạng xã hội</div><span class="tp">TB</span></div>
-              <div class="td">Đã setup TikTok, YouTube, Facebook cho VibeCoffee.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Social</span><span class="tdt">Mar 2026</span></div>
-            </div>
-            <div class="tc pm">
-              <div class="tt"><div class="ti">🔗</div><div class="tn">Kết nối domain vào website</div><span class="tp">TB</span></div>
-              <div class="td">DNS đã cấu hình, vibecoffee.vn trỏ thành công vào hosting.</div>
-              <div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div>
-              <div class="tm"><span class="tg">Web · DNS</span><span class="tdt">Apr 2026 ✓</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="ch" style="background:rgba(74,122,158,.08);border-color:rgba(74,122,158,.2)">
-            <div class="cd" style="background:var(--sky)"></div><div class="cn" style="color:var(--sky)">Đang thực hiện</div><div class="cc">1</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph">
-              <div class="tt"><div class="ti">✍️</div><div class="tn">Review & final toàn bộ nội dung web</div><span class="tp">Cao</span></div>
-              <div class="td">Rà soát toàn bộ nội dung website vibecoffee.vn — text, hình ảnh, sản phẩm. Chỉnh sửa lần cuối trước khi final chính thức.</div>
-              <div class="tpg"><div class="tb" style="width:30%;background:var(--sky)"></div></div>
-              <div class="tm"><span class="tg">Web · Content</span><span class="tdt">Đang làm</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="ch" style="background:rgba(200,150,58,.08);border-color:rgba(200,150,58,.2)">
-            <div class="cd" style="background:var(--gold)"></div><div class="cn" style="color:var(--brown2)">Chờ thực hiện</div><div class="cc">2</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph">
-              <div class="tt"><div class="ti">⚙️</div><div class="tn">Build trang quản trị (Admin)</div><span class="tp">Cao</span></div>
-              <div class="td">Xây dựng trang quản trị chuyên nghiệp cho website vibecoffee.vn — quản lý sản phẩm, đơn hàng, khách hàng.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">Web · Admin</span></div>
-            </div>
-            <div class="tc ph">
-              <div class="tt"><div class="ti">💳</div><div class="tn">Hệ thống thanh toán online</div><span class="tp">Cao</span></div>
-              <div class="td">Cần hoàn thiện hệ thống thanh toán online (VNPay / Momo / ZaloPay) cho website vibecoffee.vn. Ưu tiên hoàn thiện trước ngày launch SP1.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div>
-              <div class="tm"><span class="tg">Web · Payment</span></div>
-            </div>
-          </div>
-        </div>
-
-        <div>
-          <div class="ch" style="background:rgba(58,42,26,.04);border-color:var(--border)">
-            <div class="cd" style="background:var(--muted)"></div><div class="cn" style="color:var(--muted)">Chưa bắt đầu</div><div class="cc">2</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph">
-              <div class="tt"><div class="ti">📲</div><div class="tn">Xây dựng content TikTok & Facebook</div><span class="tp">Cao</span></div>
-              <div class="td">Lên lịch đăng bài, sản xuất nội dung. Cần kế hoạch content cho launch SP1.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div>
-              <div class="tm"><span class="tg">Social · Content</span></div>
-            </div>
-            <div class="tc pm">
-              <div class="tt"><div class="ti">🚀</div><div class="tn">Lên kế hoạch go-to-market SP1</div><span class="tp">TB</span></div>
-              <div class="td">Phân phối, kênh bán, chiến lược launch cà phê muối phô mai sau khi chốt công thức.</div>
-              <div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div>
-              <div class="tm"><span class="tg">Marketing · Launch</span></div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="ng">
-        <div class="nc">
-          <div class="nc-t">📌 Việc cần làm ngay — Marketing</div>
-          <ul class="nl">
-            <li><strong style="color:var(--sage)">✓ vibecoffee.vn đã live</strong> — Domain + Hosting + SEO ✓</li>
-            <li><strong style="color:var(--sky)">⟳ Đang làm:</strong> Review & chỉnh toàn bộ nội dung lần cuối</li>
-            <li>Build trang quản trị admin chuyên nghiệp cho website</li>
-            <li>Tích hợp hệ thống thanh toán online (VNPay / Momo / ZaloPay)</li>
-            <li>Lên kế hoạch content TikTok & Facebook trước ngày launch SP1</li>
-          </ul>
-        </div>
-        <div class="nc">
-          <div class="nc-t">💡 Gợi ý kỹ thuật</div>
-          <ul class="nl">
-            <li>Admin panel: WooCommerce / Laravel Nova / custom theo stack hiện tại</li>
-            <li>Thanh toán: VNPay (phổ biến nhất VN) + Momo + ZaloPay</li>
-            <li>Tích hợp đơn hàng website với 3 sàn TMĐT (Shopee, TikTok, Lazada)</li>
-            <li>TikTok: video ASMR pha cà phê muối rất viral — ưu tiên #1</li>
-          </ul>
-        </div>
-      </div>
-
-    </div><!-- /tab-mkt -->
+    </div>
+  </div>
+  <div class="wsec">
+    <div class="ws-t">Month 06/2026 - Carry only unfinished work</div>
+    <ul class="nl">
+      <li>Move only unfinished daily content backlog from month 05.</li>
+      <li>Move only unfinished website images and shop visual tasks from month 05.</li>
+    </ul>
+  </div>
+</div><!-- /tab-mkt -->
 
     <!-- ====== TAB 3: KÊNH TMĐT ====== -->
     <div id="tab-tmdt" class="tab-panel">
-
-      <!-- HERO STATS -->
-      <div class="tmdt-hero">
-        <div class="th-card">
-          <div class="th-ico">🛒</div>
-          <div class="th-val">3</div>
-          <div class="th-lbl">Sàn TMĐT</div>
-          <span class="th-badge" style="background:rgba(90,122,92,.1);color:var(--sage);border:1px solid rgba(90,122,92,.2)">Đã tạo TK ✓</span>
-        </div>
-        <div class="th-card">
-          <div class="th-ico">🎨</div>
-          <div class="th-val">~50%</div>
-          <div class="th-lbl">Trang trí shop</div>
-          <span class="th-badge" style="background:rgba(74,122,158,.1);color:var(--sky);border:1px solid rgba(74,122,158,.2)">Đang làm</span>
-        </div>
-        <div class="th-card">
-          <div class="th-ico">📦</div>
-          <div class="th-val">—</div>
-          <div class="th-lbl">Sản phẩm live</div>
-          <span class="th-badge" style="background:rgba(200,150,58,.1);color:var(--gold);border:1px solid rgba(200,150,58,.2)">Chờ hàng</span>
-        </div>
-        <div class="th-card">
-          <div class="th-ico">🚀</div>
-          <div class="th-val">—</div>
-          <div class="th-lbl">Đơn đầu tiên</div>
-          <span class="th-badge" style="background:rgba(200,150,58,.1);color:var(--gold);border:1px solid rgba(200,150,58,.2)">Chờ launch</span>
-        </div>
+  <div class="sec-hd">
+    <div><div class="sec-ttl">Monthly Tracker - Ecommerce Channels</div><div class="sec-sub">Channel registration done, now preparing product listing assets</div></div>
+  </div>
+  <div class="wsec">
+    <div class="ws-t">Month 05/2026 - Current</div>
+    <div class="tmdt-checklist" style="grid-template-columns:1fr 1fr;">
+      <div class="cl-card">
+        <div class="cl-title">Completed</div>
+        <div class="cl-item"><div class="cl-check cl-done">v</div><div class="cl-txt">Completed channel registration for TikTok Shop, Shopee, and Lazada.</div></div>
       </div>
-
-      <!-- 3 PLATFORM CARDS -->
-      <div style="font-family:'Playfair Display',serif;font-size:18px;font-weight:700;color:var(--brown);margin-bottom:14px">Chi tiết từng sàn</div>
-      <div class="platform-grid">
-
-        <!-- TIKTOK SHOP -->
-        <div class="pcard">
-          <div class="pcard-header">
-            <div class="pcard-logo" style="background:rgba(20,20,20,.07)">🎵</div>
-            <div>
-              <div class="pcard-name">TikTok Shop</div>
-              <div class="pcard-sub">VibeCoffee Official</div>
-            </div>
-            <span class="pcard-status" style="background:rgba(74,122,158,.1);color:var(--sky);border:1px solid rgba(74,122,158,.2)">Đang setup</span>
-          </div>
-          <div class="pcard-body">
-            <div class="pcard-row"><span class="pcard-rl">Loại tài khoản</span><span class="pcard-rv">Shop bán hàng</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Trạng thái</span><span class="pcard-rv" style="color:var(--sky)">Trang trí shop</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Sản phẩm</span><span class="pcard-rv" style="color:var(--muted)">Đang upload</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Tiềm năng</span><span class="pcard-rv" style="color:var(--rust);font-weight:600">⭐ Rất cao (viral)</span></div>
-            <div class="pcard-progress"><div class="pcard-bar" style="width:45%;background:var(--sky)"></div></div>
-            <div class="pcard-pct">Setup 45% hoàn thành</div>
-            <div class="pcard-tasks">
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sage)"></div><span class="ptask-txt ptask-done">✓ Tạo tài khoản shop</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Trang trí gian hàng</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Upload sản phẩm & mô tả</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Thiết lập vận chuyển</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Kết nối TikTok video → Shop</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Livestream bán hàng</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- SHOPEE -->
-        <div class="pcard">
-          <div class="pcard-header">
-            <div class="pcard-logo" style="background:rgba(238,77,45,.08)">🛍️</div>
-            <div>
-              <div class="pcard-name">Shopee</div>
-              <div class="pcard-sub">VibeCoffee Shop</div>
-            </div>
-            <span class="pcard-status" style="background:rgba(74,122,158,.1);color:var(--sky);border:1px solid rgba(74,122,158,.2)">Đang setup</span>
-          </div>
-          <div class="pcard-body">
-            <div class="pcard-row"><span class="pcard-rl">Loại tài khoản</span><span class="pcard-rv">Shopee Mall / Shop</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Trạng thái</span><span class="pcard-rv" style="color:var(--sky)">Trang trí shop</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Sản phẩm</span><span class="pcard-rv" style="color:var(--muted)">Đang upload</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Tiềm năng</span><span class="pcard-rv" style="color:var(--gold);font-weight:600">⭐ Cao (thị phần lớn)</span></div>
-            <div class="pcard-progress"><div class="pcard-bar" style="width:50%;background:#ee4d2d"></div></div>
-            <div class="pcard-pct">Setup 50% hoàn thành</div>
-            <div class="pcard-tasks">
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sage)"></div><span class="ptask-txt ptask-done">✓ Tạo tài khoản shop</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Trang trí gian hàng</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Upload sản phẩm & mô tả</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Thiết lập vận chuyển</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Đăng ký Shopee Mall (nếu cần)</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Cài đặt Flash Sale & Voucher</span></div>
-            </div>
-          </div>
-        </div>
-
-        <!-- LAZADA -->
-        <div class="pcard">
-          <div class="pcard-header">
-            <div class="pcard-logo" style="background:rgba(0,102,255,.07)">🔵</div>
-            <div>
-              <div class="pcard-name">Lazada</div>
-              <div class="pcard-sub">VibeCoffee Store</div>
-            </div>
-            <span class="pcard-status" style="background:rgba(74,122,158,.1);color:var(--sky);border:1px solid rgba(74,122,158,.2)">Đang setup</span>
-          </div>
-          <div class="pcard-body">
-            <div class="pcard-row"><span class="pcard-rl">Loại tài khoản</span><span class="pcard-rv">LazMall / Seller</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Trạng thái</span><span class="pcard-rv" style="color:var(--sky)">Trang trí shop</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Sản phẩm</span><span class="pcard-rv" style="color:var(--muted)">Đang upload</span></div>
-            <div class="pcard-row"><span class="pcard-rl">Tiềm năng</span><span class="pcard-rv" style="color:var(--sage);font-weight:600">TB (thị phần nhỏ hơn)</span></div>
-            <div class="pcard-progress"><div class="pcard-bar" style="width:40%;background:#0066ff"></div></div>
-            <div class="pcard-pct">Setup 40% hoàn thành</div>
-            <div class="pcard-tasks">
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sage)"></div><span class="ptask-txt ptask-done">✓ Tạo tài khoản shop</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Trang trí gian hàng</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--sky)"></div><span class="ptask-txt ptask-doing">⟳ Upload sản phẩm & mô tả</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Thiết lập vận chuyển</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Cài đặt khuyến mãi</span></div>
-              <div class="ptask"><div class="ptask-dot" style="background:var(--muted)"></div><span class="ptask-txt" style="color:var(--muted)">◦ Kết nối với Shopee ads</span></div>
-            </div>
-          </div>
-        </div>
-
+      <div class="cl-card">
+        <div class="cl-title">In progress</div>
+        <div class="cl-item"><div class="cl-check cl-doing">~</div><div class="cl-txt">Prepare product images for 3 channels.</div></div>
+        <div class="cl-item"><div class="cl-check cl-doing">~</div><div class="cl-txt">Prepare product descriptions for TikTok Shop, Shopee, Lazada listings.</div></div>
       </div>
-
-      <!-- CHECKLIST SETUP -->
-      <div style="font-size:13px;font-weight:600;color:var(--brown);margin-bottom:12px">Checklist setup chung — 3 sàn</div>
-      <div class="tmdt-checklist">
-
-        <div class="cl-card">
-          <div class="cl-title">✅ Đã hoàn thành</div>
-          <div class="cl-item"><div class="cl-check cl-done">✓</div><div class="cl-txt">Tạo tài khoản TikTok Shop</div></div>
-          <div class="cl-item"><div class="cl-check cl-done">✓</div><div class="cl-txt">Tạo tài khoản Shopee Shop</div></div>
-          <div class="cl-item"><div class="cl-check cl-done">✓</div><div class="cl-txt">Tạo tài khoản Lazada</div></div>
-          <div class="cl-item"><div class="cl-check cl-done">✓</div><div class="cl-txt">Đăng nhập & xác minh tài khoản</div></div>
-        </div>
-
-        <div class="cl-card">
-          <div class="cl-title">⟳ Đang thực hiện</div>
-          <div class="cl-item"><div class="cl-check cl-doing">⟳</div><div class="cl-txt">Trang trí gian hàng (banner, avatar, mô tả shop)</div></div>
-          <div class="cl-item"><div class="cl-check cl-doing">⟳</div><div class="cl-txt">Upload hình ảnh sản phẩm</div></div>
-          <div class="cl-item"><div class="cl-check cl-doing">⟳</div><div class="cl-txt">Viết mô tả sản phẩm chi tiết</div></div>
-          <div class="cl-item"><div class="cl-check cl-doing">⟳</div><div class="cl-txt">Đặt giá bán & SKU từng sàn</div></div>
-        </div>
-
-        <div class="cl-card">
-          <div class="cl-title">◦ Chưa bắt đầu</div>
-          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Thiết lập đơn vị vận chuyển (GHN, GHTK, J&T)</div></div>
-          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Tạo voucher & flash sale khai trương</div></div>
-          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Kết nối TikTok video với TikTok Shop</div></div>
-          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Chạy Shopee Ads / TikTok Ads TMĐT</div></div>
-          <div class="cl-item"><div class="cl-check cl-todo">◦</div><div class="cl-txt">Chuẩn bị kho hàng & quy trình đóng gói</div></div>
-        </div>
-
-      </div>
-
-      <!-- KANBAN TMDT -->
-      <div style="font-size:13px;font-weight:600;color:var(--brown);margin-bottom:12px">Tiến độ task TMĐT</div>
-      <div class="kb" style="margin-bottom:20px">
-        <div>
-          <div class="ch" style="background:rgba(90,122,92,.08);border-color:rgba(90,122,92,.2)">
-            <div class="cd" style="background:var(--sage)"></div><div class="cn" style="color:var(--sage)">Đã hoàn thành</div><div class="cc">3</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph"><div class="tt"><div class="ti">🎵</div><div class="tn">Tạo TK TikTok Shop</div><span class="tp">Cao</span></div><div class="td">Tài khoản bán hàng TikTok Shop đã tạo và xác minh.</div><div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div><div class="tm"><span class="tg">TikTok Shop</span><span class="tdt">Apr 2026</span></div></div>
-            <div class="tc ph"><div class="tt"><div class="ti">🛍️</div><div class="tn">Tạo TK Shopee Shop</div><span class="tp">Cao</span></div><div class="td">Tài khoản bán hàng Shopee đã tạo và xác minh.</div><div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div><div class="tm"><span class="tg">Shopee</span><span class="tdt">Apr 2026</span></div></div>
-            <div class="tc ph"><div class="tt"><div class="ti">🔵</div><div class="tn">Tạo TK Lazada</div><span class="tp">Cao</span></div><div class="td">Tài khoản bán hàng Lazada đã tạo và xác minh.</div><div class="tpg"><div class="tb" style="width:100%;background:var(--sage)"></div></div><div class="tm"><span class="tg">Lazada</span><span class="tdt">Apr 2026</span></div></div>
-          </div>
-        </div>
-        <div>
-          <div class="ch" style="background:rgba(74,122,158,.08);border-color:rgba(74,122,158,.2)">
-            <div class="cd" style="background:var(--sky)"></div><div class="cn" style="color:var(--sky)">Đang thực hiện</div><div class="cc">2</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph"><div class="tt"><div class="ti">🎨</div><div class="tn">Trang trí shop cả 3 sàn</div><span class="tp">Cao</span></div><div class="td">Banner, avatar, mô tả shop, bộ nhận diện thương hiệu VibeCoffee trên từng sàn.</div><div class="tpg"><div class="tb" style="width:50%;background:var(--sky)"></div></div><div class="tm"><span class="tg">Design · TMĐT</span></div></div>
-            <div class="tc ph"><div class="tt"><div class="ti">📝</div><div class="tn">Upload SP & viết mô tả</div><span class="tp">Cao</span></div><div class="td">Đăng sản phẩm cà phê muối phô mai: hình ảnh, mô tả chi tiết, giá bán, SKU cho 3 sàn.</div><div class="tpg"><div class="tb" style="width:35%;background:var(--sky)"></div></div><div class="tm"><span class="tg">Content · SP</span></div></div>
-          </div>
-        </div>
-        <div>
-          <div class="ch" style="background:rgba(200,150,58,.08);border-color:rgba(200,150,58,.2)">
-            <div class="cd" style="background:var(--gold)"></div><div class="cn" style="color:var(--brown2)">Chờ thực hiện</div><div class="cc">3</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph"><div class="tt"><div class="ti">🚚</div><div class="tn">Thiết lập vận chuyển</div><span class="tp">Cao</span></div><div class="td">Kết nối GHN / GHTK / J&T cho cả 3 sàn. Cài đặt phí ship, vùng giao hàng.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div><div class="tm"><span class="tg">Vận chuyển</span></div></div>
-            <div class="tc pm"><div class="tt"><div class="ti">🎁</div><div class="tn">Voucher khai trương shop</div><span class="tp">TB</span></div><div class="td">Tạo voucher giảm giá, flash sale khai trương để thu hút đơn hàng đầu tiên.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div><div class="tm"><span class="tg">Promotion</span></div></div>
-            <div class="tc pm"><div class="tt"><div class="ti">🔗</div><div class="tn">Kết nối TikTok video → Shop</div><span class="tp">TB</span></div><div class="td">Gắn link sản phẩm TikTok Shop vào các video content marketing.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--gold)"></div></div><div class="tm"><span class="tg">TikTok · Affiliate</span></div></div>
-          </div>
-        </div>
-        <div>
-          <div class="ch" style="background:rgba(58,42,26,.04);border-color:var(--border)">
-            <div class="cd" style="background:var(--muted)"></div><div class="cn" style="color:var(--muted)">Chưa bắt đầu</div><div class="cc">3</div>
-          </div>
-          <div class="cb">
-            <div class="tc ph"><div class="tt"><div class="ti">📦</div><div class="tn">Chuẩn bị kho hàng & đóng gói</div><span class="tp">Cao</span></div><div class="td">Quy trình nhận hàng từ gia công → kiểm tra → đóng gói → xuất kho TMĐT.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div><div class="tm"><span class="tg">Operations</span></div></div>
-            <div class="tc pm"><div class="tt"><div class="ti">📊</div><div class="tn">Chạy Ads TMĐT</div><span class="tp">TB</span></div><div class="td">Shopee Ads, TikTok Shop Ads để tăng visibility sau khi shop live.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div><div class="tm"><span class="tg">Ads · TMĐT</span></div></div>
-            <div class="tc pl"><div class="tt"><div class="ti">⭐</div><div class="tn">Xây dựng review & rating</div><span class="tp">Thấp</span></div><div class="td">Chiến lược thu thập đánh giá 5 sao từ khách hàng đầu tiên.</div><div class="tpg"><div class="tb" style="width:0%;background:var(--muted)"></div></div><div class="tm"><span class="tg">CRM · Review</span></div></div>
-          </div>
-        </div>
-      </div>
-
-      <!-- NOTES -->
-      <div class="ng">
-        <div class="nc">
-          <div class="nc-t">📌 Việc cần làm ngay — TMĐT</div>
-          <ul class="nl">
-            <li>Hoàn thiện trang trí shop cả 3 sàn (banner, avatar, mô tả)</li>
-            <li>Upload đủ hình ảnh & mô tả sản phẩm chất lượng cao</li>
-            <li>Kết nối đơn vị vận chuyển (GHN hoặc GHTK) cho từng sàn</li>
-            <li>Chuẩn bị voucher khai trương trước ngày launch</li>
-            <li>Kết nối video TikTok Marketing với TikTok Shop</li>
-          </ul>
-        </div>
-        <div class="nc">
-          <div class="nc-t">💡 Chiến lược ưu tiên theo sàn</div>
-          <ul class="nl">
-            <li><strong style="color:var(--brown2)">TikTok Shop:</strong> Ưu tiên #1 — kết nối trực tiếp với video viral, chi phí ads thấp</li>
-            <li><strong style="color:var(--brown2)">Shopee:</strong> Ưu tiên #2 — thị phần lớn nhất, traffic organic tốt</li>
-            <li><strong style="color:var(--brown2)">Lazada:</strong> Ưu tiên #3 — duy trì hiện diện, ít đầu tư ads hơn</li>
-            <li>Đồng bộ giá bán và chương trình khuyến mãi giữa các sàn</li>
-            <li>Chụp ảnh sản phẩm chuyên nghiệp trước khi upload lên sàn</li>
-          </ul>
-        </div>
-      </div>
-
-    </div><!-- /tab-tmdt -->
+    </div>
+  </div>
+  <div class="wsec">
+    <div class="ws-t">Month 06/2026 - Carry only unfinished work</div>
+    <ul class="nl">
+      <li>Publish listings on all 3 channels for items not live in month 05.</li>
+      <li>Complete missing image/description items per channel checklist.</li>
+    </ul>
+  </div>
+</div><!-- /tab-tmdt -->
 
     <!-- ====== TAB 4: PLAN PNL ====== -->
     <div id="tab-pnl" class="tab-panel">
@@ -1522,9 +816,9 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 <script>
 // TAB SWITCHING
 var updates={
-  sx:{icon:'⚙️',date:'06/04/2026',text:'Chốt COGS final 3,415đ/stick (D05) · DCV đang thiết kế bao bì · Thanh toán 1,000,000đ',who:'Apr 2026'},
-  mkt:{icon:'📣',date:'06/04/2026',text:'Google Search Console ✓ · Cần hoàn thiện thanh toán online · Đăng ký TH VIBECOFFEE đang tiến hành',who:'vibecoffee.vn'},
-  tmdt:{icon:'🛒',date:'08/04/2026',text:'Đã tạo TK TikTok Shop · Shopee · Lazada · Đang trang trí shop · Chờ launch',who:'3 sàn'},
+  sx:{icon:'[SX]',date:'05/05/2026',text:'Quatest3 result due 05/05. MQ sample 5kg this week. Waiting barcode result to finalize box and film designs.',who:'Month 05/2026'},
+  mkt:{icon:'[MKT]',date:'05/05/2026',text:'Daily content plan updates for TikTok/Facebook. Website image standardization and Shopee visual setup in progress.',who:'Marketing 05/2026'},
+  tmdt:{icon:'[ECOM]',date:'05/05/2026',text:'3 channels registered. Preparing product images and descriptions for TikTok Shop, Shopee, Lazada listings.',who:'Ecom 05/2026'},
   pnl:{icon:'📊',date:'08/04/2026',text:'TikTok: Thực thu 83,420đ · LN 13,399đ/hộp (16.1%) · Ads 15% tối ưu được',who:'TikTok live'},
 };
 
@@ -1556,3 +850,5 @@ document.getElementById('update-who').textContent=u0.who;
 </script>
 </body>
 </html>
+
+
