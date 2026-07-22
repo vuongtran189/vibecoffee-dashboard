@@ -305,6 +305,37 @@ body{font-family:'DM Sans',sans-serif;background:var(--cream);color:var(--text);
 </head>
 <body>
 
+<div id="pw-gate" style="position:fixed;inset:0;z-index:9999;background:linear-gradient(135deg,#1A0F06,#3B2A1A);display:flex;align-items:center;justify-content:center;font-family:'DM Sans',sans-serif;">
+  <div style="background:#FAF6EF;border-radius:16px;padding:36px 34px;width:100%;max-width:340px;box-shadow:0 20px 60px rgba(0,0,0,.4);text-align:center;">
+    <div style="font-family:'Playfair Display',serif;font-size:22px;font-weight:900;color:#3B2A1A;margin-bottom:4px;">VibeCoffee</div>
+    <div style="font-size:12px;color:#8A7060;margin-bottom:22px;">Nhập mật khẩu để xem dashboard</div>
+    <input type="password" id="pw-input" placeholder="Mật khẩu" style="width:100%;padding:11px 14px;border-radius:9px;border:1px solid rgba(58,42,26,.22);font-size:14px;margin-bottom:12px;outline:none;box-sizing:border-box;font-family:'DM Sans',sans-serif;">
+    <button id="pw-submit" style="width:100%;padding:11px 14px;border-radius:9px;border:none;background:#3B2A1A;color:#E8B054;font-size:13px;font-weight:600;cursor:pointer;letter-spacing:.03em;">Truy cập</button>
+    <div id="pw-error" style="color:#C04A2A;font-size:11px;margin-top:10px;min-height:14px;"></div>
+  </div>
+</div>
+<script>
+(function(){
+  var CORRECT_PW = "@Hoangkimphat8688";
+  var gate = document.getElementById('pw-gate');
+  var input = document.getElementById('pw-input');
+  var btn = document.getElementById('pw-submit');
+  var err = document.getElementById('pw-error');
+  function tryUnlock(){
+    if(input.value === CORRECT_PW){
+      gate.style.display = 'none';
+    } else {
+      err.textContent = 'Sai mật khẩu, vui lòng thử lại.';
+      input.value = '';
+      input.focus();
+    }
+  }
+  btn.addEventListener('click', tryUnlock);
+  input.addEventListener('keydown', function(e){ if(e.key === 'Enter') tryUnlock(); });
+  input.focus();
+})();
+</script>
+
 <header class="header">
   <div class="brand">VibeCoffee <span>by Hoàng Kim Phát</span></div>
   <div class="header-right">
